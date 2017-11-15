@@ -1,10 +1,10 @@
 //  Scripts and Styles needed for level_2.html
 
 var styleSheets = [
-	"/css/main.css",				/* Общие стили */
-	"/css/work-panel.css",				/* work panel */
-	"/css/buttons.css",				/* Стили кнопок */
-	"/css/news.css",				/* Лента новостей */
+	"css/main.css",					/* Общие стили */
+	"css/work-panel.css",				/* work panel */
+	"css/buttons.css",				/* Стили кнопок */
+	"css/news.css",					/* Лента новостей */
 	"https://garevna.github.io/css/modals.css"	/* Модальные окна */
 ];
 var scripts = [
@@ -13,7 +13,7 @@ var scripts = [
 	//	functions: [ "garevnaLoginProcess", "garevnaLogin" ]
 	//},
 	{
-		src: "/js/garevna_media_library.js",													/* old library */
+		src: "js/garevna_media_library.js",													/* old library */
 		functions: [
 			"create_event",
 			"createStyleSheet",
@@ -43,7 +43,7 @@ var scripts = [
 		]
 	},
 	{
-	  src: "/js/work_panel.js",															/* work panel */
+	  src: "js/work_panel.js",															/* work panel */
 		functions: [
 			"garevna_WorkPanel.getStructure",
 			"garevna_WorkPanel.createDomElements",
@@ -58,7 +58,7 @@ var scripts = [
 		]
 	},
 	{
-	  src: "/js/level_2.js",															/* work panel */
+	  src: "js/level_2.js",															/* work panel */
 		defer: true,
 		functions: [
 			"SceneForStudyProcessConstructor"
