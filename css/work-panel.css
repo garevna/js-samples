@@ -1,9 +1,9 @@
 @charset "utf-8";
-/* CSS Document */
 /* -------------------------------------------------------------------
-            Убирающаяся панель меню справа (для видео и т.д.)
+            	Убирающаяся панель меню справа
 ----------------------------------------------------------------------*/
 .panel-name, .work-panel  { width:90%; }
+
 .panel-top {
 	position:relative;
 	right:30px;
@@ -86,8 +86,15 @@
 .work-panel-elem {
 	background-color:#000;
 	border: outset 1px white;
-	font-size:12px;
+	/*font-size:12px;*/
 	color:white;
+}
+.work-panel-elem button {
+	float:left;
+}
+.work-panel span {
+	display: inline-block;
+	margin: 5px;
 }
 .work-panel-elem-short { display:inline-block; border:none; }
 
