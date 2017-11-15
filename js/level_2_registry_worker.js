@@ -1,11 +1,11 @@
 //  Scripts and Styles needed for level_2.html
 
 var styleSheets = [
-	//"/css/styles_new.css",												/* Общие стили */
-	"/css/work-panel.css",												/* work panel */
-	"/css/buttons.css",														/* Стили кнопок */
-	"/css/news.css",														  /* Лента новостей */
-	"https://garevna.github.io/css/modals.css"	  /* Модальные окна */
+	"/css/main.css",				/* Общие стили */
+	"/css/work-panel.css",				/* work panel */
+	"/css/buttons.css",				/* Стили кнопок */
+	"/css/news.css",				/* Лента новостей */
+	"https://garevna.github.io/css/modals.css"	/* Модальные окна */
 ];
 var scripts = [
 	//{
@@ -58,7 +58,7 @@ var scripts = [
 		]
 	},
 	{
-	  src: "/snippets/level_2.js",															/* work panel */
+	  src: "/js/level_2.js",															/* work panel */
 		defer: true,
 		functions: [
 			"SceneForStudyProcessConstructor"
