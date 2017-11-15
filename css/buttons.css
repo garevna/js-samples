@@ -61,7 +61,7 @@
         background-size:90%;
         background-position:center;
         background-color:transparent;
-        cursor:hand;
+        cursor:pointer;
         border:none;
 }
 .button_show, .button_hide, .flash_button,
@@ -93,15 +93,16 @@
 .button_design, .button_design:hover,
 .button_mouse, .button_mouse:hover,
 .button_settings, .button_settings:hover,
-.button_process, .button_process:hover
-{
-    width:7vmax;
-    height:7vmax;
+.button_process, .button_process:hover {
+	width: 30px;
+	height:30px;
 }
-.button_youtube, .button_youtube:hover, .button_video, .button_video:hover
-{
-    width:8vmax;
-    height:auto;
+.button_youtube,
+.button_youtube:hover,
+.button_video,
+.button_video:hover {
+	height:30px;
+	width: 40px;
 }
 
 .button_w3c:hover,
@@ -130,9 +131,9 @@
 .button_design:hover,
 .button_mouse:hover,
 .button_settings:hover,
-.button_process:hover
-{
-        background-color:rgba(150,0,100,0.5);
+.button_process:hover {
+        border:solid 1px white;
+	background-color:rgba(255,255,255,0.5);
 }
 
 .floating_buttons {
@@ -146,5 +147,6 @@
 }
 
 @media screen and (max-width:400px) and (max-height:450px) {
+	
 	#__pin__ { width:7vmax; height:7vmax; }
 }
