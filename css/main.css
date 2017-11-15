@@ -14,6 +14,7 @@ body {
   bottom:5px;
   right:5px;
   color:#555;
+  font-size:12px;
 }
 #garevna_home {
   position: fixed;
