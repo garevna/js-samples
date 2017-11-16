@@ -1,19 +1,20 @@
 //  Scripts and Styles needed for level_2.html
-
+console.info ('GLOBAL_PATH: ' + GLOBAL_PATH )
+console.info ('LOCAL_PATH: ' + LOCAL_PATH )
 var styleSheets = [
-	"css/main.css",					/* Общие стили */
-	"css/work-panel.css",				/* work panel */
-	"css/buttons.css",				/* Стили кнопок */
-	"css/news.css",					/* Лента новостей */
-	"https://garevna.github.io/css/modals.css"	/* Модальные окна */
+	LOCAL_PATH  + "css/main.css",			/* Общие стили */
+	LOCAL_PATH  + "css/work-panel.css",		/* work panel */
+	LOCAL_PATH  + "css/buttons.css",		/* Стили кнопок */
+	LOCAL_PATH  + "css/news.css",			/* Лента новостей */
+	GLOBAL_PATH + "css/modals.css"			/* Модальные окна */
 ];
 var scripts = [
 	//{
-	//	src: '/snippets/login.js',
+	//	src: LOCAL_PATH + '/js/login.js',
 	//	functions: [ "garevnaLoginProcess", "garevnaLogin" ]
 	//},
 	{
-		src: "js/garevna_media_library.js",													/* old library */
+		src: LOCAL_PATH + "js/garevna_media_library.js",													/* old library */
 		functions: [
 			"create_event",
 			"createStyleSheet",
@@ -43,7 +44,7 @@ var scripts = [
 		]
 	},
 	{
-	  src: "js/work_panel.js",															/* work panel */
+	  src: LOCAL_PATH + "js/work_panel.js",															/* work panel */
 		functions: [
 			"garevna_WorkPanel.getStructure",
 			"garevna_WorkPanel.createDomElements",
@@ -58,7 +59,7 @@ var scripts = [
 		]
 	},
 	{
-	  src: "js/level_2.js",															/* work panel */
+	  src: LOCAL_PATH + "js/level_2.js",															/* work panel */
 		defer: true,
 		functions: [
 			"SceneForStudyProcessConstructor"
@@ -67,11 +68,11 @@ var scripts = [
 ];
 var externalScripts = [
 	{
-		src: "https://garevna.github.io/libs/modals.js",	/* Модальные окна */
+		src: GLOBAL_PATH + "libs/modals.js",	/* Модальные окна */
 		functions: [ "Modals" ]
 	},
 	{
-		src: "https://garevna.github.io/libs/get_abbreviation_object.js",
+		src: GLOBAL_PATH + "libs/get_abbreviation_object.js",
 		functions: [ "get_abbreviation_object" ]
 	},
 	{
@@ -83,15 +84,15 @@ var externalScripts = [
 		functions: []
 	},
 	{
-		src: "https://garevna.github.io/GSAP/TweenMax.min.js",	/* GreenSock */
+		src: GLOBAL_PATH + "GSAP/TweenMax.min.js",	/* GreenSock */
 		functions: []
 	},
 	{
-		src: "https://garevna.github.io/GSAP/CSSPlugin.min.js",	/* GreenSock */
+		src: GLOBAL_PATH + "GSAP/CSSPlugin.min.js",	/* GreenSock */
 		functions: []
 	},
 	{
-		src: "https://garevna.github.io/GSAP/EasePack.min.js",	/* GreenSock */
+		src: GLOBAL_PATH + "GSAP/EasePack.min.js",	/* GreenSock */
 		functions: []
 	}
 ];
