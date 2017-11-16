@@ -272,8 +272,8 @@ SceneForStudyProcessConstructor.prototype.generateMethod = function ( elementDat
 	func [ 'html' ] = function () { }
 	
 	return function () {
-		if ( garevna_html_css_library && garevna_html_css_library.clear )
-			garevna_html_css_library.clear ()
+		//if ( garevna_html_css_library && garevna_html_css_library.clear )
+		//	garevna_html_css_library.clear ()
 		console.log ( func [ elemType ] )
 		return func [ elemType ] ()
 	}
