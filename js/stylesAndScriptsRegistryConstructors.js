@@ -64,7 +64,7 @@ function GarevnaScriptsRegistry () {
 		}
 	})()
 
-	this.worker = new Worker ( '/js/loader.js' )
+	this.worker = new Worker ( 'loader.js' )
 	this.worker.onmessage = function ( mess ) {
 		console.log ( 'GarevnaScriptsRegistry received data: ', mess.data )
 	}
