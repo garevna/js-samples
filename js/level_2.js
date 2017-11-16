@@ -189,10 +189,11 @@ SceneForStudyProcessConstructor.prototype.generateMethod = function ( elementDat
 //            или: generateMethod ( elem_type, ref ).call ();
 // =============================================================================================================
 	var elemType = elementData.type
-	var __parent__ = elementData.parent_node || this.scene
+	console.log ( elementData )
+	var __parent__ = elementData.parent_node || this.__scene__
 	var func = {}
 	this.clearScene ()
-	__parent__.style.display = 'block'
+	if ( __parent__.style.display === 'none' ) __parent__.style.display = 'block'
 	func [ 'presentation' ] = function () {
 		var ref = elementData.ref
 		var $url = "https://docs.google.com/presentation/d/" + ref
@@ -269,10 +270,12 @@ SceneForStudyProcessConstructor.prototype.generateMethod = function ( elementDat
 		}
 	}
 	func [ 'html' ] = function () { }
-		return function () {
-			if ( garevna_html_css_library && garevna_html_css_library.clear )
-							garevna_html_css_library.clear ()
-			return func [ elemType ] ()
+	
+	return function () {
+		if ( garevna_html_css_library && garevna_html_css_library.clear )
+			garevna_html_css_library.clear ()
+		console.log ( func [ elemType ] )
+		return func [ elemType ] ()
 	}
 }
 SceneForStudyProcessConstructor.prototype.clearScene = function () {
