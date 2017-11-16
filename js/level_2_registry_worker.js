@@ -1,6 +1,8 @@
 //  Scripts and Styles needed for level_2.html
-console.info ('GLOBAL_PATH: ' + GLOBAL_PATH )
-console.info ('LOCAL_PATH: ' + LOCAL_PATH )
+
+var GLOBAL_PATH = 'https://garevna.github.io/'
+var LOCAL_PATH = 'https://garevna.github.io/js.github.io/'
+
 var styleSheets = [
 	LOCAL_PATH  + "css/main.css",			/* Общие стили */
 	LOCAL_PATH  + "css/work-panel.css",		/* work panel */
