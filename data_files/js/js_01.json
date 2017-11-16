@@ -2,11 +2,11 @@
   "page_title": "JavaScript | BOM",
   "meta_descr": "JavaScript: Введение. Browser Object Model. Веб-консоль",
   "meta_keywords": "ECMA,AJAX,script,var,typeof,console.log,console.info,console.warn,console.error,console.dir, console.dirxml,console.group,console.groupEnd,console.groupCollapsed,console.time,console.timeEnd",
-  "start_function":"./js/js_object.js",
+  "start_function":"js_object.js",
   "functions": [
     {
       "type":"function",
-      "url": "./js/create_galery.js",
+      "url": "create_galery.js",
       "func_name":"garevna_createGalery"
     }
   ],
@@ -25,7 +25,7 @@
     },
     {
       "type": "window",
-      "url": "./js/#/data_files/js/BOM_objects.json",
+      "url": "#/data_files/js/BOM_objects.json",
       "folder_name": "Введение в курс",
       "item_name": "Объектная модель браузера (BOM)",
       "button_type": "settings",
