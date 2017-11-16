@@ -6,7 +6,7 @@
   "functions": [
     {
       "type":"function",
-      "url": "/js/create_galery.js",
+      "url": "./js/create_galery.js",
       "func_name":"garevna_createGalery"
     }
   ],
@@ -25,7 +25,7 @@
     },
     {
       "type": "window",
-      "url": "/chunks/js/#/data_files/js/BOM_objects.json",
+      "url": "./js/#/data_files/js/BOM_objects.json",
       "folder_name": "Введение в курс",
       "item_name": "Объектная модель браузера (BOM)",
       "button_type": "settings",
