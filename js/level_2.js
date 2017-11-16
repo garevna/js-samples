@@ -480,6 +480,7 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 		var elem, btn, txt, elemVar
 		for ( var j = 0; j < itemVars.content.length; j++ ) {
 			elemVar = this.menuItems [ itemVars.content [j] ]
+			console.log ('elemVar: ', elemVar)
 			elem = document.createElement ( 'div' )
 			elem.className = "work-panel-elem"
 			this.__folders__ [ folderNum ].__content__.appendChild (elem)
@@ -489,6 +490,7 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 			elem.parentObject = elem.parentPanel.parentObject
 			this.__folders__ [ folderNum ].__content__.appendChild ( elem )   // DOM element
 			this.__folders__ [ folderNum ].__content__.elem.push ( elem )      // reference to DOM element (array item)
+			console.log ('this.__folders__[', folderNum, '].__content__: ', this.__folders__ [ folderNum ].__content__)
 			btn = document.createElement ( 'button' )
 			elem.appendChild ( btn )
 			btn.className = this.getButtonType ( elemVar )
