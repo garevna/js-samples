@@ -1,6 +1,3 @@
-var GLOBAL_PATH = 'https://garevna.github.io/'
-var LOCAL_PATH = 'https://garevna.github.io/js.github.io/'
-
 document.scriptsRegistry = new GarevnaScriptsRegistry ()
 document.stylesheetsRegistry = new GarevnaStylesRegistry ()
 document.worker = new Worker ( LOCAL_PATH + 'js/level_2_registry_worker.js' )
