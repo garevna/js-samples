@@ -1,6 +1,6 @@
 document.scriptsRegistry = new GarevnaScriptsRegistry ()
 document.stylesheetsRegistry = new GarevnaStylesRegistry ()
-document.worker = new Worker ( 'js/level_2_registry_worker.js' )
+document.worker = new Worker ( 'level_2_registry_worker.js' )
 document.worker.onmessage = function ( mess ) {
 	if ( mess.data.type == 'script' ) {
 		document.scriptsRegistry.registerScript ( {
