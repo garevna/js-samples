@@ -2,7 +2,7 @@
   "page_title": "JavaScript | BOM",
   "meta_descr": "JavaScript: Введение. Browser Object Model. Веб-консоль",
   "meta_keywords": "ECMA,AJAX,script,var,typeof,console.log,console.info,console.warn,console.error,console.dir, console.dirxml,console.group,console.groupEnd,console.groupCollapsed,console.time,console.timeEnd",
-  "start_function":"js_object.js",
+  "start_function":"https://garevna.github.io/js.github.io/js/js_object.js",
   "functions": [
     {
       "type":"function",
@@ -25,7 +25,7 @@
     },
     {
       "type": "window",
-      "url": "#/data_files/js/BOM_objects.json",
+      "url": "https://garevna.github.io/js.github.io/#/data_files/js/BOM_objects.json",
       "folder_name": "Введение в курс",
       "item_name": "Объектная модель браузера (BOM)",
       "button_type": "settings",
