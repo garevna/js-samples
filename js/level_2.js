@@ -523,13 +523,13 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 			if (  j!= 0 && j != 1 ) return folder_forms
 			else return folder_forms [j]
 		}
-	}) (),
+	}) ()
 	// -------------------------------------------------------------------- folderStates (array)
 	panel.folderStates = ( function () {
 		var folder_states = [ { lbl:'&#9650;', titl:'Скрыть содержимое папки' },
 	                          { lbl:'&#9660;', titl:'Показать содержимое папки' } ]
 		return function () { return folder_states }
-	})(),
+	})()
 	// ================================================================================================== getButtonType
 	panel.getButtonType = function ( elem ) {
 		var button_type = []
@@ -545,6 +545,7 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 		if ( bt == 'show' ) { console.log( 'Не определен тип элемента меню:' +																											elem.item_name ) }
 		return "button_" + bt
 	}
+	console.log ( 'PANEL: ', panel )
 	return panel
 }
 // ================================================================================================
