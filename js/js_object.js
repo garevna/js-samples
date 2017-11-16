@@ -8,24 +8,24 @@
 		
 		var mc_elements_data = []
 		mc_elements_data [0] = {
-			img: GLOBAL_PATH + 'JavaScript/img/object.png',
+			img: GLOBAL_PATH + 'Javascript/img/object.png',
 			txt: 'Объект',
 			_top: '30%', _left: '40%', _size:'30%',
 		}
 		mc_elements_data [1] = {
-			img: GLOBAL_PATH + 'JavaScript/img/properties.png',
+			img: GLOBAL_PATH + 'Javascript/img/properties.png',
 			txt: 'Свойства',
 			_top: '30%', _left: '20%', _size:'17%',
 			_transformOrigin:"100% 100%"
 		}
 		mc_elements_data [2] = {
-			img: GLOBAL_PATH + 'JavaScript/img/methods-1.png',
+			img: GLOBAL_PATH + 'Javascript/img/methods-1.png',
 			txt: 'Методы',
 			_top: '20%', _left: '50%', _size:'20%',
 			_transformOrigin:"-50% 80%"
 		}
 		mc_elements_data [3] = {
-			img: GLOBAL_PATH + 'JavaScript/img/event-4.png',
+			img: GLOBAL_PATH + 'Javascript/img/event-4.png',
 			txt: 'События',
 			_top: '50%', _left: '50%', _size:'20%',
 			_transformOrigin:"-50% 0"
