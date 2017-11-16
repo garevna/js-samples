@@ -53,7 +53,7 @@ function DataLoadingWorkerConstructor () {
 				} )
 	}
 	return worker
-};
+}
 
 SceneForStudyProcessConstructor.prototype.loadData = function ( sourceURL, callback, params ) {
 	this.dataWorker.sourceURL = sourceURL
@@ -280,7 +280,7 @@ SceneForStudyProcessConstructor.prototype.clearScene = function () {
 	for ( var i = 0; i < articles.length; i++ ) {
 		articles[i].style.display = 'none'
 	}
-	this.scene.style.display = 'none'
+	this.__scene__.style.display = 'none'
 }
 SceneForStudyProcessConstructor.prototype.buildSwf = function ( $swf, targetElement ) {
 	var worker = new Worker( GLOBAL_PATH + 'js/swf_builder.js' )
@@ -291,24 +291,25 @@ SceneForStudyProcessConstructor.prototype.buildSwf = function ( $swf, targetElem
 }
 // ================================================================================================== browserResize
 SceneForStudyProcessConstructor.prototype.browserResize = function () {
-	console.log ('this.__articles__: ', this.__articles__)
-	for ( var i = 0; i < this.__articles__.length; i++ ) {
-		articles[i].style.width = Math.round(window.innerWidth * 0.8) + 'px'
-		articles[i].style.marginLeft = Math.round(window.innerWidth * 0.05) + 'px'
-		articles[i].style.height = Math.round(window.innerHeight * 0.9) + 'px'
-		articles[i].style.marginTop = Math.round(window.innerHeight * 0.05) + 'px'
-		if (articles[i].resize_callback) 
-			articles[i].resize_callback()
+	if ( this.__articles__ ) {
+		for ( var i = 0; i < this.__articles__.length; i++ ) {
+			articles[i].style.width = Math.round(window.innerWidth * 0.8) + 'px'
+			articles[i].style.marginLeft = Math.round(window.innerWidth * 0.05) + 'px'
+			articles[i].style.height = Math.round(window.innerHeight * 0.9) + 'px'
+			articles[i].style.marginTop = Math.round(window.innerHeight * 0.05) + 'px'
+			if ( articles[i].resize_callback ) 
+					articles[i].resize_callback()
 		}
-		if (document.getElementById("css-panel")) {
-			var _css = document.getElementById("css-panel")
-			cssPanelHeight = _css.offsetHeight
-		}
-		if ( document.getElementById ( "html-panel" ) ) {
-			var _html = document.getElementById ( "html-panel" )
-			htmlPanelHeight = _html.offsetHeight
-		}
-		if ( this.__scene__.sceneResizeCallback )
+	}
+	if (document.getElementById("css-panel")) {
+		var _css = document.getElementById ( "css-panel" )
+		cssPanelHeight = _css.offsetHeight
+	}
+	if ( document.getElementById ( "html-panel" ) ) {
+		var _html = document.getElementById ( "html-panel" )
+		htmlPanelHeight = _html.offsetHeight
+	}
+	if ( this.__scene__.sceneResizeCallback )
 			this.__scene__.sceneResizeCallback ()
 }
 
