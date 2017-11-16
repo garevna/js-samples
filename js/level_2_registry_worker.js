@@ -83,7 +83,7 @@ var externalScripts = [
 		functions: []
 	},
 	{
-		src: "https://garevna.github.io/GSAP/TweenMax.min.js",			/* GreenSock */
+		src: "https://garevna.github.io/GSAP/TweenMax.min.js",	/* GreenSock */
 		functions: []
 	},
 	{
