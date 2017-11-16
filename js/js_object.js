@@ -8,24 +8,24 @@
 		
 		var mc_elements_data = []
 		mc_elements_data [0] = {
-			img:'/JavaScript/img/object.png',
+			img: GLOBAL_PATH + '/JavaScript/img/object.png',
 			txt: 'Объект',
 			_top: '30%', _left: '40%', _size:'30%',
 		}
 		mc_elements_data [1] = {
-			img:'/JavaScript/img/properties-1.png',
+			img: GLOBAL_PATH + '/JavaScript/img/properties-1.png',
 			txt: 'Свойства',
 			_top: '30%', _left: '20%', _size:'17%',
 			_transformOrigin:"100% 100%"
 		}
 		mc_elements_data [2] = {
-			img:'/JavaScript/img/methods-1.png',
+			img: GLOBAL_PATH + '/JavaScript/img/methods-1.png',
 			txt: 'Методы',
 			_top: '20%', _left: '50%', _size:'20%',
 			_transformOrigin:"-50% 80%"
 		}
 		mc_elements_data [3] = {
-			img:'/JavaScript/img/event-4.png',
+			img: GLOBAL_PATH + '/JavaScript/img/event-4.png',
 			txt: 'События',
 			_top: '50%', _left: '50%', _size:'20%',
 			_transformOrigin:"-50% 0"
@@ -33,8 +33,9 @@
 		var mc_elem = []
 		var mc_tween = []
 		for ( var j = 0; j < mc_elements_data.length; j++ ) {
-			mc_elem[j] = document.createElement('div')
-			document.getElementById("garevna_scene").appendChild(mc_elem[j])
+			mc_elem[j] = document.createElement ( 'div' )
+			console.log ('__main__: ', garevna_Level2.__main__ )
+			garevna_Level2.__main__.appendChild ( mc_elem[j] )
 			mc_elem[j].style.backgroundImage = 'url(' + mc_elements_data[j].img + ')'
 			mc_elem[j].txt = mc_elements_data[j].txt
 			mc_elem[j].style.position = 'absolute'
