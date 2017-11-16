@@ -16,7 +16,7 @@ function SceneForStudyProcessConstructor () {
 
 	this.__articles__ = []
 
-	var jsonUrl = '/data_files/' + location.hash.substring ( 1 ) + '.json'
+	var jsonUrl = 'https://garevna.github.io/js.github.io/data_files/' + location.hash.substring ( 1 ) + '.json'
 	this.dataWorker = new DataLoadingWorkerConstructor ()
 	this.dataWorker.parentObject = this
 	this.loadData ( jsonUrl, this.mainCallback )
@@ -25,7 +25,7 @@ function SceneForStudyProcessConstructor () {
 
 function DataLoadingWorkerConstructor () {
 	try {
-		var worker = new Worker( '/js/sourse_loader.js' )
+		var worker = new Worker( 'https://garevna.github.io/js.github.io/js/sourse_loader.js' )
 	}
 	catch ( err ) {
 		var x = new Modals ( {
@@ -281,7 +281,7 @@ SceneForStudyProcessConstructor.prototype.clearScene = function () {
 	this.scene.style.display = 'none'
 }
 SceneForStudyProcessConstructor.prototype.buildSwf = function ( $swf, targetElement ) {
-	var worker = new Worker( '/js/swf_builder.js' )
+	var worker = new Worker( 'https://garevna.github.io/js.github.io/js/swf_builder.js' )
 	worker.postMessage ( { num:num, url: $swf } )
 	worker.onmessage = function ( mess ) {
 		targetElement.innerHTML = e.data
@@ -553,7 +553,7 @@ function ElemTooltip ( elem, tooltip_text ) {
 	elem.tooltipText = tooltip_text
 	elem.onmouseout = function ( event ) {
 		if ( event.target.children [0] )
-						event.target.removeChild ( event.target.children [0] )
+				event.target.removeChild ( event.target.children [0] )
 	}
 	elem.onmouseover = function ( event ) {
 		var x = event.pageX ? ( event.pageX - window.pageXOffset ) : event.clientX
