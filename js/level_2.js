@@ -25,7 +25,7 @@ function SceneForStudyProcessConstructor () {
 
 function DataLoadingWorkerConstructor () {
 	try {
-		var worker = new Worker( LOCAL_PATH + 'js/sourse_loader.js' )
+		var worker = new Worker( GLOBAL_PATH + 'js/sourse_loader.js' )
 	}
 	catch ( err ) {
 		var x = new Modals ( {
