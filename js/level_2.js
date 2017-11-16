@@ -503,6 +503,8 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 				console.log ( event.target.parentObject )
 				event.target.parentObject.generateMethod ( btn.params ).call ()
 			}
+			console.dir ( 'button: ', btn )
+			console.log ( 'button onclick: ', btn.onclick )
 			txt = document.createElement ( 'span' )
 			elem.appendChild ( txt )
 			txt.innerHTML = elemVar.item_name
