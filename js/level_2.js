@@ -16,7 +16,7 @@ function SceneForStudyProcessConstructor () {
 
 	this.__articles__ = []
 
-	var jsonUrl = 'https://garevna.github.io/js.github.io/data_files/' + location.hash.substring ( 1 ) + '.json'
+	var jsonUrl = GLOBAL_PATH + 'data_files/' + location.hash.substring ( 1 ) + '.json'
 	this.dataWorker = new DataLoadingWorkerConstructor ()
 	this.dataWorker.parentObject = this
 	this.loadData ( jsonUrl, this.mainCallback )
@@ -25,7 +25,7 @@ function SceneForStudyProcessConstructor () {
 
 function DataLoadingWorkerConstructor () {
 	try {
-		var worker = new Worker( 'https://garevna.github.io/js.github.io/js/sourse_loader.js' )
+		var worker = new Worker( LOCAL_PATH + 'js/sourse_loader.js' )
 	}
 	catch ( err ) {
 		var x = new Modals ( {
@@ -72,7 +72,6 @@ SceneForStudyProcessConstructor.prototype.processRecord = function ( record ) {
 	console.log ('PROCESS RECORD: ', record )
 	if ( record.type === 'window' ) return
 	record.parent_node = this.scene
-	// var types = [ 'object', 'html', 'swf' ]
 	if ( [ 'object', 'html', 'swf' ].indexOf ( record.type ) >= 0 ) {
 		var num = this.articlesCounter ()
 		this.__articles__ [ num ] = document.createElement ( 'article' )
@@ -97,7 +96,12 @@ SceneForStudyProcessConstructor.prototype.appendScript = function ( scriptURL ) 
 	script.defer = true
 	script.src = scriptURL
 	document.getElementsByTagName ( 'head' ) [0].appendChild ( script )
-	script.onerror = function ( e ) { console.error ( 'Script loading error: ' + scriptURL ) }
+	script.onerror = function ( e ) {
+		console.error ( 'Script loading error: ' + scriptURL )
+	}
+	script.onload = function ( e ) {
+		console.info ( 'Script was loaded: ' + scriptURL )
+	}
 }
 // ================================ H T M L    C A L L B A C K ====================================
 
@@ -111,9 +115,7 @@ SceneForStudyProcessConstructor.prototype.scriptCallback = function ( func, para
 	var script = document.createElement ( 'script' )
 	var funcText = document.createTextNode ( func )
 	document.head.appendChild ( script )
-	console.log ('funcText: ', funcText.outerHTML)
 	script.appendChild ( funcText )
-	console.log ('PARAMS: ', params)
 	if ( params ) {
 		if ( params.func_type == 'library' ) {
 			var $lib = window [ params.lib_name ]
@@ -281,7 +283,7 @@ SceneForStudyProcessConstructor.prototype.clearScene = function () {
 	this.scene.style.display = 'none'
 }
 SceneForStudyProcessConstructor.prototype.buildSwf = function ( $swf, targetElement ) {
-	var worker = new Worker( 'https://garevna.github.io/js.github.io/js/swf_builder.js' )
+	var worker = new Worker( GLOBAL_PATH + 'js/swf_builder.js' )
 	worker.postMessage ( { num:num, url: $swf } )
 	worker.onmessage = function ( mess ) {
 		targetElement.innerHTML = e.data
@@ -492,6 +494,7 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 			btn.__tooltip__ = new ElemTooltip ( btn, tooltipText )
 			// ---------------------------------------------------------------- onclick
 			btn.onclick = function (event) {
+				console.log ( event.target.parentObject )
 				event.target.parentObject.generateMethod ( btn.params ).call ()
 			}
 			txt = document.createElement ( 'span' )
@@ -515,6 +518,8 @@ SceneForStudyProcessConstructor.prototype.createWorkPanel = function () {
 			}
 		]
 		return function (j) {
+			console.log ( 'folder_forms: ', folder_forms )
+			console.log ( 'current form: ', folder_forms [j] )
 			if (  j!= 0 && j != 1 ) return folder_forms
 			else return folder_forms [j]
 		}
