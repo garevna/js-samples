@@ -7,3 +7,10 @@ var sample = {
                 document.write ( testElemContent () )
         }
 }
+
+sample.elem.onchange = function ( event ) {
+        sample.showElemContent ()
+}
+
+// <IMG SRC=/ onerror="alert(String.fromCharCode(88,83,83))"></img>
+// <BODY BACKGROUND="javascript:alert('XSS')">
