@@ -8,11 +8,11 @@ function insertUserText ( userText ) {
 }
 
 insertUserText (`javascript:/*-->
-      </title>
-      </style>
-      </textarea>
-      </script>
-      </xmp>
-      <svg
-      /onload='+/"/+/onmouseover=1/+/[*/[]/+
-      document.write("Looser")//'>`
+                  </title>
+                  </style>
+                  </textarea>
+                  </script>
+                  </xmp>
+                  <svg
+                  /onload='+/"/+/onmouseover=1/+/[*/[]/+
+                        document.write("Looser")//'>`)
