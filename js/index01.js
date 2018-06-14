@@ -2,7 +2,9 @@ function testUserText ( userText ) {
       return userText
 }
 function insertUserText ( userText ) {
-     document.body.innerHTML += testUserText ( userText )
+      var x = document.createElement ( 'div' )
+      x.innerHTML = testUserText ( userText )
+      document.body.appendChild ( x )
 }
 
-insertUserText ( '><img src="javascript:alert();"' )
+insertUserText ( '<script src="javascript:alert(this);"></script>' )
