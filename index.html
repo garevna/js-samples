@@ -2,57 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport"
-    		content="width=device-width, height=device-height, initial-scale=1.0">
-	<title>JS</title>
-	<base href="https://garevna.github.io/js.github.io/"/>
-	<meta name="description" content="It will be changed"/>
-	<meta name="keywords" content="It will be changed"/>
-	<meta http-equiv="Cache-Control" content="no-Cache" />
-	<meta name="viewport" content="width=device-width" />
+	<title>JS lesson 2</title>
+	<meta name="description" content="Samples for my students"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script>
-		var GLOBAL_PATH = 'https://garevna.github.io/'
-		var LOCAL_PATH = 'https://garevna.github.io/js.github.io/'
-	</script>
 	<link rel="shortcut icon" href="logos/a-level-ico.png" type="image/x-icon">
-	<script src = "https://garevna.github.io/js.github.io/js/stylesAndScriptsRegistryConstructors.js"></script>
-	<script src = "https://garevna.github.io/js.github.io/js/level_2_init.js"></script>
-	<script defer src= "https://garevna.github.io/js.github.io/js/level_2.js"></script>
+	<script src = "js/index.js"></script>
 </head>
 
 <body>
-
-	<!--<script src="/snippets/login.js"></script>-->
 	<button id="garevna_home" class="button_home"
 		onclick="window.open('/index.html','_self')" />
 	</button>
 	<div id="garevna_logo">
 		&copy; Филиппова Ірина 2016
 	</div>
-	<script>
-
-	var garevna_YouTubeIframeAPIReady = false
-
-	function onYouTubeIframeAPIReady() {
-		garevna_YouTubeIframeAPIReady = true
-	}
-	var garevna_Level2
-
-	window.onload = function ( e ) {
-		garevna_Level2 = new SceneForStudyProcessConstructor ()
-		window.addEventListener( "resize", garevna_Level2.browserResize )
-		garevna_Level2.browserResize ()
-	}
-	window.addEventListener ( 'pageshow', function __reload ( event ) {
-   		if ( event.persisted ) {
-			var a = new Modals ( { type: 'alert', text: 'Страница загружена из кэша браузера: обновляем' } )
-			window.location.reload()
-		}
-	} )
-</script>
 </body>
-
-
 
 </html>
