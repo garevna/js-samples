@@ -11,4 +11,4 @@ document.querySelector ( 'input' ).onchange = function ( event ) {
         insertUserText ( event.target.value )
 }
 // <IMG SRC=/ onerror="document.write(String.fromCharCode(88,83,83))"></img>
-// <BODY BACKGROUND="javascript:alert('XSS')">
+// <IFRAME SRC=js/attack.js onmouseover="alert(document.cookie)"></IFRAME>
