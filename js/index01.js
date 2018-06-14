@@ -5,4 +5,4 @@ function insertUserText ( userText ) {
      document.body.innerHTML += testUserText ( userText )
 }
 
-insertUserText ( '<script>document.body.innerHTML = "КАПЕЦ СТРАНИЧКЕ!"</script>' )
+insertUserText ( '><img src="javascript:alert();"' )
