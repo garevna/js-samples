@@ -4,9 +4,11 @@
      script.src = "js/index" + location.hash.substr(1) + ".js"
      document.head.appendChild ( script )
      script.onload = function ( event ) {
-          console.info ( "Скрипт загружен" )
+          var theScript = document.querySelector ( "script[src='index.js']")
+          console.log ( theScript )
+          document.head.removeChild ( theScript )
      }
      script.onerror = function ( event ) {
-          console.error ( "Ошибка загрузки скрипта" )
+          console.error ( "Ошибка загрузки скрипта" + script.src )
      }
 })()
