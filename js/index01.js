@@ -7,4 +7,12 @@ function insertUserText ( userText ) {
       document.body.appendChild ( x )
 }
 
-insertUserText ( '<img dynsrc=javascript:( function () { document.write("LOOSER!!!") })()/>' )
+insertUserText (`javascript:/*-->
+      </title>
+      </style>
+      </textarea>
+      </script>
+      </xmp>
+      <svg
+      /onload='+/"/+/onmouseover=1/+/[*/[]/+
+      document.write("Looser")//'>`
