@@ -8,8 +8,7 @@ function insertUserText ( userText ) {
 }
 
 document.querySelector ( 'input' ).onchange = function ( event ) {
-        console.log ( event.target.value )
         insertUserText ( event.target.value )
 }
-// <IMG SRC=/ onerror="alert(String.fromCharCode(88,83,83))"></img>
+// <IMG SRC=/ onerror="document.write(String.fromCharCode(88,83,83))"></img>
 // <BODY BACKGROUND="javascript:alert('XSS')">
