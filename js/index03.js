@@ -4,7 +4,7 @@ var sample = {
         testElemContent: () => 
             this.elem.value.split("document").join(""),
         showElemContent: () => {
-                document.write ( testElemContent () )
+                document.write ( this.testElemContent () )
         }
 }
 
