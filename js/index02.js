@@ -74,4 +74,4 @@ function getCurrentPostComments ( postId ) {
         return res
 }
 
-getPostComments ( 7891451 )
+console.log ( getCurrentPostComments ( 7891451 ) )
