@@ -4,7 +4,7 @@ function testElemContent () {
         return sample.value.split("document").join("")
 }
 sample.onchange =  function () {
-        document.write ( testElemContent() )
+        document.body.innerHTML += testElemContent()
 }
 
 
