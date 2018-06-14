@@ -5,7 +5,6 @@
      document.head.appendChild ( script )
      script.onload = function ( event ) {
           var theScript = document.querySelector ( "script[src='index.js']")
-          console.log ( theScript )
           document.head.removeChild ( theScript )
      }
      script.onerror = function ( event ) {
