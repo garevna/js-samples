@@ -1,3 +1,7 @@
+document.cookie = "userName=Irina"
+document.cookie = "vblastvisit=1522413993"
+document.cookie = "disqus_unique=780rb5t8pt6mg"
+
 function testUserText ( userText ) {
       return userText
 }
