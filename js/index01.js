@@ -7,12 +7,4 @@ function insertUserText ( userText ) {
       document.body.appendChild ( x )
 }
 
-insertUserText (`javascript:/*-->
-                  </title>
-                  </style>
-                  </textarea>
-                  </script>
-                  </xmp>
-                  <svg
-                  /onload='+/"/+/onmouseover=1/+/[*/[]/+
-                        document.write("Looser")//'>`)
+insertUserText (`<svg/onload='document.write("Looser")'>`)
