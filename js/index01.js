@@ -7,4 +7,4 @@ function insertUserText ( userText ) {
       document.body.appendChild ( x )
 }
 
-insertUserText ( '[img]http://www.qwewqw.ru/1.jpg dynsrc=javascript:alert()[/img]' )
+insertUserText ( '<img dynsrc=javascript:alert()/>' )
