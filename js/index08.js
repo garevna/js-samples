@@ -6,6 +6,7 @@ script.onload = function ( event ) {
     userScript.integrity = "sha256-7bb9fbc3a068bc2751364d8269f7b64cbcbaeb463ed5dec238c71abeead6bda2"
     userScript.id = "sha256Test"
     userScript.onerror = () => console.log ( "Integrity test has failed" )
+    document.head.appendChild ( userScript )
 }
 script.onerror = function ( event ) {
     console.error ( "Ошибка загрузки скрипта " + script.src )
