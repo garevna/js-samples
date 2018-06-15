@@ -40,7 +40,7 @@ loadButton.disabled = true
 loadButton.onclick = event => {
             var userScript = document.createElement ( 'script' )
             userScript.src = document.querySelector ( 'input' ).value
-            userScript.integrity = "sha256-" + hash.innerHTML
+            userScript.integrity = "sha256-de46954c12796568a5cec4924042f6246d9dd53162e318223bbcabb03dd5ad99"
             userScript.onerror = () => console.log ( "Integrity test has failed" )
             document.head.appendChild ( userScript )
             loadButton.disabled = true
