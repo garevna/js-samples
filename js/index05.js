@@ -74,8 +74,9 @@ function getCurrentPostComments ( postId ) {
         var res = []
         for ( var x of comments ) {
                 if ( x.postId === postId ) {
+                        var user = users.indexOf( x.author )
                         res.push ({
-                                autor: users [ x.author ].name,
+                                autor: user < 0 ? "anonymous" : users [ user ] .name,
                                 text: x.text
                         })
                 }
