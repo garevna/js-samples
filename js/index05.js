@@ -83,7 +83,7 @@ function getCurrentPostComments ( postId ) {
                                 user = users [ index ].userId === x.author ?
                                         users [ index++ ].name : user
                         }
-                        while ( user < 0 )
+                        while ( index < users.length )
                         res.push ({
                                 autor: user < 0 ? "anonymous" : users [ user ] .name,
                                 text: x.text
