@@ -21,16 +21,19 @@ shaButton.disabled = true
 shaButton.onclick = event => {
     fileName = document.querySelector ( 'input' ).value || 'js/testSHA.js'
     document.querySelector ( 'input' ).value = fileName
-    fetch ( fileName )
-        .then ( responseObject => {
-                responseObject.text().then ( response => {
+    fetch ( fileName, {
+         integrity: "sha256-3kaVTBJ5ZWilzsSSQEL2JG2d1TFi4xgiO7yrsD3VrZk=",
+         crossorigin: "anonymous"
+    } )
+    .then ( responseObject => {
+                responseObject.clone().then ( response => {
                         hash.innerHTML = Sha256.hash ( response )
                         loadButton.disabled = false
                         document.querySelector ( 'input' ).disabled = true
                         shaButton.disabled = true
                 })
-        })
-        .catch ( ( err ) => hash.innerHTML = "Error file " + fileName )
+    })
+    .catch ( ( err ) => hash.innerHTML = "Error file " + fileName )
 }
 
 var loadButton = document.createElement ( 'button' )
