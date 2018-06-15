@@ -80,9 +80,9 @@ function getCurrentPostComments ( postId ) {
                         var user = -1
                         var index = 0
                         do {
-                                user = users [ index ].userId === x.author ?
-                                        users [ index++ ].name : user
-                                console.log ( index, ' : ', users.length )
+                                user = users [ index ].userId === x.author ? index : user
+                                console.log ( 'user: ', user, ' index: ', index, ' users.length: ', users.length )
+                                index += 1
                         }
                         while ( index < users.length )
                         res.push ({
