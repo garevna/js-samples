@@ -3,6 +3,7 @@
 Courseware for my students learning JS
 
 К занятию 2
+
 Пройденный материал:
 Chrome DevTools
 Функции
