@@ -58,7 +58,9 @@ https://garevna.github.io/js-samples/#07
 
 https://garevna.github.io/js-samples/#08     Ссылка пока не активна
 
-https://garevna.github.io/js-samples/#09     Ссылка пока не активна
+► SHA
+
+https://garevna.github.io/js-samples/#09
 
 https://garevna.github.io/js-samples/#10     Ссылка пока не активна
 
