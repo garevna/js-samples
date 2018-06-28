@@ -30,16 +30,11 @@ function testUserData () {
     if ( !nameElem.value || !passElem.value ) return
     var userKey = Sha256.hash ( nameElem.value + passElem.value )
     if ( demo.regim === 0 ) {
-        users.push (
-            users.indexOf ( userKey ) >= 0 ? null :
-                    {
-                        name: nameElem.value,
-                        key: userKey
-                    })
+        users.push ( users.indexOf ( userKey ) >= 0 ? null : userKey )
         title.innerHTML = `Регистрация ${nameElem.value} прошла успешно`
     } 
     else {
-        if ( users.indexOf ( useruserKey ) >= 0 ) {
+        if ( users.indexOf ( userKey ) >= 0 ) {
             var script = document.createElement( 'script' )
             script.id = "hello"
             script.src = 'https://garevna.github.io/js-samples/js/testSHA384.js'
