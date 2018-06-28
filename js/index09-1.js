@@ -30,8 +30,10 @@ function testUserData () {
     if ( !nameElem.value || !passElem.value ) return
     var userKey = Sha256.hash ( nameElem.value + passElem.value )
     if ( demo.regim === 0 ) {
-        users.push ( users.indexOf ( userKey ) >= 0 ? null : userKey )
-        title.innerHTML = `Регистрация ${nameElem.value} прошла успешно`
+        if ( users.indexOf ( userKey ) < 0 ) {
+            users.push ( userKey )
+            title.innerHTML = `Регистрация ${nameElem.value} прошла успешно`
+        } else title.innerHTML = `Пользователь ${nameElem.value} уже зарегистрирован`
     } 
     else {
         if ( users.indexOf ( userKey ) >= 0 ) {
