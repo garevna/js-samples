@@ -1,4 +1,4 @@
-var hello384 = document.createElement ( 'div' )
+var hello = document.createElement ( 'div' )
 hello.style = `position: fixed; 
                 top: 15%; left: 15%; 
                 bottom: 15%; right: 15%; 
