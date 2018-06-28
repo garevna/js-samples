@@ -1,6 +1,4 @@
 var demo = document.querySelector ( "#demo" )
-let script = document.createElement( 'script' )
-
 var btnReg = document.querySelector ( "#registration" )
 var btnSignIn = document.querySelector ( "#sign-in" )
 var nameElem = document.querySelector ( "#name" )
@@ -37,13 +35,15 @@ function testUserData () {
     }
     else {
         if ( users.indexOf ( user ) >= 0 ) {
+            var script = document.createElement( 'script' )
+            script.id = "hello"
             script.src = 'https://garevna.github.io/js-samples/js/testSHA384.js'
             script.crossOrigin = 'anonymous';
             script.integrity = 'sha384-yXrIdlO1CBJknfDtCtDe2tmWWNl5xK30aTz62nLkEpEIBRD3OGi7+To7hfKRaUZ/'
             document.head.appendChild( script )
         }
         setTimeout ( function () {
-            script.parentNode.removeChild ( script )
+            document.querySelector ( "#hello" ).parentNode.removeChild ( script )
         }, 5000 )
     }
     hideButtons ( false )
