@@ -28,19 +28,25 @@ function signIn ( event ) {
 
 function testUserData () {
     if ( !nameElem.value || !passElem.value ) return
-    var user = Sha256.hash ( nameElem.value + passElem.value )
+    var userKey = Sha256.hash ( nameElem.value + passElem.value )
     if ( demo.regim === 0 ) {
-        if ( users.indexOf ( user ) < 0 ) users.push ( user )
-        title.innerHTML = "Регистрация прошла успешно"
-    }
+        users.push (
+            users.indexOf ( userKey ) >= 0 ? null :
+                    {
+                        name: nameElem.value,
+                        key: userKey
+                    })
+        title.innerHTML = `Регистрация ${nameElem.value} прошла успешно`
+    } 
     else {
-        if ( users.indexOf ( user ) >= 0 ) {
+        if ( users.indexOf ( useruserKey ) >= 0 ) {
             var script = document.createElement( 'script' )
             script.id = "hello"
             script.src = 'https://garevna.github.io/js-samples/js/testSHA384.js'
             script.crossOrigin = 'anonymous';
             script.integrity = 'sha384-yXrIdlO1CBJknfDtCtDe2tmWWNl5xK30aTz62nLkEpEIBRD3OGi7+To7hfKRaUZ/'
             document.head.appendChild( script )
+            title.innerHTML = nameElem.value
         }
         setTimeout ( function () {
             document.querySelector ( "#hello" ).parentNode.removeChild ( script )
@@ -48,3 +54,4 @@ function testUserData () {
     }
     hideButtons ( false )
 }
+
