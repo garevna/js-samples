@@ -31,12 +31,8 @@ function signIn ( event ) {
 function testUserData () {
     if ( !nameElem.value || !passElem.value ) return
     var user = Sha256.hash ( nameElem.value + passElem.value )
-    console.log ( user )
-    console.log ( demo.regim )
     if ( demo.regim === 0 ) {
-        console.log ( users.indexOf ( user ) )
-        if ( !users.indexOf ( user ) ) users.push ( user )
-        console.log ( users )
+        if ( users.indexOf ( user ) < 0 ) users.push ( user )
         title.innerHTML = "Регистрация прошла успешно"
     }
     else {
