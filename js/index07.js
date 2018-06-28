@@ -1,5 +1,5 @@
 var sample = document.querySelector ( "input" )
-sample.oninput = "getTextDigest ( this.value )"
+sample.oninput = 'getTextDigest'
 sample.value = "Привет студентам A-level"
 
 var demo = document.createElement ( 'p' )
@@ -15,6 +15,7 @@ script.onerror = function ( event ) {
 }
 document.head.appendChild ( script )
 
-function getTextDigest ( text ) {
-    demo.innerHTML = `Text: ${sample.value}\nHash: ${Sha256.hash ( text )}`
+function getTextDigest () {
+    demo.innerHTML = `Text: ${sample.value}
+        Hash: ${Sha256.hash (sample.value)}`
 }
