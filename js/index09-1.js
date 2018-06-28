@@ -36,7 +36,7 @@ function testUserData () {
         title.innerHTML = "Регистрация прошла успешно"
     }
     else {
-        if ( users.indexOf ( user ) ) {
+        if ( users.indexOf ( user ) >= 0 ) {
             script.src = 'https://garevna.github.io/js-samples/js/testSHA384.js'
             script.crossOrigin = 'anonymous';
             script.integrity = 'sha384-yXrIdlO1CBJknfDtCtDe2tmWWNl5xK30aTz62nLkEpEIBRD3OGi7+To7hfKRaUZ/'
