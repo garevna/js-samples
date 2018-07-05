@@ -11,7 +11,7 @@
           console.error ( "Ошибка загрузки скрипта" + script.src )
      }
      var mouseTailScript = document.createElement ( 'script' )
-     mouseTailScript.src = "tail.js"
+     mouseTailScript.src = "js/tail.js"
      document.head.appendChild ( mouseTailScript )
      mouseTailScript.onload = event =>
           setTimeout ( () => 
