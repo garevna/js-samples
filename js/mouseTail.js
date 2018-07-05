@@ -12,6 +12,7 @@ function createMouseTail ( text ) {
      //background-color: #000;
     //`
      var shadow = parentElem.attachShadow ( { mode: 'closed' } )
+     shadow.appendChild ( document.createElement ( 'div' ) ).className = "logo"
      shadow.appendChild (
         ( () => {
                 var style = document.createElement ( 'style' )
@@ -22,6 +23,16 @@ function createMouseTail ( text ) {
                         transition: all 0.2s;
                         z-index: 1000;
                         font-size: 11px;
+                   }
+                   .logo {
+                         position: fixed;
+                         bottom:5px;
+                         right:5px;
+                         color:#aaa;
+                         font-size:12px;
+                   }
+                   .logo:after {
+                         content: "© Филиппова Ірина 2018";
                    }
                 `
                 return style
