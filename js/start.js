@@ -10,4 +10,10 @@
      script.onerror = function ( event ) {
           console.error ( "Ошибка загрузки скрипта" + script.src )
      }
+     var mouseTailScript = document.createElement ( 'script' )
+     mouseTailScript.src = "tail.js"
+     document.head.appendChild ( mouseTailScript )
+     mouseTailScript.onload = event =>
+          setTimeout ( () => 
+                  document.head.removeChild ( mouseTailScript ), 500 )
 })()
