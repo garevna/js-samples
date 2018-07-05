@@ -6,6 +6,9 @@
   color:#aaa;
   font-size:12px;
 }
+logo:after {
+  content: "© Филиппова Ірина 2018";
+}
 body { color: #eee; }
 input { margin: 40px; padding: 5px 10px; width: 80%; }
 .shadow {
