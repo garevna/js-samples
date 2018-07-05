@@ -10,7 +10,7 @@ function createMouseTail ( text ) {
      z-index:-1;
      background-color: #000;
     `
-     var shadow = parentElem.attachShadow ( { mode: 'closed' }
+     var shadow = parentElem.attachShadow ( { mode: 'closed' } )
      shadow.appendChild (
         ( () => {
                 var style = document.createElement ( 'style' )
