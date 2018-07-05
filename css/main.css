@@ -6,7 +6,7 @@
   color:#aaa;
   font-size:12px;
 }
-logo:after {
+.logo:after {
   content: "© Филиппова Ірина 2018";
 }
 body { color: #eee; }
