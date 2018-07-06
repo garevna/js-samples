@@ -35,3 +35,11 @@ var books = []
 books [0] = new LibraryBook ( "Война и мир", "1995", "Лев Толстой" )
 books [1] = new LibraryBook ( "Отцы и дети", "1998", "Тургенев" )
 books [3] = new LibraryBook ( "Кобзарь", "2005", "Тарас Шевченко" )
+
+console.log ( books )
+
+books [0].getBookInfo()
+books [0].getTheBook( "Иван Сидоренко", new Date ( 2018, 6, 25 ) )
+books [0].getBookInfo()
+books [0].returnBook()
+books [0].getBookInfo()
