@@ -62,7 +62,8 @@ https://garevna.github.io/js-samples/#08     Ссылка пока не акти
 
 https://garevna.github.io/js-samples/#09
 
-https://garevna.github.io/js-samples/#10     Ссылка пока не активна
+► Занятие 4 ( домашка )
+https://garevna.github.io/js-samples/#10     LibraryBook
 
 https://garevna.github.io/js-samples/#11     Ссылка пока не активна
 
