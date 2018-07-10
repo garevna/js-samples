@@ -65,7 +65,8 @@ https://garevna.github.io/js-samples/#09
 ► Занятие 4 ( домашка )
 https://garevna.github.io/js-samples/#10     LibraryBook
 
-https://garevna.github.io/js-samples/#11     Ссылка пока не активна
+► Занятие 6
+https://garevna.github.io/js-samples/#11     getSearchObject ()
 
 https://garevna.github.io/js-samples/#12     Ссылка пока не активна
 
