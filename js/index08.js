@@ -26,7 +26,7 @@ shaButton.onclick = event => {
          crossorigin: "anonymous"
     } )
     .then ( responseObject => {
-                responseObject.clone().then ( response => {
+                responseObject.text().then ( response => {
                         hash.innerHTML = Sha256.hash ( response )
                         loadButton.disabled = false
                         document.querySelector ( 'input' ).disabled = true

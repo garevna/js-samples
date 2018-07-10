@@ -1,4 +1,4 @@
-﻿var hello = document.createElement ( 'div' )
+var hello = document.createElement ( 'div' )
 hello.style = `position: fixed; 
                 top: 15%; left: 15%; 
                 bottom: 15%; right: 15%; 
@@ -6,10 +6,12 @@ hello.style = `position: fixed;
                 border: solid 0.5px #bbb; 
                 padding: 30px;
                 z-index: 300;
-                background-color: #eef;`
+                background-color: #000;`
 document.body.appendChild ( hello )
-hello.innerHTML = "<h3>Success!</h3>"
-hello.innerHTML += "<p>file integrity test resuts with OK</p>"
+hello.innerHTML = "<h2 style='color: #789'>Success!</h2>"
+hello.innerHTML += "<p style='color: #fa0'>Algoritm: SHA384</p>"
+hello.innerHTML += "<hr>"
+hello.innerHTML += "<p style='color: #fff'>File integrity test resuts with OK</p>"
 setTimeout ( () => {
         document.body.removeChild ( hello )
-}, 4000 )
+}, 5000 )
