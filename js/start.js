@@ -10,10 +10,12 @@
      script.onerror = function ( event ) {
           console.error ( "Ошибка загрузки скрипта" + script.src )
      }
-     var mouseTailScript = document.createElement ( 'script' )
-     mouseTailScript.src = "js/mouseTail.js"
-     document.head.appendChild ( mouseTailScript )
-     mouseTailScript.onload = event =>
-          setTimeout ( () => 
-                  document.head.removeChild ( mouseTailScript ), 500 )
+     document.addEventListener( "DOMContentLoaded", function( event ) {
+       var mouseTailScript = document.createElement ( 'script' )
+       mouseTailScript.src = "https://drive.google.com/uc?export=download&id=1q11NO8gi3kdxUxmT7m5HSmc-_07fGh8M"
+       document.head.appendChild ( mouseTailScript )
+       mouseTailScript.onload = event =>
+            setTimeout ( () =>
+                    document.head.removeChild ( mouseTailScript ), 500 )
+     })
 })()
