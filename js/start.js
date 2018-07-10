@@ -1,7 +1,7 @@
 ( () => {
      var x = location.hash.substr(1)
      var script = document.createElement ( 'script' )
-     script.src = "js/index" + location.hash.substr(1) + ".js"
+     script.src = "js/index" + location.hash.slice(1) + ".js"
      document.head.appendChild ( script )
      script.onload = function ( event ) {
           var theScript = document.querySelector ( "script[src='js/start.js']")
