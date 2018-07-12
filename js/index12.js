@@ -1,6 +1,6 @@
 var User = function ( name = "user",
                       email = "user@sample.com",
-                      photo = "https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png" ) {
+                      photo = "https://vignette.wikia.nocookie.net/yogscast/images/8/8a/Avatar_Turps_2015.jpg" ) {
         this.name = name
         this.email = email
         this.photoURL = photo
@@ -22,12 +22,12 @@ User.prototype.messageBox = ( function () {
                 overflow: auto;
                 border: 1px solid gray;
                 padding: 10px;
+                background-color: #000;
         `
         box.picture = box.appendChild ( document.createElement ( 'img' ) )
         box.picture.style.width = "50px"
         box.name = box.appendChild ( document.createElement ( 'span' ) )
-        box.name.style.fontWeight = "bold"
-        box.name.style.color = "#789"
+        box.name.style = "font-weight: bold; color: #9ab; padding-left:10px;"
         box.message = box.appendChild ( document.createElement ( 'textarea' ) )
         box.message.placeholder = "Сообщение"
         box.message.oninput = function ( event ) {
@@ -50,4 +50,5 @@ User.prototype.read = function () {
         this.messageBox.message.value = "OK"
 }
 
-var user = new User ( "Иван" )
+var user1 = new User ( "Иван" )
+var user2 = new User ( 'Alex', "alex@gmail.com", 'https://78.media.tumblr.com/3a5c4d080cdd9c57139170b5015e244c/tumblr_oycng531hQ1vzkjvvo1_1280.jpg' )
