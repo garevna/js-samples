@@ -1,28 +1,60 @@
-# js.github.io
+#js-samples
 Courseware for my students learning JS
 
-https://garevna.github.io/js/#js/js_01
+К занятию 2
 
-https://garevna.github.io/js/#js/js_02
+Пройденный материал:
 
-https://garevna.github.io/js/#js/js_03
+Chrome DevTools
 
-https://garevna.github.io/js/#js/js_04
+Функции
 
-https://garevna.github.io/js/#js/js_05
+Методы работы со строками
 
-https://garevna.github.io/js/#js/js_06
+Методы работы с массивами
 
-https://garevna.github.io/js/#js/js_07
+Циклы for...of, for...in
 
-https://garevna.github.io/js/#js/js_08
+► XSS: Пример инъекции вредоносного кода
 
-https://garevna.github.io/js/#js/js_09
+▼ Задание: используя изученные методы работы со строками, отфильтровать полученный текст
 
-https://garevna.github.io/js/#js/js_10
+https://garevna.github.io/js-samples/#01
 
-https://garevna.github.io/js/#js/js_11
+► Циклы
 
-https://garevna.github.io/js/#js/js_12
+▼ Задание: Написать код функции, возвращающей все комментарии к посту по его идентификатору
 
+https://garevna.github.io/js-samples/#02 ( for...in ) https://garevna.github.io/js-samples/#05 ( for...of, do...while )
 
+► XSS: Пример инъекции кода с вводом пользовательских данных
+
+▼ Задание: используя изученные методы работы со строками, отфильтровать ввод пользователя
+
+https://garevna.github.io/js-samples/#03
+
+► XSS: Пример уже внедренного вредоносного кода ( нефильтрованный ввод пользователя был сохранен на сервере )
+
+▼ Задание: блокировать вывод комментариев, содержащих вредоносный код
+
+https://garevna.github.io/js-samples/#04
+
+https://garevna.github.io/js-samples/#06 Ссылка пока не активна
+
+► SHA algorithm
+
+https://garevna.github.io/js-samples/#07
+
+https://garevna.github.io/js-samples/#08 Ссылка пока не активна
+
+► SHA
+
+https://garevna.github.io/js-samples/#09
+
+► Занятие 4 ( домашка ) https://garevna.github.io/js-samples/#10 LibraryBook
+
+► Занятие 6 https://garevna.github.io/js-samples/#11 getSearchObject ()
+
+► Занятие 6 https://garevna.github.io/js-samples/#12
+
+► Занятие 7 https://garevna.github.io/js-samples/#13 Ссылка пока не активна
