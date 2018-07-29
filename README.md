@@ -3,7 +3,7 @@
 Courseware for my students learning JS
 ______________________________________
 
-К занятию 2
+► К занятию 2
 
 Пройденный материал:
 
@@ -63,13 +63,31 @@ https://garevna.github.io/js-samples/#08     Ссылка пока не акти
 https://garevna.github.io/js-samples/#09
 
 ► Занятие 4 ( домашка )
+
 https://garevna.github.io/js-samples/#10     LibraryBook
 
 ► Занятие 6
+
 https://garevna.github.io/js-samples/#11     getSearchObject ()
 
 ► Занятие 6
+
 https://garevna.github.io/js-samples/#12
 
-https://garevna.github.io/js-samples/#13     Ссылка пока не активна
+► Занятие 7 ( recursion )
+
+https://garevna.github.io/js-samples/#13
+
+► SVG ( sample )
+
+https://garevna.github.io/js-samples/#14
+
+► localStorage & SHA ( sample )
+
+https://garevna.github.io/js-samples/#15
+
+► localStorage & location ( sample )
+
+https://garevna.github.io/js-samples/#16
+
 
