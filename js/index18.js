@@ -50,9 +50,9 @@ circle.setAttribute ( "fill", "transparent" )
 circle.setAttribute ( "stroke-width", 8 )
 
 var rect = picture.drawFigure ( "rect", { x: 180, y: 180, width: 150, height: 100 } )
-circle.setAttribute ( "stroke", "green" )
-circle.setAttribute ( "fill", "#ffff0090" )
-circle.setAttribute ( "stroke-width", 5 )
+rect.setAttribute ( "stroke", "green" )
+rect.setAttribute ( "fill", "#ffff0090" )
+rect.setAttribute ( "stroke-width", 5 )
 
 var students = picture.drawFigure ( "text", {
                       x: '150',
