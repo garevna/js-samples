@@ -90,4 +90,10 @@ https://garevna.github.io/js-samples/#15
 
 https://garevna.github.io/js-samples/#16
 
+► simple slider ( sample )
 
+https://garevna.github.io/js-samples/#17
+
+► svg ( sample )
+
+https://garevna.github.io/js-samples/#18
