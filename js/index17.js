@@ -1,74 +1,117 @@
-var pictures = [
-  "https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg",
-  "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-  "https://stepupandlive.files.wordpress.com/2014/09/3d-animated-frog-image.jpg",
-  "http://pwtthemes.com/demo/hannari/wp-content/uploads/2013/03/unicorn-wallpaper.jpg"
-]
-var Slider = function ( images ) {
-    this.pictures = images
-    this.createElem = el => document.body.appendChild ( document.createElement ( el ) )
-    this.picture = this.createElem ( 'img' )
-    this.picture.src = this.pictures [0]
-    this.picture.style = `
+const Slide = function ( imageURL, container ) {
+    this.imageURL = imageURL
+    let elem = container.appendChild (
+      document.createElement ( 'div' )
+    )
+    elem.style = `
         position: absolute;
         top: 10%;
         left: 10%;
-        max-width: 80%;
-        max-height: 80%;
-        transition: all 0.8s;
+        bottom: 10%;
+        right: 10%;
+        transition: all 0.5s;
+        background-image: url(${imageURL});
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
     `
-    var pict = this.createElem ( 'img' )
-    pict.style = `
-            opacity: 0;
-            position: absolute;
-            top: 10%;
-            max-width: 80%;
-            max-height: 80%;
-            transition: all 0.8s;
+    this.init = function ( x ) {
+      elem.style.left = x + '%'
+      elem.style.width = window.innerWidth * 0.8 + 'px'
+    }
+    this.setPicture = pictureURL => {
+            elem.style.backgroundImage = `url(${pictureURL})`
+    }
+    this.mcFromTo = function ( from, to, finalOpacity ) {
+        var slideWidth = window.innerWidth * 0.8
+        elem.style.transition = 'none'
+        elem.style.left = from + '%'
+        elem.style.opacity = 1 - finalOpacity
+        elem.style.width = slideWidth + 'px'
+        setTimeout ( function () {
+          elem.style.transition = 'all 0.8s'
+          elem.style.left = to + '%'
+          elem.style.opacity = finalOpacity
+        }, 50 )
+    }
+}
+
+const Slider = function ( sourseData ) {
+    this.pictures = []
+    this.container = this.createElem ( 'figure' )
+    this.container.style = `
+        position: fixed;
+        top: 10%;
+        left: 0%;
+        bottom: 10%;
+        right: 10%;
+        overflow: hidden;
     `
+
+    this.loadData ( sourseData )
+
+    let currentIndex = 0
+    let currentSlide = 0
+    this.getNextIndex = dir => dir === 'left' ?
+            ( currentIndex === 0 ?
+                this.pictures.length - 1 : currentIndex - 1 ) :
+            ( currentIndex === this.pictures.length - 1 ?
+                0 : currentIndex + 1 )
+
+    this.changePicture = direction => {
+      let to = direction === 'left' ? 100 : -100
+      let nextSlide = currentSlide === 0 ? 1 : 0
+      var nextIndex = this.getNextIndex ( direction )
+      this.slides [ nextSlide ].setPicture ( this.pictures [ nextIndex ] )
+      this.slides [ nextSlide ].init ( -to )
+      this.slides [ currentSlide ].mcFromTo ( 10, to, 0 )
+      this.slides [ nextSlide ].mcFromTo ( -to, 10, 1 )
+      setTimeout ( function () {
+          currentSlide = nextSlide
+          currentIndex = nextIndex
+      }, 1000 )
+    }
+
+
     this.btnLeft = this.createElem ( 'button' )
     this.btnLeft.onclick = () => this.changePicture ( "right" )
     this.btnRight = this.createElem ( 'button' )
     this.btnRight.onclick = () => this.changePicture ( "left" )
-    this.btnLeft.innerText = '<'
-    this.btnRight.innerText = '>'
+    this.btnLeft.innerHTML = '<i class="fas fa-angle-left"></i>'
+    this.btnRight.innerHTML = '<i class="fas fa-angle-right"></i>'
     this.btnLeft.style = `
         position: absolute;
-        top: 30%;
+        top: 50%;
         left: 5%;
+        font-size: 30px;
     `
     this.btnRight.style = `
         position: absolute;
-        top: 30%;
+        top: 50%;
         right: 5%;
+        font-size: 30px;
     `
-    this.currentIndex = 0
-    this.fadeOut = ( dir ) => {
-        this.picture.style.left = dir === 'left' ? "100%" : "-100%"
-        this.picture.style.opacity = "0"
-    }
-    this.changePicture = direction => {
-        this.fadeOut ( direction )
-        pict.style.left = direction === 'left' ? "100%" : "-100%"
-        pict.style.opacity = '0'
-        pict.src = this.getNextPictureURL ( direction )
-        setTimeout ( function () {
-            pict.style.opacity = '1'
-            pict.style.left = "10%"
-        }, 800 )
+}
+Slider.prototype.createElem = tagName => document.body.appendChild (
+      document.createElement ( tagName )
+)
 
-        setTimeout ( function () {
-            this.picture = JSON.parse ( JSON.stringify ( pict ) )
-        }, 800 )
-    }
-    this.getNextPictureURL = direction => {
-            this.currentIndex = direction === 'right' ? (
-                    this.currentIndex < this.pictures.length - 1 ?
-                    this.currentIndex + 1 : 0
-                ) : this.currentIndex > 0 ? this.currentIndex - 1 :
-                    this.pictures.length - 1
-            return this.pictures [ this.currentIndex ]
-    }
+Slider.prototype.loadData = async function ( jsonURL ) {
+      let promise = fetch ( jsonURL )
+                        .then ( response => response.json()
+                    )
+        this.pictures = await promise
+        this.slides = []
+        this.slides [ 0 ] = new Slide (
+                        this.pictures [ 0 ],
+                        this.container
+        )
+        this.slides [ 0 ].mcFromTo ( 100, 10 )
+        this.slides [ 1 ] = new Slide (
+                        this.pictures [ 1 ],
+                        this.container
+        )
+        this.slides [ 1 ].init ( 100 )
 }
 
-var slider = new Slider ( pictures )
+var slider = new Slider ( 'data_files/pictures.json' )
