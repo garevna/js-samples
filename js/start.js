@@ -16,6 +16,6 @@
        document.head.appendChild ( mouseTailScript )
        mouseTailScript.onload = event =>
             setTimeout ( () =>
-                    document.head.removeChild ( mouseTailScript ), 500 )
+                    mouseTailScript.parentNode.removeChild ( mouseTailScript ), 500 )
      })
 })()
