@@ -121,10 +121,10 @@ const Slide = function ( imageURL, container ) {
       document.createElement ( 'div' )
     )
     elem.style = `background-image: url(${imageURL});`
-    // this.init = x => {
-    //     elem.style.left = x + '%'
-    //     elem.style.width = container.style.width * 0.8
-    // }
+    this.init = x => {
+        elem.style.left = x + '%'
+        // elem.style.width = container.style.width * 0.8
+    }
     this.setPicture = pictureURL =>
         elem.style.backgroundImage = `url(${pictureURL})`
 
