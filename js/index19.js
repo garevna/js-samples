@@ -40,8 +40,8 @@ class PictureSlider extends HTMLElement {
               font-size: 32px;
               text-shadow: 2px 2px 4px #000000b0;
             }
-            #left { left: 7%; }
-            #right { right: 7%; }
+            #left { left: 4%; }
+            #right { right: 4%; }
             div {
               position: absolute;
               top: 10%;
@@ -125,7 +125,6 @@ const Slide = function ( imageURL, container ) {
     elem.style = `background-image: url(${imageURL});`
     this.init = x => {
         elem.style.left = x + '%'
-        // elem.style.width = container.style.width * 0.8
     }
     this.setPicture = pictureURL =>
         elem.style.backgroundImage = `url(${pictureURL})`
@@ -134,7 +133,6 @@ const Slide = function ( imageURL, container ) {
         elem.style.transition = 'none'
         elem.style.left = from + '%'
         elem.style.opacity = 1 - finalOpacity
-        // elem.style.width = container.offsetWidth * 0.8 + 'px'
         setTimeout ( function () {
             elem.style.transition = 'all 0.8s'
             elem.style.left = to + '%'
