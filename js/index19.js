@@ -1,5 +1,9 @@
-var elem = document.body.appendChild ( document.createElement ( 'picture-slider' ) )
+var elem = document.body.appendChild (
+  document.createElement ( 'picture-slider' )
+)
 elem.src = "data_files/pictures.json"
+
+console.log ( elem )
 
 class PictureSlider extends HTMLElement {
     constructor () {
