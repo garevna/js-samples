@@ -1,7 +1,7 @@
 var elem = document.body.appendChild (
   document.createElement ( 'picture-slider' )
 )
-elem.src = "data_files/pictures.json"
+elem.setAttribute( "src", "data_files/pictures.json" )
 
 console.log ( elem )
 
