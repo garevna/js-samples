@@ -34,14 +34,11 @@ elems.iterator = (
         }
         const promise = ( size, color ) =>
             new Promise (
-                function ( resolve ) {
+                resolve =>
                     setTimeout (
-                        function () {
-                            resolve ( addElem ( size, color ) )
-                        },
+                        () => resolve ( addElem ( size, color ) ),
                         1000
                     )
-                }
             )
         let len = this.length
         while ( len --> 0 ) {
@@ -57,14 +54,12 @@ elems.iterator = (
 
 
 async function iterateElements () {
-    let res = []
     for ( var item of elems )
-        res.push ( await elems.iterator.next() )
+        await elems.iterator.next()
 }
 
-iterateElements ().then (
-    res => console.log ( 'iterateElements: ', res )
-)
+iterateElements ()
+
 
 class CircleElement extends HTMLElement {
     constructor() {
