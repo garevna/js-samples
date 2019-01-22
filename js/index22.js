@@ -1,22 +1,25 @@
+const getRandomRadius = () =>
+    Math.max ( 30, Math.round ( Math.random() * 200 ) )
+
 const elems = [
     {
-        size: Math.round ( Math.random() * 200 ),
+        size: getRandomRadius(),
         backColor: "red"
     },
     {
-        size: Math.round ( Math.random() * 200 ),
+        size: getRandomRadius(),
         backColor: "orange"
     },
     {
-        size: Math.round ( Math.random() * 200 ),
+        size: getRandomRadius(),
         backColor: "yellow"
     },
     {
-        size: Math.round ( Math.random() * 200 ),
+        size: getRandomRadius(),
         backColor: "green"
     },
     {
-        size: Math.round ( Math.random() * 200 ),
+        size: getRandomRadius(),
         backColor: "blue"
     }
 ]
@@ -27,8 +30,8 @@ elems.iterator = (
             let elem = document.body.appendChild (
                 document.createElement ( "circle-element" )
             )
-            elem.size = size
-            elem.backColor = color
+            elem.setAttribute ( "size", size )
+            elem.setAttribute ( "color", color )
 
             return elem
         }
@@ -37,7 +40,7 @@ elems.iterator = (
                 resolve =>
                     setTimeout (
                         () => resolve ( addElem ( size, color ) ),
-                        Math.round ( Math.random () * 5000 )
+                        Math.round ( 5000 - Math.random () * 4000 )
                     )
             )
         let len = this.length
@@ -68,34 +71,30 @@ class CircleElement extends HTMLElement {
         this.shadow.appendChild (
             document.createElement ( "div" )
         )
+        this.shadowStyle = document.createElement ( "style" )
+        this.shadow.appendChild ( this.shadowStyle )
+        this.shadowStyle.textContent = ''
+    }
+    static get observedAttributes() {
+        return [ 'size', 'color']
+    }
+    attributeChangedCallback( attrName, oldVal, newVal ) {
+        this.setStyle ()
     }
     setStyle () {
-        this.shadow.appendChild (
-            ( () => {
-                let style = document.createElement ( "style" )
-                style.appendChild (
-                    ( () => {
-                        let css = document.createTextNode(
-                          `
-                              div {
-                                  width: ${this.size}px;
-                                  height: ${this.size}px;
-                                  border: inset 1px;
-                                  border-radius: 50%;
-                                  box-shadow: 3px 3px 5px #00000090;
-                                  background-color: ${this.backColor};
-                              }
-                              div:hover {
-                                  box-shadow: inset 3px 3px 5px #00000090;
-                              }
-                          `
-                        )
-                        return css
-                    })()
-                )
-                return style
-            })()
-        )
+        this.shadowStyle.textContent = `
+             div {
+                 width: ${ this.getAttribute ( "size" ) }px;
+                 height: ${ this.getAttribute ( "size" ) }px;
+                 border: inset 1px;
+                 border-radius: 50%;
+                 box-shadow: 3px 3px 5px #00000090;
+                 background-color: ${ this.getAttribute ( "color" ) };
+            }
+            div:hover {
+                box-shadow: inset 3px 3px 5px #00000090;
+            }
+        `
     }
 }
 
