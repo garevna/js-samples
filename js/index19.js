@@ -66,7 +66,7 @@ class PictureSlider extends HTMLElement {
     }
 
     async loadData ( jsonURL ) {
-        console.log ( jsonURL )
+        console.log ( this.src )
         let promise = fetch ( jsonURL )
             .then ( response => response.json() )
         this.pictures = await promise
