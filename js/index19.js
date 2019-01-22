@@ -85,12 +85,6 @@ class PictureSlider extends HTMLElement {
         let to = direction === 'left' ? 100 : -100
         let nextSlide = this.currentSlide === 0 ? 1 : 0
         let nextIndex = this.getNextIndex ( direction )
-        /*document.querySelector ( '#demo' ).innerText = `
-                current slide: ${this.currentSlide}
-                current index: ${this.currentIndex}
-                next slide: ${nextSlide}
-                next index: ${nextIndex}
-        `*/
         this.slides [ nextSlide ].setPicture ( this.pictures [ nextIndex ] )
         this.slides [ nextSlide ].init ( -to )
         this.slides [ this.currentSlide ].mcFromTo ( 10, to, 0 )
@@ -98,10 +92,6 @@ class PictureSlider extends HTMLElement {
         setTimeout ( function () {
             this.currentSlide = nextSlide
             this.currentIndex = nextIndex
-            /*document.querySelector ( '#demo' ).innerText = `
-                current slide: ${this.currentSlide}
-                current index: ${this.currentIndex}
-            `*/
         }.bind(this), 1000 )
     }
 
@@ -117,6 +107,7 @@ class PictureSlider extends HTMLElement {
 customElements.define ( 'picture-slider', PictureSlider )
 
 const Slide = function ( imageURL, container ) {
+    console.log ( imageURL )
     this.imageURL = imageURL
     let elem = container.appendChild (
       document.createElement ( 'div' )
@@ -129,7 +120,7 @@ const Slide = function ( imageURL, container ) {
       elem.style.width = container.style.width * 0.8
     }
     this.setPicture = pictureURL => {
-            elem.style.backgroundImage = `url(${pictureURL})`
+        elem.style.backgroundImage = `url(${pictureURL})`
     }
     this.mcFromTo = function ( from, to, finalOpacity ) {
         elem.style.transition = 'none'
@@ -137,12 +128,12 @@ const Slide = function ( imageURL, container ) {
         elem.style.opacity = 1 - finalOpacity
         elem.style.width = container.offsetWidth * 0.8 + 'px'
         setTimeout ( function () {
-          elem.style.transition = 'all 0.8s'
-          elem.style.left = to + '%'
-          elem.style.opacity = finalOpacity
+            elem.style.transition = 'all 0.8s'
+            elem.style.left = to + '%'
+            elem.style.opacity = finalOpacity
         }, 50 )
     }
 }
 
 var elem = document.body.appendChild ( document.createElement ( 'picture-slider' ) )
-elem.src = "../data_files/pictures.json"
+elem.src = "data_files/pictures.json"
