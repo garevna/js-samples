@@ -37,7 +37,7 @@ elems.iterator = (
                 resolve =>
                     setTimeout (
                         () => resolve ( addElem ( size, color ) ),
-                        1000
+                        Math.round ( Math.random () * 5000 )
                     )
             )
         let len = this.length
