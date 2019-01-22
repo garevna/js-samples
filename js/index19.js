@@ -1,3 +1,6 @@
+var elem = document.body.appendChild ( document.createElement ( 'picture-slider' ) )
+elem.src = "data_files/pictures.json"
+
 class PictureSlider extends HTMLElement {
     constructor () {
         super()
@@ -66,7 +69,7 @@ class PictureSlider extends HTMLElement {
     }
 
     async loadData ( jsonURL ) {
-        console.log ( this.src )
+        console.log ( this, this.getAttribute('src') )
         let promise = fetch ( jsonURL )
             .then ( response => response.json() )
         this.pictures = await promise
@@ -134,6 +137,3 @@ const Slide = function ( imageURL, container ) {
         }, 50 )
     }
 }
-
-var elem = document.body.appendChild ( document.createElement ( 'picture-slider' ) )
-elem.src = "data_files/pictures.json"
