@@ -18,10 +18,11 @@ class PictureSlider extends HTMLElement {
             figure {
                 position: fixed;
                 top: 10%;
-                left: -10%;
+                left: 0;
                 bottom: 10%;
-                right: -10%;
+                right: 0;
                 overflow: hidden;
+                margin: 0;
             }
             button {
               position: absolute;
@@ -39,12 +40,14 @@ class PictureSlider extends HTMLElement {
               font-size: 32px;
               text-shadow: 2px 2px 4px #000000b0;
             }
-            #left { left: 5%; }
-            #right { right: 5%; }
+            #left { left: 7%; }
+            #right { right: 7%; }
             div {
               position: absolute;
               top: 10%;
               bottom: 10%;
+              left: 10%;
+              right: 10%;
               background-repeat: no-repeat;
               background-size: contain;
               background-position: center center;
@@ -118,10 +121,10 @@ const Slide = function ( imageURL, container ) {
       document.createElement ( 'div' )
     )
     elem.style = `background-image: url(${imageURL});`
-    this.init = x => {
-        elem.style.left = x + '%'
-        elem.style.width = container.style.width * 0.8
-    }
+    // this.init = x => {
+    //     elem.style.left = x + '%'
+    //     elem.style.width = container.style.width * 0.8
+    // }
     this.setPicture = pictureURL =>
         elem.style.backgroundImage = `url(${pictureURL})`
 
