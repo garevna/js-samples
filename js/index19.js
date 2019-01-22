@@ -134,7 +134,7 @@ const Slide = function ( imageURL, container ) {
         elem.style.transition = 'none'
         elem.style.left = from + '%'
         elem.style.opacity = 1 - finalOpacity
-        elem.style.width = container.offsetWidth * 0.8 + 'px'
+        // elem.style.width = container.offsetWidth * 0.8 + 'px'
         setTimeout ( function () {
             elem.style.transition = 'all 0.8s'
             elem.style.left = to + '%'
