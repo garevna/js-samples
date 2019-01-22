@@ -1,9 +1,7 @@
-var elem = document.body.appendChild (
+const elem = document.body.appendChild (
   document.createElement ( 'picture-slider' )
 )
 elem.setAttribute( "src", "data_files/pictures.json" )
-
-console.log ( elem )
 
 class PictureSlider extends HTMLElement {
     constructor () {
@@ -73,7 +71,6 @@ class PictureSlider extends HTMLElement {
     }
 
     async loadData ( jsonURL ) {
-        console.log ( this, this.getAttribute('src') )
         let promise = fetch ( jsonURL )
             .then ( response => response.json() )
         this.pictures = await promise
@@ -89,6 +86,7 @@ class PictureSlider extends HTMLElement {
         )
         this.slides [ 1 ].init ( 100 )
     }
+
     changePicture ( direction ) {
         let to = direction === 'left' ? 100 : -100
         let nextSlide = this.currentSlide === 0 ? 1 : 0
@@ -119,16 +117,14 @@ const Slide = function ( imageURL, container ) {
     let elem = container.appendChild (
       document.createElement ( 'div' )
     )
-    elem.style = `
-        background-image: url(${imageURL});
-    `
-    this.init = function ( x ) {
-      elem.style.left = x + '%'
-      elem.style.width = container.style.width * 0.8
+    elem.style = `background-image: url(${imageURL});`
+    this.init = x => {
+        elem.style.left = x + '%'
+        elem.style.width = container.style.width * 0.8
     }
-    this.setPicture = pictureURL => {
+    this.setPicture = pictureURL =>
         elem.style.backgroundImage = `url(${pictureURL})`
-    }
+
     this.mcFromTo = function ( from, to, finalOpacity ) {
         elem.style.transition = 'none'
         elem.style.left = from + '%'
