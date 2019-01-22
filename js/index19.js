@@ -66,8 +66,9 @@ class PictureSlider extends HTMLElement {
     }
 
     async loadData ( jsonURL ) {
+        console.log ( jsonURL )
         let promise = fetch ( jsonURL )
-                        .then ( response => response.json() )
+            .then ( response => response.json() )
         this.pictures = await promise
         this.slides = []
         this.slides [ 0 ] = new Slide (
@@ -107,7 +108,6 @@ class PictureSlider extends HTMLElement {
 customElements.define ( 'picture-slider', PictureSlider )
 
 const Slide = function ( imageURL, container ) {
-    console.log ( imageURL )
     this.imageURL = imageURL
     let elem = container.appendChild (
       document.createElement ( 'div' )
