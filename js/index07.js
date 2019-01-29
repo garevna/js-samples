@@ -14,6 +14,6 @@ script.onerror = function ( event ) {
 document.head.appendChild ( script )
 
 function getTextDigest () {
-    demo.innerHTML = `Text: ${sample.value}
-        Hash: ${Sha256.hash (sample.value)}`
+    demo.innerHTML = `<p>Text: <em>${sample.value}</em></p>
+        <p>Hash: ${Sha256.hash (sample.value)}</p>`
 }

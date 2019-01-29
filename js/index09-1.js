@@ -1,17 +1,16 @@
-var demo = document.querySelector ( "#demo" )
-var btnReg = document.querySelector ( "#registration" )
-var btnSignIn = document.querySelector ( "#sign-in" )
-var nameElem = document.querySelector ( "#name" )
-var passElem = document.querySelector ( "#pass" )
-var title = document.querySelector ( "#title" )
+var demo = document.getElementById ( "demo" )
+var btnReg = document.getElementById ( "registration" )
+var btnSignIn = document.getElementById ( "sign-in" )
+var nameElem = document.getElementById ( "name" )
+var passElem = document.getElementById ( "pass" )
+var title = document.getElementById ( "title" )
 
 var users = []
 hideButtons ( false )
 
 function hideButtons ( param ) {
-    var dspl = param ? "none" : "inline-block"
-    btnReg.style.display = dspl
-    btnSignIn.style.display = dspl
+    btnReg.style.display = param ? "none" : "inline-block"
+    btnSignIn.style.display = param ? "none" : "inline-block"
     demo.style.display = !param ? "none" : "block"
 }
 function reg ( event ) {
@@ -34,7 +33,7 @@ function testUserData () {
             users.push ( userKey )
             title.innerHTML = `Регистрация ${nameElem.value} прошла успешно`
         } else title.innerHTML = `Пользователь ${nameElem.value} уже зарегистрирован`
-    } 
+    }
     else {
         if ( users.indexOf ( userKey ) >= 0 ) {
             var script = document.createElement( 'script' )
@@ -51,4 +50,3 @@ function testUserData () {
     }
     hideButtons ( false )
 }
-
