@@ -2,7 +2,7 @@
 
 ###### Courseware for my students learning JS
 
-`Примеры для курса [`**`Client-side JS`**](https://github.com/garevna/js-course/wiki)
+`Примеры для курса `[**`Client-side JS`**](https://github.com/garevna/js-course/wiki)
 
 `Примеры следует изучать в `**`Chrome DevTools`**`
 
