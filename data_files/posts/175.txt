@@ -1,0 +1,5 @@
+Like regular generators, you yield values, but unlike regular generators you can await promises.
+
+Like all for-loops, you can break whenever you want. This results in the loop calling iterator.return(), which causes the generator to act as if there was a return statement after the current (or next) yield.
+
+Using a web service to get random numbers is a bit of a silly example, so let's look at something more practical…

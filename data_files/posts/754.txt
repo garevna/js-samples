@@ -1,0 +1,5 @@
+JavaScript does not have any native type annotations as of this writing, but several competing formats have sprung up over the years to fill the gaps, including JSDoc (in decline due to the emergence of better options), Facebook’s Flow, and Microsoft’s TypeScript. I use rtype for documentation — a notation I find much more readable than TypeScript for functional programming.
+
+At the time of this writing, there is no clear winner for type annotations. None of the alternatives have been blessed by the JavaScript specification, and there seem to be clear shortcomings in all of them.
+
+Type inference is the process of inferring types based on the context in which they are used. In JavaScript, it is a very good alternative to type annotations.

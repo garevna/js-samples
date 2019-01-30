@@ -1,0 +1,11 @@
+If you provide enough clues for inference in your standard JavaScript function signatures, you’ll get most of the benefits of type annotations with none of the costs or risks.
+
+Even if you decide to use a tool like TypeScript or Flow, you should do as much as you can with type inference, and save the type annotations for situations where type inference falls short. For example, there’s no native way in JavaScript to specify a shared interface. That’s both easy and useful with TypeScript or rtype.
+
+Tern.js is a popular type inference tool for JavaScript that has plugins for many code editors and IDEs.
+
+Microsoft’s Visual Studio Code doesn’t need Tern because it brings the type inference capabilities of TypeScript to regular JavaScript code.
+
+When you specify default parameters for functions in JavaScript, tools capable of type inference such as Tern.js, TypeScript, and Flow can provide IDE hints to help you use the API you’re working with correctly.
+
+Without defaults, IDEs (and frequently, humans) don’t have enough hints to figure out the expected parameter type.

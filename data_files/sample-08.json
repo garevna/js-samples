@@ -1,0 +1,17 @@
+{
+  "content": [
+    {
+      "post": "100.txt",
+      "author": "11"
+    },
+    {
+      "post": "111.txt",
+      "author": "08"
+    },
+    {
+      "post": "008.txt",
+      "author": "01"
+    }
+  ],
+  "next": "sample-03.json"
+}

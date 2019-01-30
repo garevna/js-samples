@@ -1,0 +1,5 @@
+Factory Functions for Mixin Composition
+
+Factories are great at cranking out objects using a nice calling API. Usually, they’re all you need, but once in a while, you’ll find yourself building similar features into different types of objects, and you’ll want to abstract those features into functional mixins so you can reuse them more easily.
+
+That’s where functional mixins shine. Let’s build a withConstructor mixin to add the .constructor property to all object instances.

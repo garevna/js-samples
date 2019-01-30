@@ -1,0 +1,9 @@
+ES6 provides a convenient syntax for dealing with object creation and factory functions. Most of the time, that’s all you’ll need, but because this is JavaScript, there’s another approach that makes it feel more like Java: the class keyword.
+
+In JavaScript, classes are more verbose & restrictive than factories, and a bit of a minefield when it comes to refactoring, but they’ve also been embraced by major front-end frameworks like React and Angular, and there are a couple of rare use-cases that make the complexity worthwhile.
+
+“Sometimes, the elegant implementation is just a function. Not a method. Not a class. Not a framework. Just a function.”
+
+John Carmack
+
+Start with the simplest implementation, and move to more complex implementations only as required.
