@@ -18,7 +18,7 @@
 * * `Методы работы с массивами`
 * * `Циклы for...of, for...in`
 
-[:coffee: **`XSS`**](https://garevna.github.io/js-samples/#01): Пример инъекции вредоносного кода
+[:coffee: **`XSS`**](https://garevna.github.io/js-samples/#01): `Пример инъекции вредоносного кода`
 
 `▼ Задание: используя изученные методы работы со строками, отфильтровать полученный текст`
 
@@ -36,9 +36,9 @@
 
 ### Методы массивов и строк
 
-[:coffee: **`XSS`**](https://garevna.github.io/js-samples/#03): Пример инъекции кода с вводом пользовательских данных
+[:coffee: **`XSS`**](https://garevna.github.io/js-samples/#03)`: Пример инъекции кода с вводом пользовательских данных`
 
-▼ Задание: используя изученные методы работы со строками, отфильтровать ввод пользователя
+`▼ Задание: используя изученные методы работы со строками, отфильтровать ввод пользователя`
 
 ***
 
@@ -61,6 +61,7 @@
 
 [](https://garevna.github.io/js-samples/#08)
 
+***
 
 [:coffee: **`location.search`**](https://garevna.github.io/js-samples/#11)
 
@@ -115,4 +116,4 @@
 
 [:coffee: :one:](https://garevna.github.io/js-samples/#23)
 
-[:coffee: two:](https://garevna.github.io/js-samples/#22)
+[:coffee: :two:](https://garevna.github.io/js-samples/#22)
