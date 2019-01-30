@@ -1,60 +1,120 @@
-#js-samples
-Courseware for my students learning JS
+# js-samples
 
-К занятию 2
+###### Courseware for my students learning JS
+
+***
+
+### К занятию 2
 
 Пройденный материал:
 
-Chrome DevTools
+* Chrome DevTools
+* Функции
+* Методы работы со строками
+* Методы работы с массивами
+* Циклы for...of, for...in
 
-Функции
-
-Методы работы со строками
-
-Методы работы с массивами
-
-Циклы for...of, for...in
-
-► XSS: Пример инъекции вредоносного кода
+► [XSS](https://garevna.github.io/js-samples/#01): Пример инъекции вредоносного кода
 
 ▼ Задание: используя изученные методы работы со строками, отфильтровать полученный текст
 
-https://garevna.github.io/js-samples/#01
+***
 
 ► Циклы
 
-▼ Задание: Написать код функции, возвращающей все комментарии к посту по его идентификатору
+▼ Задание: Написать код функции, возвращающей все комментарии к посту
+по его идентификатору
 
-https://garevna.github.io/js-samples/#02 ( for...in ) https://garevna.github.io/js-samples/#05 ( for...of, do...while )
+[for...in](https://garevna.github.io/js-samples/#02)
+[for...of, do...while](https://garevna.github.io/js-samples/#05)
 
-► XSS: Пример инъекции кода с вводом пользовательских данных
+***
+
+► [XSS](https://garevna.github.io/js-samples/#03): Пример инъекции кода с вводом пользовательских данных
 
 ▼ Задание: используя изученные методы работы со строками, отфильтровать ввод пользователя
 
-https://garevna.github.io/js-samples/#03
+***
 
-► XSS: Пример уже внедренного вредоносного кода ( нефильтрованный ввод пользователя был сохранен на сервере )
+► [XSS](https://garevna.github.io/js-samples/#04):
+
+###### Пример уже внедренного вредоносного кода
+
+`( нефильтрованный ввод пользователя был сохранен на сервере )`
 
 ▼ Задание: блокировать вывод комментариев, содержащих вредоносный код
 
-https://garevna.github.io/js-samples/#04
+***
 
-https://garevna.github.io/js-samples/#06 Ссылка пока не активна
+### SHA
 
-► SHA algorithm
+► [SHA](https://garevna.github.io/js-samples/#07)
 
-https://garevna.github.io/js-samples/#07
+► [SHA и cookie](https://garevna.github.io/js-samples/#09)
 
-https://garevna.github.io/js-samples/#08 Ссылка пока не активна
 
-► SHA
+► [](https://garevna.github.io/js-samples/#08)
 
-https://garevna.github.io/js-samples/#09
 
-► Занятие 4 ( домашка ) https://garevna.github.io/js-samples/#10 LibraryBook
+► [location.search](https://garevna.github.io/js-samples/#11)
 
-► Занятие 6 https://garevna.github.io/js-samples/#11 getSearchObject ()
+***
 
-► Занятие 6 https://garevna.github.io/js-samples/#12
+### Конструктор
 
-► Занятие 7 https://garevna.github.io/js-samples/#13 Ссылка пока не активна
+► [Library Book](https://garevna.github.io/js-samples/#10)
+
+► [Fake chat](https://garevna.github.io/js-samples/#12)
+
+► [simple slider](https://garevna.github.io/js-samples/#17)
+
+***
+
+### Рекурсия
+
+► [Recursion](https://garevna.github.io/js-samples/#13)
+
+***
+
+► SVG ( sample )
+
+https://garevna.github.io/js-samples/#14
+
+***
+
+### localStorage
+
+► [localStorage & SHA](https://garevna.github.io/js-samples/#15)
+
+► [localStorage & location](https://garevna.github.io/js-samples/#16)
+
+***
+
+### Classes
+
+► [svg (simple)](https://garevna.github.io/js-samples/#18)
+
+► [SVG graphics](https://garevna.github.io/js-samples/#06)
+
+***
+
+### customElements
+
+► [Slider](https://garevna.github.io/js-samples/#19)
+
+[Bankomat](https://garevna.github.io/js-samples/#20)
+
+***
+
+### Генераторы и итераторы
+
+[](
+
+► Асинхронный генератор ( 1 )
+
+https://garevna.github.io/js-samples/#22
+
+► Асинхронный генератор ( 2 )
+
+https://garevna.github.io/js-samples/#23
+
