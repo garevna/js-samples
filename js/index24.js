@@ -4,7 +4,9 @@ const writeHTML = html => document.body.insertAdjacentHTML ( "beforeEnd", html )
 
 const showFileName = fileName => writeHTML ( `<h3>${fileName}</h3>` )
 
-const showPost = postContent => writeHTML ( `<pre style="color:#ddf; font-size:10px; border: inset 1px; padding: 10px 20px; overflow: auto;">${postContent}</pre>` )
+const showPostName = name => writeHTML ( `<h5 style="color:#ffa">${name}</h5>` )
+
+const showPost = postContent => writeHTML ( `<pre style="color:#99a; font-size:10px; border: inset 1px; padding: 10px 20px; overflow: auto;">${postContent}</pre>` )
 
 const showError = err => writeHTML ( `<p style="color:red">${err}</p>` )
 
@@ -25,13 +27,13 @@ async function* postGenerator ( startURL ) {
             .catch ( err => console.warn( err ) )
 
     while ( nextJsonFile ) {
-        console.log ( nextJsonFile )
         const json = await getJSON ( nextJsonFile )
-        console.log ( json )
         showFileName ( nextJsonFile )
         nextJsonFile = json.next
-        for ( let item of json.content )
+        for ( let item of json.content ) {
+            showPostName ( item.post )
             showPost ( await getPostContent ( item.post ) )
+        }
         yield nextJsonFile
     }
 }
@@ -41,7 +43,6 @@ async function showAllPosts () {
     let stop = false
     while ( !stop ) {
         let step = await postsIterator.next()
-        console.log ( step )
         stop = step.done
     }
 }
