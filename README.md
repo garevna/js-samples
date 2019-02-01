@@ -117,3 +117,5 @@
 [:coffee: :one:](https://garevna.github.io/js-samples/#23)
 
 [:coffee: :two:](https://garevna.github.io/js-samples/#22)
+
+[:coffee: :three:](https://garevna.github.io/js-samples/#24)
