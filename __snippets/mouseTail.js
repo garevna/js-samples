@@ -1,16 +1,11 @@
 function createMouseTail ( text ) {
-     var parentElem = document.createElement ( 'div' )
+     // var style = document.createElement ( 'style' )
+     // document.head.appendChild ( style )
+     // style.innerHTML = '.shadowDOM { position: fixed;top: 0;bottom: 0;left: 0;right: 0;z-index:-1;background-color: #000; }'
+
+     const parentElem = document.createElement ( 'div' )
      document.body.insertBefore ( parentElem, document.body.firstChild )
-     parentElem.className = "shadow"
-     //parentElem.style = `
-     //position: fixed;
-     //top: 0;
-     //bottom: 0;
-     //left: 0;
-     //right: 0;
-     //z-index:-1;
-     //background-color: #000;
-    //`
+     // parentElem.className = "shadowDOM"
      var shadow = parentElem.attachShadow ( { mode: 'closed' } )
      shadow.appendChild ( document.createElement ( 'div' ) ).className = "logo"
      shadow.appendChild (
@@ -47,7 +42,7 @@ function createMouseTail ( text ) {
                var elem = document.createElement( 'p' );
                elem.className = "mouseTailLetters";
                elem.innerHTML = letters [ elems.length ];
-               elem.style.color = colors [ elems.length < colors.length ? 
+               elem.style.color = colors [ elems.length < colors.length ?
                            elems.length : elems.length - colors.length ];
                shadow.appendChild ( elem );
                elems.push ( elem );
@@ -58,7 +53,7 @@ function createMouseTail ( text ) {
           if ( Math.min ( Math.abs ( coords.x - event.clientX ), Math.abs ( coords.y - event.clientY ) ) < 10 ) return;
           coords = { x: event.clientX, y: event.clientY };
           elems = appendLetter ();
-          for ( var i = elems.length -1; i > 0; i-- ) {
+          for ( var i = elems.length - 1; i > 0; i-- ) {
                elems [ i ].style.top = elems [ i - 1 ].style.top;
                elems [ i ].style.left = elems [ i - 1 ].style.left;
           }

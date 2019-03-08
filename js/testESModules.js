@@ -13,7 +13,7 @@ export function showMessage ( message ) {
         <h2 style='color: #789'>Module was successfully imported</h2>
         <p style='color: #fa0'>Now you can see how it works :)</p>
         <hr>
-        <p style='color: #dde'>${message}</p>
+        <h3 style='color: #dde'>${message}</h3>
     `
     setTimeout ( () => {
             document.body.removeChild ( demo )
