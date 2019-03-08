@@ -28,7 +28,7 @@ startButton.onclick = event => {
     img.style.transition = "all 0.5s"
     timeOut ( 2500 )
         .then ( () => img.src = "https://thumbs.gfycat.com/OddWideHookersealion-small.gif" )
-    timeOut ( 2000 )
+    timeOut ( 1800 )
         .then ( () => img.style.opacity = 0 )
     timeOut ( 2500 )
         .then ( () => img.style.opacity = 1 )
