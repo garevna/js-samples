@@ -1,3 +1,11 @@
+* { margin: 0; }
+
+body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
 .container {
   position: relative;
   width: 70%;
@@ -12,13 +20,11 @@
   user-select: none;
 }
 
-* { margin: 0; }
-
 main {
   position: fixed;
   top: 10px;
   bottom: 10px;
-  left: calc(20vw + 20px);
+  left: 155px;
   right: 20px;
   border: inset 1px;
   padding: 10px 20px;
@@ -26,7 +32,7 @@ main {
   font-size: 12px;
   line-height: 1.2rem;
   overflow: auto;
-  background-color: rgb(197, 197, 168);
+  background-color: #ddb;
 }
 
 #rule {
@@ -40,18 +46,37 @@ main {
   border-bottom: groove 3px #fff;
   padding: 10px;
   font-family: Arial;
-  font-size: 11px;
+  font-size: 12px;
+  /* line-height: 30px; */
   overflow: auto;
 }
+
+#main_demo > h4, #section_1_demo > h4, #section_2_demo > h4 {
+  position: sticky;
+  top: 0;
+}
+#demo input {
+  width:40px;
+  font-size:11px;
+  text-align:center;
+}
+
+/* #main_demo > figure, #section_1_demo > figure, #section_2_demo > figure {
+  position:relative;
+  margin-top: 20px;
+} */
 
 h4 { color: #fff; font-size: 12px; background-color: #079; padding: 2px 10px; }
 
 #demo {
   position: fixed;
-  left:0;
-  right: 80vw;
   top: 0vh;
-  bottom: 0;
+  left:0;
+  width: 150px;
+  height: 99vh;
   border: solid 1px #999;
+  box-shadow: 2px 2px 4px #00000090;
+  background-color:#eee;
   line-height: 1.5rem;
+  z-index: 5;
 }
