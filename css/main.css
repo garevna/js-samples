@@ -14,7 +14,7 @@ body {
 header {
   
 }
-header > img {
+header > h1 > img {
   vertical-align: middle;
 }
 
