@@ -1,3 +1,5 @@
+document.getElementsByTagName ( "input" )[0].remove()
+
 const getRandomRadius = () =>
     Math.max ( 30, Math.round ( Math.random() * 200 ) )
 
