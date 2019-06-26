@@ -1,1 +1,1 @@
-window.open ( "../chanks/scroll.html", "_self", "resizable,scrollbars,status" )
+window.open ( "./chanks/scroll.html", "_self", "resizable,scrollbars,status" )
