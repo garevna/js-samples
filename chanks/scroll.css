@@ -51,6 +51,12 @@ main {
   overflow: auto;
 }
 
+#demo figure {
+    border-top: 40px transparent;
+    overflow: auto;
+    height: calc(30vh - 40px);
+}
+
 #main_demo > h4, #section_1_demo > h4, #section_2_demo > h4 {
   position: sticky;
   top: 0;
