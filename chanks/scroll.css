@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  width: 70%;
+  height: 70vh;
+  margin: 1vh 15%;
+  box-sizing: border-box;
+  overflow: auto;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #777;
+  user-select: none;
+}
+
+* { margin: 0; }
+
+main {
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: calc(20vw + 20px);
+  right: 20px;
+  border: inset 1px;
+  padding: 10px 20px;
+  font-family: monospace, Arial;
+  font-size: 12px;
+  line-height: 1.2rem;
+  overflow: auto;
+  background-color: rgb(197, 197, 168);
+}
+
+#rule {
+  width: 200vw;
+  height: 1vh;
+}
+
+#main_demo, #section_1_demo, #section_2_demo {
+  position: relative;
+  height: 30vh;
+  border-bottom: groove 3px #fff;
+  padding: 10px;
+  font-family: Arial;
+  font-size: 11px;
+}
+
+h4 { color: #fff; font-size: 12px; background-color: #079; padding: 2px 10px; }
+
+#demo {
+  position: fixed;
+  left:0;
+  right: 80vw;
+  top: 0vh;
+  bottom: 0;
+  border: solid 1px #999;
+  overflow: auto;
+  line-height: 1.5rem;
+}
