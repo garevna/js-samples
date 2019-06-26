@@ -1,3 +1,5 @@
+document.getElementsByTagName ( "input" ).remove()
+
 const elem = document.body.appendChild (
   document.createElement ( 'picture-slider' )
 )
