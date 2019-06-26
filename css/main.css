@@ -1,4 +1,5 @@
-* { font-family: monospace, Arial; outline: none; }
+* { font-family: "Poppins", "Montserrat", "Roboto", "Arial"; outline: none; }
+
 body {
   position: fixed;
   top: 0;
@@ -9,7 +10,28 @@ body {
   background-color: #000;
   color: #dde;
 }
+
+header {
+  
+}
+header > img {
+  vertical-align: middle;
+}
+
+header > h1 > span.js {
+    color: #f50;
+    font-family: "Luckiest Guy";
+    font-size: 50px;
+    letter-spacing: 8px;
+}
+header > h1 > span.samples {
+    color: #0ad;
+    font-family: "Mali";
+    font-size: 30px;
+}
+
 input { margin: 40px; padding: 5px 10px; width: 80%; }
+
 button {
   padding: 5px 10px;
   background-color: transparent;
