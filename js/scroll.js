@@ -3,21 +3,35 @@ const main = document.querySelector ( '#main' )
 const section_1 = document.querySelector ( '#section_1' )
 const section_2 = document.querySelector ( '#section_2' )
 
+demo.querySelectorAll("input").forEach (
+  elem => {
+    elem.disabled = true
+    elem.onchange = function ( event ) {
+        event.target.style.color = 
+            event.target.value == event.param ? 
+                "#079" : "#f00"
+        event.target.value = event.param
+    }
+  }
+)
+
 
 function show ( event ) {
+  function sendValueToElement ( elem, val ) {
+      let event = new Event ( "change" )
+      event.param = val
+      elem.dispatchEvent ( event )
+  }
 
   [ "scrollTop", "scrollLeft", "scrollHeight", "offsetTop", "offsetHeight", "offsetWidth", "clientHeight", "clientWidth" ].forEach (
-    item => {
-      this.querySelector( `#${event.target.id}_${item}` ).innerText = event.target[item]
-    }
-  )
-  if ( event.target.id === "main" ) {
-          section_1.dispatchEvent ( new Event ( "scroll" ))
-          section_2.dispatchEvent ( new Event ( "scroll" ))
-  }
+      item => sendValueToElement (
+            this.querySelector( `#${event.target.id}_${item}` ),
+            event.target[item]
+      )
+    )
 }
 
-main.onscroll = show.bind ( demo.querySelector( "#main_demo" )  )
+main.onscroll = show.bind ( demo.querySelector( "#main_demo" ) )
 section_1.onscroll = show.bind ( demo.querySelector( "#section_1_demo" ) )
 section_2.onscroll = show.bind ( demo.querySelector( "#section_2_demo" ) )
 
@@ -33,4 +47,11 @@ function ready ( event ) {
   main.dispatchEvent ( new Event ( "scroll" ))
   section_1.dispatchEvent ( new Event ( "scroll" ))
   section_2.dispatchEvent ( new Event ( "scroll" ))
+  reset()
+}
+
+function reset ( event ) {
+  demo.querySelectorAll("input").forEach (
+    elem => elem.style.color = "#079"
+  )
 }
