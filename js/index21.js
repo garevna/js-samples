@@ -1,3 +1,5 @@
+document.getElementsByTagName ( "input" ).remove()
+
 const pictures = [
     "https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510__340.jpg",
     "https://cdn.pixabay.com/photo/2018/01/11/19/02/architecture-3076685__340.jpg",
