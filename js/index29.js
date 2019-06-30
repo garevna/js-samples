@@ -11,19 +11,45 @@ addElem ( "script", document.head )
 addElem( "style", document.head )
     .textContent = `
         section {
-            position: absolute;
-            top: 200px;
+            position: relative;
+            top: 0;
             left: 10%;
             right: 10%;
-            height: calc(100% - 220px);
+            box-sizing: border-box;
+            height: max-content;
             border: solid 1px #888;
             padding: 10px 20px;
+            overflow: auto;
         }
-        #endpoints {
-            position:
+        input[type="file"] {
+            opacity: 0;
+        }
+        input[type="file"]:before {
+            content: "Select user avatar";
+            background: linear-gradient(to right, #09b, #09b, #09b);
+            padding: 10px 20px;
+            font-family: Mali, Montserrat, Arial;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 1px 1px 2px #00000070;
+        }
+        input[type="file"]:before:hover {
+            animation: button-hover 0.2s ease alternate 2;
+            box-shadow: 0px 0px 2px #00000050;
+            text-shadow: 1px 1px 1px #005577de;
         }
         input {
             padding: 5px 10px;
+            margin: 10px;
+        }
+        @keyframes button-hover {
+            0% { background: linear-gradient(to right top, #09b,#09b, #09b); }
+           20% { background: linear-gradient(to right top, #09b, #5bd 10% 30%, #09b); }
+           40% { background: linear-gradient(to right top, #09b, #5bd 30% 50%, #09b); }
+           60% { background: linear-gradient(to right top, #09b, #5bd 50% 70%, #09b); }
+           80% { background: linear-gradient(to right top, #09b, #5bd 70% 90%, #09b); }
+          100% { background: linear-gradient(to right top, #09b, #09b, #09b); }
+
         }
     `
 
