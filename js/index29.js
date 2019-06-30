@@ -93,7 +93,7 @@ main.innerHTML = `
         <input type="file" name="file" id="file" class="inputfile" />
         <label for="file">Select avatar</label>
       </form>
-      <button onclick="registerUser()" id="register-button">Register</button>
+      <button id="register-button">Register</button>
   </section>
   <section id="userInfo">
     <h4></h4>
