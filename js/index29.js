@@ -108,7 +108,7 @@ document.querySelector( "input[type='file']" )
     .onchange = function ( event ) {
         if ( event.target.files [0].type.indexOf ( "image" ) !== 0 ) return
 
-        const reader = new FileReader ()
+        const fileReade = new FileReader ()
         fileReader.onload = function ( event ) {
             document.getElementById ( "user-photo-preview" ).src = event.target.result
             document.getElementsByName ( "user-photo" )[0].value = event.target.result
