@@ -21,19 +21,27 @@ addElem( "style", document.head )
             padding: 10px 20px;
             overflow: auto;
         }
-        input[type="file"] {
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
             opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
         }
-        input[type="file"]:before {
-            content: "Select user avatar";
+        .inputfile + label {
             background: linear-gradient(to right, #09b, #09b, #09b);
             padding: 10px 20px;
             font-family: Mali, Montserrat, Arial;
             font-size: 1.2rem;
             color: white;
             box-shadow: 1px 1px 2px #00000070;
+            display: inline-block;
+            cursor: pointer;
         }
-        input[type="file"]:before:hover {
+
+        .inputfile:focus + label,
+        .inputfile + label:hover {
             animation: button-hover 0.2s ease alternate 2;
             box-shadow: 0px 0px 2px #00000050;
             text-shadow: 1px 1px 1px #005577de;
@@ -72,7 +80,8 @@ main.innerHTML = `
         <input type="hidden" value="" name="pass-hash">
         <input type="hidden" value="" name="user-photo">
         <img src="https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" id="user-photo-preview" width="80">
-        <input type="file">
+        <input type="file" name="file" id="file" class="inputfile" />
+        <label for="file">Select avatar</label>
       </form>
       <button onclick="registerUser()" id="register-button">Register</button>
   </section>
