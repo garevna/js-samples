@@ -106,11 +106,14 @@ document.getElementById ( "userInfo" ).style.display = "none"
 
 document.querySelector( "input[type='file']" )
     .onchange = function ( event ) {
-        let photo = event.target.files[0]
-        if ( photo.type.indexOf ( "image" ) !== 0 ) return
-        let picture = URL.createObjectURL ( photo )
-        document.getElementById ( "user-photo-preview" ).src = picture
-        document.getElementsByName ( "user-photo" )[0].value = picture
+        if ( event.target.files [0].type.indexOf ( "image" ) !== 0 ) return
+
+        const reader = new FileReader ()
+        fileReader.onload = function ( event ) {
+            document.getElementById ( "user-photo-preview" ).src = event.target.result
+            document.getElementsByName ( "user-photo" )[0].value = event.target.result
+        }
+        fileReader.readAsDataURL ( event.target.files [0] )
     }
 
 document.getElementById ( "pass-1" ).oninput = function ( event ) {
