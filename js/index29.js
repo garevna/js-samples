@@ -14,12 +14,15 @@ addElem( "style", document.head )
             position: relative;
             top: 0;
             left: 10%;
-            right: 10%;
+            width: 80%;
             box-sizing: border-box;
             height: max-content;
             border: solid 1px #888;
             padding: 10px 20px;
             overflow: auto;
+        }
+        #registrationForm > img {
+            display: block;
         }
         .inputfile {
             width: 0.1px;
