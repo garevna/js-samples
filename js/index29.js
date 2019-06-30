@@ -1,7 +1,7 @@
 document.getElementsByTagName ( "input" ).remove()
 
 var addElem = ( tagName, container ) =>
-    return ( container ? container : document.body )
+    ( container ? container : document.body )
         .appendChild (
             document.createElement ( tagName )
         )
