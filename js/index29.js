@@ -10,6 +10,7 @@ addElem ( "script", document.head )
     .src = "https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"
 addElem( "style", document.head )
     .textContent = `
+        main { overflow: auto; }
         section {
             position: relative;
             top: 0;
@@ -32,7 +33,7 @@ addElem( "style", document.head )
             position: absolute;
             z-index: -1;
         }
-        .inputfile + label {
+        .inputfile + label, button {
             background: linear-gradient(to right, #09b, #09b, #09b);
             padding: 10px 20px;
             font-family: Mali, Montserrat, Arial;
@@ -42,9 +43,15 @@ addElem( "style", document.head )
             display: inline-block;
             cursor: pointer;
         }
+        button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
 
         .inputfile:focus + label,
-        .inputfile + label:hover {
+        .inputfile + label:hover,
+        button:focus, button:hover {
             animation: button-hover 0.2s ease alternate 2;
             box-shadow: 0px 0px 2px #00000050;
             text-shadow: 1px 1px 1px #005577de;
