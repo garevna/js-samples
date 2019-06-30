@@ -153,6 +153,7 @@ document.getElementById ( "register-button" ).onclick = function ( event ) {
             document.body.querySelector ( "#userInfo > img" )
                 .src = currentUser[ "user-photo" ]
             document.cookie = `userId=${currentUser.id}`
+            document.cookie = `userPass=${currentUser["pass-hash"]}`
             document.getElementById ( "registration" ).style.display = "none"
             document.getElementById ( "userInfo" ).style.display = "block"
         })
