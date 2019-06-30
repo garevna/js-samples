@@ -71,6 +71,33 @@ addElem( "style", document.head )
         }
     `
 
+function registerUser() {
+    let formData = new FormData(
+        document.getElementById ( "registrationForm" )
+    )
+    let result = {}
+    formData.forEach (
+      ( val, key ) => Object.assign ( result, { [key]: val } )
+    )
+    fetch("https://a-level-json-server.glitch.me/students", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify ( result )
+    }).then ( response => response.json() )
+        .then ( response => {
+            currentUser = response 
+            document.body.querySelector ( "#showUserInfo > h4" )
+                .innerText = currentUser[ "user-name" ]
+            document.body.querySelector ( "#showUserInfo > img" )
+                .src = currentUser[ "user-photo" ]
+            document.cookie = `userId=${currentUser.id}`
+            document.getElementById ( "registration" ).style.display = "none"
+            document.getElementById ( "userInfo" ).style.display = "block"
+        })
+}
+
 const main = addElem ( "main" )
 
 main.innerHTML = `
@@ -131,29 +158,3 @@ document.getElementById ( "pass-2" ).onchange = function ( event ) {
             .value = Sha256.hash ( event.target.value ) : null
 }
 
-function registerUser() {
-    let formData = new FormData(
-        document.getElementById ( "registrationForm" )
-    )
-    let result = {}
-    formData.forEach (
-      ( val, key ) => Object.assign ( result, { [key]: val } )
-    )
-    fetch("https://a-level-json-server.glitch.me/students", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify ( result )
-    }).then ( response => response.json() )
-        .then ( response => {
-            currentUser = response 
-            document.body.querySelector ( "#showUserInfo > h4" )
-                .innerText = currentUser[ "user-name" ]
-            document.body.querySelector ( "#showUserInfo > img" )
-                .src = currentUser[ "user-photo" ]
-            document.cookie = `userId=${currentUser.id}`
-            document.getElementById ( "registration" ).style.display = "none"
-            document.getElementById ( "userInfo" ).style.display = "block"
-        })
-}
