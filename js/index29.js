@@ -1,4 +1,4 @@
-document.getElementsByTagName ( "input" ).remove()
+document.getElementsByTagName ( "input" )[0].remove()
 
 var addElem = ( tagName, container ) =>
     ( container ? container : document.body )
