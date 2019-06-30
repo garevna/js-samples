@@ -148,9 +148,9 @@ document.getElementById ( "register-button" ).onclick = function ( event ) {
     }).then ( response => response.json() )
         .then ( response => {
             currentUser = response 
-            document.body.querySelector ( "#showUserInfo > h4" )
+            document.body.querySelector ( "#userInfo > h4" )
                 .innerText = currentUser[ "user-name" ]
-            document.body.querySelector ( "#showUserInfo > img" )
+            document.body.querySelector ( "#userInfo > img" )
                 .src = currentUser[ "user-photo" ]
             document.cookie = `userId=${currentUser.id}`
             document.getElementById ( "registration" ).style.display = "none"
