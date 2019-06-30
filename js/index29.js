@@ -19,6 +19,9 @@ addElem( "style", document.head )
             border: solid 1px #888;
             padding: 10px 20px;
         }
+        #endpoints {
+            position:
+        }
         input {
             padding: 5px 10px;
         }
@@ -64,6 +67,13 @@ document.querySelector( "input[type='file']" )
         document.getElementById ( "user-photo-preview" ).src = picture
         document.getElementsByName ( "user-photo" )[0].value = picture
     }
+
+document.getElementById ( "pass-1" ).oninput = function ( event ) {
+    let pass = event.target.value
+    event.target.valid = pass.length > 6 && !!pass.match ( /\d/ ) && !!pass.match ( /\D/ )
+    event.target.style.color = event.target.valid ? "green" : "red"
+    document.getElementById ( "pass-2" ).disabled = !event.target.valid
+}
 
 document.getElementById ( "pass-2" ).oninput = function ( event ) {
     event.target.valid = event.target.value === document.getElementById ( "pass-1" ).value
