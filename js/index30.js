@@ -25,11 +25,11 @@ figure1.style = figure2.style = `
 `
 
 figure1.style.backgroundColor = "#f50"
-figure1.style.top = "50px"
+figure1.style.top = "200px"
 figure1.innerText = "setTimeout"
 
 figure2.style.backgroundColor = "#079"
-figure2.style.top = "120px"
+figure2.style.top = "270px"
 figure2.innerText = "requestAnimationFrame"
 
 let stop = false
