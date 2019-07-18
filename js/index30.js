@@ -8,13 +8,6 @@ let figure2 = document.body.appendChild (
     document.createElement ( "div" )
 )
 
-function randomY () {
-    return Math.max ( 0, Math.round ( Math.random () * window.innerHeight - 50 ) )
-}
-function randomX () {
-    return Math.max ( 0, Math.round ( Math.random () * window.innerWidth - 50 ) )
-}
-
 figure1.style = figure2.style = `
     position: absolute;
     width: 150px;
