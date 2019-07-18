@@ -55,3 +55,8 @@ function handler2 () {
 
 handler1 ()
 requestAnimationFrame( handler2 )
+
+setTimeout (
+    () => stop = true,
+    20000
+)
