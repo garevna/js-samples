@@ -1,3 +1,5 @@
+window["input_field"].remove()
+
 let figure1 = document.body.appendChild (
     document.createElement ( "div" )
 )
@@ -25,11 +27,11 @@ figure1.style = figure2.style = `
 `
 
 figure1.style.backgroundColor = "#f50"
-figure1.style.top = "200px"
+figure1.style.top = "250px"
 figure1.innerText = "setTimeout"
 
 figure2.style.backgroundColor = "#079"
-figure2.style.top = "270px"
+figure2.style.top = "320px"
 figure2.innerText = "requestAnimationFrame"
 
 let stop = false
