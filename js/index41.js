@@ -4,9 +4,9 @@ export function showMessage ( message ) {
     const section = document.querySelector('[script="dynamic-import-3.js"]' ).shadow.querySelector("section")
     const demo = document.createElement ( 'div' )
     demo.style = `
-        position: fixed;
-        top: 15%; left: 15%;
-        bottom: 15%; right: 15%;
+        position: absolute;
+        top: 5%; left: 5%;
+        bottom: 5%; right: 5%;
         box-shadow: 10px 10px 16px #00000090;
         border: solid 0.5px #bbb;
         padding: 30px;
