@@ -1,2 +1,2 @@
 alert( "Module has been imported :)" )
-console.log ( this.parentNode )
+console.log ( document.documentElement )
