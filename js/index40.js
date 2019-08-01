@@ -1,4 +1,3 @@
-alert( "Module has been imported :)" )
 const section = document.querySelector('[script="dynamic-import-1.js"]' ).shadow.querySelector("section")
 
 const pictures = [
