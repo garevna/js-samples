@@ -1,7 +1,8 @@
-const section = document.querySelector('[script="dynamic-import-3.js"]' ).shadow.querySelector("section")
+'use strict'
 
 export function showMessage ( message ) {
-    var demo = document.createElement ( 'div' )
+    const section = document.querySelector('[script="dynamic-import-3.js"]' ).shadow.querySelector("section")
+    const demo = document.createElement ( 'div' )
     demo.style = `
         position: fixed;
         top: 15%; left: 15%;
