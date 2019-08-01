@@ -17,11 +17,11 @@ pictures.createSlide = function () {
         document.createElement ( "figure" )
     )
     slide.style = `
-        position: fixed;
-        top: 10%;
-        bottom: 10%;
-        left: 10%;
-        right: 10%;
+        position: absolute;
+        top: 5%;
+        bottom: 5%;
+        left: 5%;
+        right: 5%;
         transition: all 0.5s;
         background-size: contain;
         background-repeat: no-repeat;
