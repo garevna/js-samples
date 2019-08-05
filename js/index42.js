@@ -5,8 +5,8 @@ const addElem = function ( tagName, container ) {
 }
 
 const createPage = function ( header, text ) {
-    let main = document.getElementsByTagName ( "main" )[0]
-    main ? null : addElem ( "main" )
+    let main = document.getElementsByTagName ( "main" )[0];
+    main || addElem ( "main" );
     main.innerHTML = `
         <style>
             * { font-family: Arial; }
@@ -16,7 +16,7 @@ const createPage = function ( header, text ) {
         </style>
         <h3>${header}</h3>
         <p>${text}</p>
-    `
+    `;
 }
 
 const createHomePage  = () => createPage ( "Home", "This is the home page of application" )
