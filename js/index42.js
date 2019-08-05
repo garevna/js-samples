@@ -4,9 +4,9 @@ const addElem = function ( tagName, container ) {
     )
 }
 
+const main = addElem ( "main" )
+
 const createPage = function ( header, text ) {
-    let main = document.getElementsByTagName ( "main" )[0];
-    main || addElem ( "main" );
     main.innerHTML = `
         <style>
             * { font-family: Arial; }
