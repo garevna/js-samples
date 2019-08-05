@@ -35,7 +35,7 @@ history.pushState ( { callback: "createHomePage" }, "admin", "/admin" )
 history.pushState ( { callback: "createAdminPage" }, "admin", "/admin" )
 history.pushState ( { callback: "createUserPage" }, "user", "/user" )
 history.pushState ( { callback: "createDebugPage" }, "debug", "/debug" )
-
+;
 [ "home", "admin", "user", "debug" ].forEach (
     item => {
         let button = addElem ( "button" )
@@ -45,6 +45,8 @@ history.pushState ( { callback: "createDebugPage" }, "debug", "/debug" )
         }
     }
 )
+
+history.go ( "/home" )
 
 // history.back()
 // history.back()
