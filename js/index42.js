@@ -31,17 +31,17 @@ window.onpopstate = function ( event ) {
 
 createHomePage()
 
-history.pushState ( { callback: "createHomePage" }, "admin", "/admin" )
-history.pushState ( { callback: "createAdminPage" }, "admin", "/admin" )
-history.pushState ( { callback: "createUserPage" }, "user", "/user" )
-history.pushState ( { callback: "createDebugPage" }, "debug", "/debug" )
+history.pushState ( { callback: "createHomePage" }, "home", "/js-samples/home" )
+history.pushState ( { callback: "createAdminPage" }, "admin", "/js-samples/admin" )
+history.pushState ( { callback: "createUserPage" }, "user", "/js-samples/user" )
+history.pushState ( { callback: "createDebugPage" }, "debug", "/js-samples/debug" )
 ;
 [ "home", "admin", "user", "debug" ].forEach (
     item => {
         let button = addElem ( "button" )
         button.innerText = item
         button.onclick = function ( event ) {
-            history.go ( `/${item}` )
+            history.go ( `/js-samples/${item}` )
         }
     }
 )
