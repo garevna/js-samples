@@ -5,7 +5,7 @@ Notification.requestPermission(
 
 function showNotification ( message ) {
     let options = {
-        icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFUtDreoTbGcj2E3DGpen9jEA9iJxXIx577Z8j9Rb4L3O7lyxT',
+        icon: 'https://www.axialis.com/tutorials/iw/down.ico',
         body: message
     }
     const notification = new Notification( 'garevna', options )
