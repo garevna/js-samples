@@ -13,5 +13,9 @@ function spawnNotification( message ) {
         body: text
 //         image: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png"
     }
-    var n = new Notification( "garevna", options )
+    var note = new Notification( "garevna", options )
+    console.log ( 'badge', note.badge )
+    console.log ( 'image', note.image )
+    console.log ( 'icon', note.icon )
+    console.log ( 'body', note.body )
 }
