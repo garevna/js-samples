@@ -9,8 +9,14 @@ showNotification ( message ) {
         body: message
     }
     const notification = new Notification( 'garevna', options )
-    notification.onclick = function () {
+    notification.onclick = function ( event ) {
         window.open( 'https://github.com/garevna/js-course/wiki' )
+    }
+    notification.onerror = function ( event ) {
+        document.body.appendChild (
+            document.createElement ( "p" )
+        ).innerHTML = `<em style='color: red'>Error</p>`
+        console.log ( event )
     }
 }
 
