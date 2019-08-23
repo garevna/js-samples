@@ -1,4 +1,5 @@
-console.log ( window.webkitNotification )
+console.log ( `webkitNotification: `, navigator.webkitNotification )
+console.log ( `mozNotification: `, navigator.mozNotification )
 
 Notification.requestPermission(
     permission => permission === "granted" ? 
