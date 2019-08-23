@@ -10,7 +10,7 @@ function spawnNotification( message ) {
     var options = {
         body: message,
         icon: "/js-samples/icons/communication-1.png",
-        badge: "https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2Fmy-photo.png",
+        badge: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png",
         image: "/js-samples/images/js-ico.png",
         requireInteraction: true
     }
