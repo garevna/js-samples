@@ -8,7 +8,8 @@ Notification.requestPermission(
     
 function spawnNotification( message ) {
     var options = {
-        icon: "/js-samples/icons/link.png",
+        badge: "https://developers.google.com/web/fundamentals/push-notifications/images/notification-screenshots/mobile/chrome-badge.png",
+//         icon: "/js-samples/icons/link.png",
         body: text
 //         image: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png"
     }
