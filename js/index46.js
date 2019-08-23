@@ -8,11 +8,7 @@ document.body.appendChild ( document.createElement ( "img" ) ).src = "/js-sample
     
 function spawnNotification( message ) {
     var options = {
-        body: message,
-        icon: "/js-samples/icons/communication-1.png",
-        badge: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png",
-        image: "/js-samples/images/js-ico.png",
-        requireInteraction: true
+        image: "/js-samples/images/js-ico.png"
     }
     var n = new Notification( "garevna", options )
 }
