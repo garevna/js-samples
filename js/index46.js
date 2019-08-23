@@ -8,7 +8,9 @@ Notification.requestPermission(
     
 function spawnNotification( message ) {
     var options = {
-        image: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png"
+        icon: "/js-samples/icons/link.png",
+        body: text
+//         image: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png"
     }
     var n = new Notification( "garevna", options )
 }
