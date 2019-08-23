@@ -1,4 +1,4 @@
-console.log ( chrome.notifications )
+console.log ( webkitNotification )
 
 Notification.requestPermission(
     permission => permission === "granted" ? 
