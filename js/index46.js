@@ -8,7 +8,6 @@ function showNotification ( message ) {
         icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
         body: message
     }
-    console.log ( options )
     const notification = new Notification( 'garevna', options )
     notification.onclick = function ( event ) {
         window.open( 'https://github.com/garevna/js-course/wiki' )
