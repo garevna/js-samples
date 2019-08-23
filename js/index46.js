@@ -1,5 +1,3 @@
-console.log ( webkitNotification )
-
 Notification.requestPermission(
     permission => permission === "granted" ? 
         showNotification ( `Что вам следует знать о JS` ) : null
@@ -15,11 +13,11 @@ function showNotification ( message ) {
     notification.onclick = function ( event ) {
         window.open( 'https://github.com/garevna/js-course/wiki' )
     }
-    notification.onshow = function ( event ) {
-        document.body.appendChild (
-            document.createElement ( "img" )
-        ).src = event.target.icon
-    }
+//     notification.onshow = function ( event ) {
+//         document.body.appendChild (
+//             document.createElement ( "img" )
+//         ).src = event.target.icon
+//     }
     notification.onerror = function ( event ) {
         document.body.appendChild (
             document.createElement ( "p" )
