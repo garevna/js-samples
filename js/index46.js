@@ -5,7 +5,7 @@ Notification.requestPermission(
 
 function showNotification ( message ) {
     let options = {
-        icon: 'https://www.dofactory.com/Images/Box/javascript-transparent.png',
+        icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
         body: message
     }
     const notification = new Notification( 'garevna', options )
