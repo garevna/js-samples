@@ -1,4 +1,4 @@
-Notification.requestPermission(
+Notification.requestPermission().then (
     permission => permission === "granted" ? 
         showNotification ( `Что вам следует знать о JS` ) : null
 )
