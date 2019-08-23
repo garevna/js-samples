@@ -3,7 +3,7 @@ Notification.requestPermission(
         showNotification ( `Что вам следует знать о JS` ) : null
 )
 
-showNotification ( message ) {
+function showNotification ( message ) {
     let options = {
         icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
         body: message
