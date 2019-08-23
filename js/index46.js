@@ -5,7 +5,7 @@ Notification.requestPermission(
 
 function showNotification ( message ) {
     let options = {
-        image: 'https://garevna.github.io/js-samples/images/test-360-180.png',
+        icon: 'https://garevna.github.io/js-samples/images/my-photo.jpg',
         body: message
     }
     const notification = new Notification( 'garevna', options )
