@@ -8,7 +8,7 @@ Notification.requestPermission(
     
 function spawnNotification( message ) {
     var options = {
-        badge: "https://banner2.kisspng.com/20180517/swe/kisspng-social-media-computer-icons-organization-share-ico-5afd90d8eec5f5.852329941526567128978.jpg",
+        badge: "https://i.pinimg.com/236x/6e/87/1c/6e871c81e47c31c11cd62267a8595e1c--animated-icons-social-media-icons.jpg",
         icon: "/js-samples/icons/link.png",
         body: text,
         image: "https://politikus.ru/uploads/posts/2012-09/1347832924_trollface.png"
