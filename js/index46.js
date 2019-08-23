@@ -1,3 +1,5 @@
+console.log ( window.webkitNotification )
+
 Notification.requestPermission(
     permission => permission === "granted" ? 
         showNotification ( `Что вам следует знать о JS` ) : null
