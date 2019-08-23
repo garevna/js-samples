@@ -5,7 +5,7 @@ Notification.requestPermission(
 
 function showNotification ( message ) {
     let options = {
-        icon: 'https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2Fmy-photo.png',
+        icon: 'http://www.iconarchive.com/download/i34230/treetog/i/Documents.ico',
         body: message
     }
     const notification = new Notification( 'garevna', options )
