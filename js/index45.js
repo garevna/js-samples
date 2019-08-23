@@ -11,7 +11,7 @@ function spawnNotification( theBody, theIcon, theTitle ) {
 }
 
 spawnNotification(
-    "Hello, students!",
+    "Hello, students )",
     "https://www.webfx.com/tools/emoji-cheat-sheet/graphics/emojis/wink.png",
     "garevna"
 ) 
