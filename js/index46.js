@@ -5,7 +5,6 @@ Notification.requestPermission(
 
 function showNotification ( message ) {
     let options = {
-        tag : "js-course",
         icon: 'https://garevna.github.io/js-course/images/my-photo.png',
         body: message
     }
