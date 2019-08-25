@@ -1,7 +1,7 @@
 Notification.requestPermission( permission => showNotification ({
     icon: "https://garevna.github.io/js-course/images/my-photo.png",
     image: "https://cn.opendesktop.org/img/b/2/d/5/cfd19f550736133723633e53ba0b05def2e4.jpg",
-    body: "Hello, students!",
+    message: "Hello, students! Welcome to JS!",
     title: "garevna"
 }) )
 
