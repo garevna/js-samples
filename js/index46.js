@@ -9,7 +9,8 @@ messageWorker.postMessage({
 
 const addElem = tag => document.body.appendChild (
     document.createElement ( tag )
-}
+)
+
 const addImage = url => addElem ( "img" ).src = url
 )
 
