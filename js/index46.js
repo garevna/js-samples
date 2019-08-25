@@ -14,6 +14,8 @@ const addElem = tag => document.body.appendChild (
 const addImage = url => addElem ( "img" ).src = url
 
 messageWorker.onmessage = function ( event ) {
+    console.dir ( event )
+    console.dir ( event.data )
     if ( event.data.type = "image" ) {
       addImage ( event.data.image )
       addImage ( event.data.icon )
