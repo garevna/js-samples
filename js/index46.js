@@ -1,8 +1,8 @@
 const messageWorker = new Worker( "./js/notifications-worker.js" )
 
 messageWorker.postMessage({
-    icon: 'https://garevna.github.io/js-course/ico/bash-20.png',
-    image: "https://garevna.github.io/js-course/images/lessons/smoke-monkey.gif",
+    icon: 'https://garevna.github.io/js-course/images/a-level-ico.png',
+    image: "https://garevna.github.io/js-course/images/AJAX.png",
     message: "Hello, students! Do you like JS ?",
     title: "garevna"
 })
