@@ -20,3 +20,7 @@ messageWorker.onmessage = function ( event ) {
     } else addElem ( "p" ).innerText = event.data.text
     messageWorker.terminate()
 }
+
+messageWorker.onclick = function ( event ) {
+    window.open ( "https://garevna.github.io/js-samples/#19", "_blank" )
+}
