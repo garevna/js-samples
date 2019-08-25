@@ -1,10 +1,10 @@
 onmessage = function ( event ) {
-    console.log ( event )
+    console.dir ( event )
     showNotification ( event.data )
 }
 
 function showNotification ( data ) {
-    console.log ( data )
+    console.dir ( data )
     const notification = new Notification( data.title, {
         icon: data.icon,
         image: data.image,
