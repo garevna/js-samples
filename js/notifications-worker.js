@@ -1,4 +1,5 @@
 onmessage = function ( event ) {
+    console.dir ( Notification )
     Notification.requestPermission(
         permission => {
             console.log ( "permission", permission )
