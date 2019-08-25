@@ -1,13 +1,5 @@
 onmessage = function ( event ) {
-    console.dir ( Notification )
-    Notification.requestPermission(
-        permission => {
-            console.log ( "permission", permission )
-            console.log ( "message", event.data )
-            permission === "granted" ? 
-            showNotification ( event.data ) : null
-        }
-    )
+    showNotification ( event.data )
 }
 
 console.log ( "worker is working..." )
