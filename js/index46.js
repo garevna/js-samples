@@ -21,6 +21,4 @@ messageWorker.onmessage = function ( event ) {
     messageWorker.terminate()
 }
 
-messageWorker.onclick = function ( event ) {
-    window.open ( "https://garevna.github.io/js-samples/#19", "_blank" )
-}
+messageWorker.onclick = () => self.open ( "https://garevna.github.io/js-samples/#19", "_blank" )
