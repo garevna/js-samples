@@ -3,8 +3,6 @@ onmessage = function ( event ) {
 }
 
 function showNotification ( data ) {
-    console.dir ( data.icon )
-    console.dir ( data.image )
     const notification = new Notification( data.title, {
         icon: data.icon,
         image: data.image,
@@ -14,7 +12,6 @@ function showNotification ( data ) {
     } )
     
     notification.onshow = function ( event ) {
-        console.log ( notification.image )
         postMessage ({
             messageType: "images",
             image: notification.image,
