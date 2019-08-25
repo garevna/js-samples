@@ -11,6 +11,7 @@ function showNotification ( message ) {
     }
     const notification = new Notification( 'garevna', options )
     notification.onclick = function ( event ) {
+        document.body.appendChild ( document.createElement ( "img" ) ).src = notification.image
         window.open( 'https://github.com/garevna/js-course/wiki' )
     }
     notification.onerror = function ( event ) {
