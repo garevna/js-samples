@@ -6,7 +6,7 @@ Notification.requestPermission(
 function showNotification ( message ) {
     let options = {
 //         icon: 'https://garevna.github.io/js-course/images/my-photo.png',
-        image: "https://www.hrirrigation.com/wp-content/uploads/bg-home-2000px.jpg"
+        "image": "https://peter-gribanov.github.io/serviceworker/Bubble-Nebula_big.jpg"
 //         body: message
     }
     const notification = new Notification( 'garevna', options )
