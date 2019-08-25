@@ -1,4 +1,4 @@
-const messageWorker = new Worker("./js-samples/js/notification-worker.js")
+const messageWorker = new Worker("./js/notifications-worker.js")
 messageWorker.postMessage( "Hello!" )
-alert( "start" )
+alert( "last!" )
 messageWorker.terminate()
