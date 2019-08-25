@@ -1,5 +1,4 @@
 onmessage = function ( event ) {
-    console.dir ( event.data )
     showNotification ( event.data )
 }
 
@@ -18,8 +17,8 @@ function showNotification ( data ) {
         console.log ( notification.image )
         postMessage ({
             messageType: "images",
-            image: notification.image.src,
-            icon: notification.icon.src
+            image: notification.image,
+            icon: notification.icon
         })
     }
     
