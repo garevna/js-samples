@@ -16,7 +16,7 @@ const addImage = url => addElem ( "img" ).src = url
 messageWorker.onmessage = function ( event ) {
     console.dir ( event )
     console.dir ( event.data )
-    if ( event.data.messageType === "image" ) {
+    if ( event.data.messageType === "images" ) {
       addImage ( event.data.image )
       addImage ( event.data.icon )
     } else addElem ( "p" ).innerText = event.data.text
