@@ -6,7 +6,7 @@ Notification.requestPermission(
 function showNotification ( message ) {
     let options = {
 //         icon: 'https://garevna.github.io/js-course/images/my-photo.png',
-        image: "https://bipbap.ru/wp-content/uploads/2017/09/1kgwYBuQw7t5etDwP9o1XE9H-640x410.jpeg"
+        image: "https://www.hrirrigation.com/wp-content/uploads/bg-home-2000px.jpg"
 //         body: message
     }
     const notification = new Notification( 'garevna', options )
@@ -14,9 +14,7 @@ function showNotification ( message ) {
         window.open( 'https://github.com/garevna/js-course/wiki' )
     }
     notification.onerror = function ( event ) {
-        document.body.appendChild (
-            document.createElement ( "p" )
-        ).innerText = "Notifications are not alowed"
+        console.warn ( "Notifications are not allowed" )
     }
 }
 
