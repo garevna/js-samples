@@ -2,13 +2,28 @@ onmessage = function ( event ) {
     showNotification ( event.data )
 }
 
-console.log ( "worker is working..." )
-
-function showNotification ( message ) {
-    let options = {
-        icon: 'https://garevna.github.io/js-course/images/my-photo.png',
-        image: "https://bipbap.ru/wp-content/uploads/2017/09/1kgwYBuQw7t5etDwP9o1XE9H-640x410.jpeg",
-        body: message
+function showNotification ( data ) {
+    
+    const notification = new Notification( data.title, {
+        icon: data.icon,
+        image: data.image,
+        body: data.message,
+        requireInteraction: true,
+        silent: true
+    } )
+    
+    notification.onshow = function ( event ) {
+        postMessage ({
+            messageType: "images",
+            image: event.target.image.src,
+            icon: event.target.icon.src
+        })
     }
-    const notification = new Notification( 'garevna', options )
+    
+    notification.onclose = function ( event ) {
+        postMessage ({
+            messageType: "text",
+            text: "I'm worker. Notification has been closed"
+        })
+    }
 }
