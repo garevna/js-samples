@@ -12,7 +12,6 @@ const addElem = tag => document.body.appendChild (
 )
 
 const addImage = url => addElem ( "img" ).src = url
-)
 
 messageWorker.onmessage = function ( event ) {
     if ( event.data.type = "image" ) {
