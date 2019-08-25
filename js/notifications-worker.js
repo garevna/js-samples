@@ -1,7 +1,9 @@
-Notification.requestPermission(
-    permission => permission === "granted" ? 
-        showNotification ( "Hello" ) : null
-)
+onmessage = function ( event ) {
+    Notification.requestPermission(
+        permission => permission === "granted" ? 
+            showNotification ( event.data ) : null
+    )
+}
 
 function showNotification ( message ) {
     let options = {
@@ -10,12 +12,4 @@ function showNotification ( message ) {
         body: message
     }
     const notification = new Notification( 'garevna', options )
-    notification.onclick = function ( event ) {
-        window.open( 'https://github.com/garevna/js-course/wiki' )
-    }
-    notification.onerror = function ( event ) {
-        document.body.appendChild (
-            document.createElement ( "p" )
-        ).innerText = "Notifications are not alowed"
-    }
 }
