@@ -1,2 +1,2 @@
-var messageWorker = new Worker("js/notification-worker.js")
+var messageWorker = new Worker("https://garevna.github.io/js-samples/js/notification-worker.js")
 messageWorker.postMessage( "Hello!" )
