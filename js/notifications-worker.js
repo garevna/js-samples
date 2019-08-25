@@ -16,8 +16,8 @@ function showNotification ( data ) {
     notification.onshow = function ( event ) {
         postMessage ({
             messageType: "images",
-            image: event.target.image.src,
-            icon: event.target.icon.src
+            image: notification.image.src,
+            icon: notification.icon.src
         })
     }
     
