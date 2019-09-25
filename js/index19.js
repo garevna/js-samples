@@ -2,6 +2,8 @@
     document.getElementsByTagName ( "input" )[0]
 )
 
+console.log ( Symbol.for ( "section" ) )
+
 const elem = document.body.appendChild (
   document.createElement ( 'picture-slider' )
 )
