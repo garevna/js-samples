@@ -1,4 +1,6 @@
-document.getElementsByTagName ( "input" )[0].remove()
+( elem => elem && elem.remove() )(
+    document.getElementsByTagName ( "input" )[0]
+)
 
 const pictures = [
     "https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510__340.jpg",
