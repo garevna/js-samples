@@ -1,5 +1,5 @@
 console.log ( Symbol.for ( "section" ) )
-console.log ( [ Symbol.for ( "section" ) ] )
+console.log ( window [ Symbol.for ( "section" ) ] )
 
 function Figure ( params ) {
      this.type = params ? params.type || 'circle' : 'square'
