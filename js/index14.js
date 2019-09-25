@@ -1,5 +1,7 @@
-console.log ( Symbol.for ( "section" ) )
-console.log ( window [ Symbol.for ( "section" ) ] )
+let container = window [ Symbol.for ( "section" ) ] ?
+                window [ Symbol.for ( "section" ) ] :
+                document.body
+console.log ( container )
 
 function Figure ( params ) {
      this.type = params ? params.type || 'circle' : 'square'
@@ -21,7 +23,7 @@ function Figure ( params ) {
           this.elem.setAttributeNS ( null, attr, val )
      }
 }
-Figure.prototype.canvas = document.body.appendChild (
+Figure.prototype.canvas = container.appendChild (
         document.createElementNS ( "http://www.w3.org/2000/svg", 'svg' )
 )
 Figure.prototype.canvas.setAttributeNS( null, 'width', window.innerWidth - 40 )
