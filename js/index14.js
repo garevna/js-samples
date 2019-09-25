@@ -1,3 +1,6 @@
+console.log ( Symbol.for ( "section" ) )
+console.log ( [ Symbol.for ( "section" ) ] )
+
 function Figure ( params ) {
      this.type = params ? params.type || 'circle' : 'square'
      this.elem = this.canvas.appendChild (
