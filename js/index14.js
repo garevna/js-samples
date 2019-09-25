@@ -1,6 +1,7 @@
 let container = window [ Symbol.for ( "section" ) ] ?
                 window [ Symbol.for ( "section" ) ] :
                 document.body
+container.style.margin = 0
 
 function Figure ( params ) {
      this.type = params ? params.type || 'circle' : 'square'
@@ -27,7 +28,7 @@ Figure.prototype.canvas = container.appendChild (
 )
 Figure.prototype.canvas.setAttributeNS( null, 'width', container.offsetWidth )
 Figure.prototype.canvas.setAttributeNS( null, 'height', container.offsetHeight )
-Figure.prototype.canvas.style.border = 'solid 1px red'
+// Figure.prototype.canvas.style = border = 'solid 1px red'
 
 Figure.prototype.default = {
      circle: { cx:100, cy:100, r:100 },
