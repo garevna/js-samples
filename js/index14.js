@@ -25,8 +25,8 @@ function Figure ( params ) {
 Figure.prototype.canvas = container.appendChild (
         document.createElementNS ( "http://www.w3.org/2000/svg", 'svg' )
 )
-Figure.prototype.canvas.setAttributeNS( null, 'width', window.innerWidth - 40 )
-Figure.prototype.canvas.setAttributeNS( null, 'height', window.innerHeight - 400 )
+Figure.prototype.canvas.setAttributeNS( null, 'width', container.offsetWidth )
+Figure.prototype.canvas.setAttributeNS( null, 'height', container.offsetHeight )
 Figure.prototype.canvas.style.border = 'solid 1px red'
 
 Figure.prototype.default = {
