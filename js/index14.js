@@ -1,7 +1,6 @@
 let container = window [ Symbol.for ( "section" ) ] ?
                 window [ Symbol.for ( "section" ) ] :
                 document.body
-console.log ( container )
 
 function Figure ( params ) {
      this.type = params ? params.type || 'circle' : 'square'
