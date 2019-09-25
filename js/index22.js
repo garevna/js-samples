@@ -1,4 +1,6 @@
-document.getElementsByTagName ( "input" )[0].remove()
+( elem => elem && elem.remove() )(
+    document.getElementsByTagName ( "input" )[0]
+)
 
 const getRandomRadius = () =>
     Math.max ( 30, Math.round ( Math.random() * 200 ) )
