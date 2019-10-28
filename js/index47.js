@@ -37,6 +37,8 @@ class registerComponent extends HTMLElement {
         const message = this.shadow.getElementById ( "message" );
         const submit = this.shadow.getElementById ( "submit" );
         const registration = this.shadow.getElementById ( "registration" );
+        
+        console.log ( userName, userAge );
 
         let currentUser = null;
 
@@ -90,17 +92,17 @@ class registerComponent extends HTMLElement {
                 let user = {}
                 formData.forEach (
                     prop => prop instanceof File ? 
-                        document.body.appendChild (
+                        this.shadow.appendChild (
                             document.createElement ( "img" )
                         ).src = URL.createObjectURL ( prop ) :
-                        document.body.appendChild (
+                        this.shadow.appendChild (
                             document.createElement ( "p" )
                         ).innerText = prop
                 );
             }
 
             getFormData ( dataURL );
-            document.getElementsByTagName ( "header" )[0].remove();
+            this.shadow.getElementsByTagName ( "header" )[0].remove();
         }
 
         const register = login => {
