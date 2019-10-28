@@ -5,8 +5,9 @@ class registerComponent extends HTMLElement {
     }
     connectedCallback () {
         this.shadow.innerHTML = `
+            <link rel="stylesheet" href="https://garevna-form-data.glitch.me/style.css">
             <header>
-                <img src="/assets/cat.gif" width="30">
+                <img src="https://garevna-form-data.glitch.me/assets/cat.gif" width="30">
                 <small id="logMessage"> Sign in</small>
                 <input id="login" placeholder="login">
             </header>
