@@ -116,7 +116,7 @@ class registerComponent extends HTMLElement {
               userPhoto.src = URL.createObjectURL( event.target.files [0] );
             }
 
-            avatar.onchange = validateImage;
+            avatar.onchange = validateImage.bind( this );
 
             let ready = () => userName.value.length > 1 && userAge.value < 100 && userAge.value > 5 && !message.innerText;
 
@@ -132,13 +132,13 @@ class registerComponent extends HTMLElement {
                 }
 
                 let formData = new FormData ( this.shadow.getElementById ( "form" ) );
-
+                let header = this.shadow.getElementsByTagName ( "header" )[0];
                 fetch ( `https://garevna-form-data.glitch.me/form/${login}`, {
                     method: "POST",
                     body: formData
                 }).then ( response => {
                   registration.style.display = "none";
-                  this.shadow.getElementsByTagName ( "header" )[0].remove();
+                  header.remove();
                   resolve ( login );
                 });
             };
@@ -155,6 +155,9 @@ customElements.define (
 )
 
 document.getElementsByTagName ( "input" )[0].remove();
+document.getElementsByTagName ( "span" )[0].remove();
+document.getElementsByTagName ( "span" )[1].remove();
+document.getElementsByTagName ( "img" )[0].remove();
 
 document.body.appendChild (
     document.createElement ( "sign-up" )
