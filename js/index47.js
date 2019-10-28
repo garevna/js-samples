@@ -155,8 +155,8 @@ customElements.define (
 )
 
 document.getElementsByTagName ( "input" )[0].remove();
-document.getElementsByTagName ( "span" )[0].remove();
-document.getElementsByTagName ( "span" )[1].remove();
+document.querySelector ( "span.js" ).remove();
+document.querySelector ( "span.samples" ).remove();
 document.getElementsByTagName ( "img" )[0].remove();
 
 document.body.appendChild (
