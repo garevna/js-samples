@@ -37,16 +37,11 @@ class registerComponent extends HTMLElement {
         const message = this.shadow.getElementById ( "message" );
         const submit = this.shadow.getElementById ( "submit" );
         const registration = this.shadow.getElementById ( "registration" );
-        
-        console.log ( userName, userAge );
-
-        let currentUser = null;
+        const userInput = this.shadow.getElementById ( "login" );
 
         function getInput ( users ) {
 
             let logins = Object.keys ( users );
-
-            let userInput = this.shadow.getElementById ( "login" );
 
             userInput.oninput = event => {
                 let test = logins.filter (
