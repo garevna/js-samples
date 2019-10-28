@@ -97,7 +97,7 @@ class registerComponent extends HTMLElement {
             }
 
             getFormData ( dataURL );
-            this.shadow.getElementsByTagName ( "header" )[0].remove();
+            header.remove();
         }
 
         const register = login => {
