@@ -38,6 +38,7 @@ class registerComponent extends HTMLElement {
         const submit = this.shadow.getElementById ( "submit" );
         const registration = this.shadow.getElementById ( "registration" );
         const userInput = this.shadow.getElementById ( "login" );
+        const shadow = this.shadow;
 
         function getInput ( users ) {
 
@@ -87,10 +88,10 @@ class registerComponent extends HTMLElement {
                 let user = {}
                 formData.forEach (
                     prop => prop instanceof File ? 
-                        this.shadow.appendChild (
+                        shadow.appendChild (
                             document.createElement ( "img" )
                         ).src = URL.createObjectURL ( prop ) :
-                        this.shadow.appendChild (
+                        shadow.appendChild (
                             document.createElement ( "p" )
                         ).innerText = prop
                 );
@@ -107,7 +108,7 @@ class registerComponent extends HTMLElement {
               message.innerText = 
                   avatar.files[0].type.indexOf ( "image" ) === 0 ? avatar.files[0].size < 100000 ? "" : 
                       "File is too large" : "It's not an image file";
-              const userPhoto = this.shadow.getElementById ( "userPhoto" );
+              const userPhoto = shadow.getElementById ( "userPhoto" );
               userPhoto.src = URL.createObjectURL( event.target.files [0] );
             }
 
