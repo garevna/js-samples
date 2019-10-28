@@ -31,13 +31,20 @@ class registerComponent extends HTMLElement {
             </main>
         `;
         
-        const userName = this.shadow.getElementById ( "userName" );
-        const userAge = this.shadow.getElementById ( "userAge" );
-        const avatar = this.shadow.getElementById ( "avatar" );
-        const message = this.shadow.getElementById ( "message" );
-        const submit = this.shadow.getElementById ( "submit" );
-        const registration = this.shadow.getElementById ( "registration" );
-        const userInput = this.shadow.getElementById ( "login" );
+        [ userName, userAge, avatar, message, submit, registration, userInput, formData ] =
+                [ "userName", "userAge", "avatar", "message", "submit","registration", "login", "form" ]
+                    .map (
+                        item => this.shadow.getElementById ( item )
+                    )
+//         const userName = this.shadow.getElementById ( "userName" );
+//         const userAge = this.shadow.getElementById ( "userAge" );
+//         const avatar = this.shadow.getElementById ( "avatar" );
+//         const message = this.shadow.getElementById ( "message" );
+//         const submit = this.shadow.getElementById ( "submit" );
+//         const registration = this.shadow.getElementById ( "registration" );
+//         const userInput = this.shadow.getElementById ( "login" );
+        const header = this.shadow.getElementsByTagName ( "header" )[0];
+//         const formData = new FormData ( this.shadow.getElementById ( "form" ) );
         const shadow = this.shadow;
 
         function getInput ( users ) {
@@ -127,8 +134,6 @@ class registerComponent extends HTMLElement {
                   return;
                 }
 
-                let formData = new FormData ( this.shadow.getElementById ( "form" ) );
-                let header = this.shadow.getElementsByTagName ( "header" )[0];
                 fetch ( `https://garevna-form-data.glitch.me/form/${login}`, {
                     method: "POST",
                     body: formData
