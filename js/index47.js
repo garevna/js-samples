@@ -152,6 +152,8 @@ customElements.define (
     registerComponent
 )
 
+document.getElementsByTagName ( "input" )[0].remove();
+
 document.body.appendChild (
     document.createElement ( "sign-up" )
 )
