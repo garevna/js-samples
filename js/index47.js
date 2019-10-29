@@ -31,11 +31,10 @@ class registerComponent extends HTMLElement {
             </main>
         `;
         
-        [ userName, userAge, avatar, message, submit, registration, userInput, formData ] =
+        let [ userName, userAge, avatar, message, submit, registration, userInput, formData ] =
                 [ "userName", "userAge", "avatar", "message", "submit","registration", "login", "form" ]
-                    .map (
-                        item => this.shadow.getElementById ( item )
-                    )
+                    .map ( item => this.shadow.getElementById ( item ) );
+        
 //         const userName = this.shadow.getElementById ( "userName" );
 //         const userAge = this.shadow.getElementById ( "userAge" );
 //         const avatar = this.shadow.getElementById ( "avatar" );
