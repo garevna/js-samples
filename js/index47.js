@@ -42,7 +42,7 @@ class registerComponent extends HTMLElement {
 //         const submit = this.shadow.getElementById ( "submit" );
 //         const registration = this.shadow.getElementById ( "registration" );
 //         const userInput = this.shadow.getElementById ( "login" );
-        const header = this.shadow.getElementsByTagName ( "header" )[0];
+        const header = this.shadow.querySelector ( "header" );
 //         const formData = new FormData ( this.shadow.getElementById ( "form" ) );
         const shadow = this.shadow;
 
