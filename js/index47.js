@@ -1,7 +1,7 @@
 class registerComponent extends HTMLElement {
     constructor () {
-        super()
-        this.shadow = this.attachShadow ({ mode: "closed" })
+        super();
+        this.shadow = this.attachShadow ({ mode: "closed" });
     }
     connectedCallback () {
         this.shadow.innerHTML = `
@@ -65,8 +65,6 @@ class registerComponent extends HTMLElement {
             )
         }
 
-        // ======================= getLogin ========================= 
-
         async function getLogin () {
 
             let users = await (
@@ -75,8 +73,6 @@ class registerComponent extends HTMLElement {
 
             return await getInput ( users )
         }
-
-        // ==========================================================
 
         const resolve = userLogin => {
             let dataURL = `https://garevna-form-data.glitch.me/forms/${userLogin}`
