@@ -31,7 +31,7 @@ class registerComponent extends HTMLElement {
             </main>
         `;
         
-        let [ userName, userAge, avatar, message, submit, registration, userInput, formData ] =
+        let [ userName, userAge, avatar, message, submit, registration, userInput, form ] =
                 [ "userName", "userAge", "avatar", "message", "submit","registration", "login", "form" ]
                     .map ( item => this.shadow.getElementById ( item ) );
         
@@ -125,7 +125,7 @@ class registerComponent extends HTMLElement {
                   return;
                 }
                 
-                let formData = new FormData ( formData );
+                let formData = new FormData ( form );
                 
                 fetch ( `https://garevna-form-data.glitch.me/form/${login}`, {
                     method: "POST",
