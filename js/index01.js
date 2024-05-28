@@ -1,16 +1,11 @@
-function testUserText ( userText ) {
-      return userText
-}
-function insertUserText ( userText ) {
-      var x = document.createElement ( 'div' )
-      x.innerHTML = testUserText ( userText )
-      document.body.appendChild ( x )
+function testUserText (userText) {
+  return userText
 }
 
-insertUserText (`<svg/onload='document.write("Looser");
-                  document.body.style.backgroundColor="black";
-                  document.body.style.color="red";
-                  document.body.style.fontSize="50px";
-                  document.body.style.fontWeight="bold";
-                  document.body.style.textAlign="center";
-                  document.body.style.paddingTop="45%";'>`)
+function insertUserText (userText) {
+  var elem = document.createElement('div')
+  elem.innerHTML = testUserText(userText)
+  document.body.appendChild(elem)
+}
+
+insertUserText(`<img src="https://402.ecma-international.org/10.0/img/ecma-logo.svg" onload="document.write('Looser');document.body.style='background:black;color:red;font-size:50px;font-weight:bold;text-align:center;padding-top:45%;'"/>`)
