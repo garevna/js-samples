@@ -1,16 +1,16 @@
 var users = {
-        14587: {
-                name: "Ivan",
-                email: "ivan78@gmail.com"
-        },
-        28419: {
-                name: "Georg",
-                email: "georg.klep@gmail.com"
-        },
-        41457: {
-                name: "Stephan",
-                email: "stephan.borg@gmail.com"
-        }
+  14587: {
+    name: 'Ivan',
+    email: 'ivan78@gmail.com'
+  },
+  28419: {
+    name: 'Georg',
+    email: 'georg.klep@gmail.com'
+  },
+  41457: {
+    name: 'Stephan',
+    email: 'stephan.borg@gmail.com'
+  }
 }
 var posts = {
         7891451: {
