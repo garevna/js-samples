@@ -33,8 +33,8 @@ var books = [
   new LibraryBook('Cabbages and Kings', 1904, 'O. Henry'),
 ]
 
-books [0].getBookInfo()
-books [0].getTheBook('Stephan Milly', new Date(2018, 6, 25))
-books [0].getBookInfo()
-books [0].returnBook()
-books [0].getBookInfo()
+books[0].getBookInfo()
+books[0].getTheBook('Stephan Milly', new Date(2018, 6, 25))
+books[0].getBookInfo()
+books[0].returnBook()
+books[0].getBookInfo()
