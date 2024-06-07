@@ -1,17 +1,17 @@
-var LibraryBook = function (_title = 'Untitled', _year = 'no data', _author = 'no data') {
-  var title = _title
-  var year = _year
-  var author = _author
+var LibraryBook = function (title = 'Untitled', year = 'no data', author = 'no data') {
   var readerName = null
   var readerData = null
+
   function giveTheBook (client, data = new Date()) {
     readerName = client
     readerData = data
   }
+
   this.getBookInfo = function () {
     var text = readerName ? 'handed out' : 'are available'
     console.info(`${author}, ${title} (${year}): ${text}`)
   }
+
   this.getTheBook = function (client, data) {
     if (readerName) {
       this.getBookInfo()
@@ -21,6 +21,7 @@ var LibraryBook = function (_title = 'Untitled', _year = 'no data', _author = 'n
       return { title, year, author }
     }
   }
+
   this.returnBook = function () {
     readerName = null
     readerData = null
