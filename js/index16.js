@@ -20,6 +20,6 @@ window.onhashchange = function (event) {
   var hash = hash > 3 || hash < 0 ? 0 : hash
   location.hash = '#' + hash
   picture.src = pictures[hash]
-  messagePlaceholder.innerText = headers[hash]
+  messagePlaceholder.innerText = messages[hash]
   localStorage.setItem('page' + hash, new Date().toLocaleString())
 }
