@@ -2,7 +2,7 @@ var pictures = [
   'https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg',
   'https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg',
   'https://stepupandlive.files.wordpress.com/2014/09/3d-animated-frog-image.jpg',
-  'http://pwtthemes.com/demo/hannari/wp-content/uploads/2013/03/unicorn-wallpaper.jpg'
+  'https://www.grimdarkmagazine.com/wp-content/uploads/2021/08/roadside-picnic-header.jpeg'
 ]
 var messages = [
   'Everything is about nothing...',
