@@ -4,23 +4,22 @@ var pictures = [
   "https://stepupandlive.files.wordpress.com/2014/09/3d-animated-frog-image.jpg",
   "http://pwtthemes.com/demo/hannari/wp-content/uploads/2013/03/unicorn-wallpaper.jpg"
 ]
-var headers = [
-    "Все ни о чем...",
-    "Ух, ты! Природа, био-мать!",
-    "Понедельник начинается в субботу",
-    "Пикник на обочине"
+var messages = [
+  'Everything is about nothing...',
+  'Wow! Nature, bio-mother!',
+  'Monday starts on Saturday',
+  'Roadside Picnic'
 ]
 
-var picture = document.querySelector ( 'img' )
-picture.width = "300"
-var header = document.createElement ( 'h1' )
-document.body.insertBefore( header, picture )
+var picture = Object.assign(document.querySelector('img'), { width: 300 })
+var messagePlaceholder = document.querySelector('header > h1 > span')
+console.log(messagePlaceholder)
 
-window.onhashchange = function ( event ) {
-    var hash = 1 * location.hash.substr ( 1 )
-    var hash = hash > 3 || hash < 0 ? 0 : hash
-    location.hash = "#" + hash
-    picture.src = pictures [ hash ]
-    header.innerText = headers [ hash ]
-    localStorage.setItem ( "page" + hash, new Date().toLocaleString() )
+window.onhashchange = function (event) {
+  var hash = 1 * location.hash.substr(1)
+  var hash = hash > 3 || hash < 0 ? 0 : hash
+  location.hash = '#' + hash
+  picture.src = pictures[hash]
+  messagePlaceholder.innerText = headers[hash]
+  localStorage.setItem('page' + hash, new Date().toLocaleString())
 }
