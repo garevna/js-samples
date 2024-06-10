@@ -40,13 +40,12 @@ class PictureSlider extends HTMLElement {
   }
 
   async loadData (jsonURL) {
-    const promise = fetch(jsonURL)
-      .then(response => response.json())
+    const pictures = await (await fetch(jsonURL)).json()
     Object.assign(this, {
-      pictures: await promise,
+      pictures,
       slides: [
-        new Slide(this.pictures[0], this.container),
-        new Slide(this.pictures[1], this.container)
+        new Slide(pictures[0], this.container),
+        new Slide(pictures[1], this.container)
       ]
     })
     this.slides[0].mcFromTo(100, 10)
