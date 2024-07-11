@@ -42,17 +42,17 @@ function createSlider (container) {
       return slide
     },
     iterator: (function * () {
-      
-      let getNextPictureNum = function () {
+      const getNextPictureNum = function () {
         return this.currentPicture < this.length - 1 ? this.currentPicture + 1 : 0
       }.bind(this)
 
       const slides = [this.createSlide(), this.createSlide()]
+
       let currentSlide = 0
       this.currentPicture = 0
 
       while (true) {
-        this.currentPicture = getNextPictureNum ()
+        this.currentPicture = getNextPictureNum()
         slides[Math.abs(currentSlide - 1)]
           .style.backgroundImage = `url(${this[this.currentPicture]})                `
         moveSlide(slides[currentSlide], false)
@@ -65,17 +65,17 @@ function createSlider (container) {
   })
 }
 
-// export function showSlider (section) {
+export function showSlider (section) {
+  createSlider(section)
+  pictures.iterator.next()
+}
+
+// export function showSlider () {
+//   const section = document
+//     .querySelector('[script="dynamic-import-1.js"]')
+//     .shadowRoot
+//     .querySelector('section')
+
 //   createSlider(section)
 //   pictures.iterator.next()
 // }
-
-export function showSlider () {
-  const section = document
-    .querySelector('[script="dynamic-import-1.js"]')
-    .shadowRoot
-    .querySelector('section')
-
-  createSlider(pictures, section)
-  pictures.iterator.next()
-}
