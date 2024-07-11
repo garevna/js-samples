@@ -1,4 +1,4 @@
-const section = document.querySelector('[script="dynamic-import-1.js"]' ).shadow.querySelector("section")
+// const section = document.querySelector('[script="dynamic-import-1.js"]' ).shadow.querySelector("section")
 
 const pictures = [
   "https://garevna.github.io/js-quiz/images/148.jpg",
