@@ -1,5 +1,3 @@
-// const section = document.querySelector('[script="dynamic-import-1.js"]' ).shadow.querySelector("section")
-
 const pictures = [
   "https://garevna.github.io/js-quiz/images/148.jpg",
   "https://garevna.github.io/js-quiz/images/149.jpg",
@@ -11,52 +9,73 @@ const pictures = [
   "https://garevna.github.io/js-quiz/images/405.jpg"
 ]
 
-pictures.createSlide = function () {
-  const slide = section.appendChild(document.createElement('figure'))
-  slide.style = `
-    position: fixed;
-    top: 10%;
-    bottom: 10%;
-    left: 10%;
-    right: 10%;
-    transition: all 0.5s;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  `
-  slide.onclick = function () {
-    this.iterator.next ()
-  }.bind(this)
+const style = `
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  transition: all 0.5s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+`
 
-  return slide
+function moveSlide (slide, active) {
+  Object.assign(slide.style, {
+    left: `${ active ? 5 : -100 }%`,
+    right: `${ active ? 5 : 100 }%`,
+    opacity: active ? 1 : 0
+  })
 }
 
-pictures.iterator = (function * () {
-  function moveSlide (slide, active) {
-    slide.style.left = `${ active ? 10 : -100 }%`
-    slide.style.right = `${ active ? 10 : 100 }%`
-    slide.style.opacity = active ? 1 : 0
-  }
-  let getNextPictureNum = function () {
-    return this.currentPicture < this.length - 1 ? this.currentPicture + 1 : 0
-  }.bind(this)
+function createSlider (container) {
+  Object.assign(pictures, {
+    createSlide () {
+      const slide = container
+        .appendChild(document.createElement('figure'))
+      slide.style = style
+      slide.onclick = function () {
+        this.iterator.next()
+      }.bind(this)
 
-  const slides = [this.createSlide(), this.createSlide()]
-  let currentSlide = 0
-  this.currentPicture = 0
+      return slide
+    },
+    iterator: (function * () {
+      
+      let getNextPictureNum = function () {
+        return this.currentPicture < this.length - 1 ? this.currentPicture + 1 : 0
+      }.bind(this)
 
-  while (true) {
-    this.currentPicture = getNextPictureNum ()
-    slides[Math.abs(currentSlide - 1)]
-      .style.backgroundImage = `url(${this[this.currentPicture]})                `
-    moveSlide(slides[currentSlide], false)
-    moveSlide(slides[Math.abs(currentSlide - 1)], true )
-    currentSlide = Math.abs(currentSlide - 1)
+      const slides = [this.createSlide(), this.createSlide()]
+      let currentSlide = 0
+      this.currentPicture = 0
 
-    yield slides[currentSlide]
-  }
-}).call(pictures)
+      while (true) {
+        this.currentPicture = getNextPictureNum ()
+        slides[Math.abs(currentSlide - 1)]
+          .style.backgroundImage = `url(${this[this.currentPicture]})                `
+        moveSlide(slides[currentSlide], false)
+        moveSlide(slides[Math.abs(currentSlide - 1)], true )
+        currentSlide = Math.abs(currentSlide - 1)
 
-pictures.iterator.next()
+        yield slides[currentSlide]
+      }
+    }.bind(pictures))()
+  })
+}
 
+// export function showSlider (section) {
+//   createSlider(section)
+//   pictures.iterator.next()
+// }
 
+export function showSlider () {
+  const section = document
+    .querySelector('[script="dynamic-import-1.js"]')
+    .shadowRoot
+    .querySelector('section')
+
+  createSlider(pictures, section)
+  pictures.iterator.next()
+}
