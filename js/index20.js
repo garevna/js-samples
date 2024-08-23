@@ -89,7 +89,7 @@ class Bankomat extends HTMLElement {
 
 Object.assign(Bankomat.prototype, {
   pictures: {
-    active: 'https://garevna.github.io/js-samples/pictures/bankomat-active.jpg',
+    active: 'https://garevna.github.io/js-samples/pictures/bankomat-active.png',
     input: 'https://garevna.github.io/js-samples/pictures/bankomat-input.jpg',
     normal: 'https://garevna.github.io/js-samples/pictures/bankomat-normal.jpg',
     card: 'https://garevna.github.io/js-samples/pictures/bankomat-card.jpg'
@@ -102,10 +102,11 @@ Object.assign(Bankomat.prototype, {
   ],
   css: `
       .wrapper {
-        width: 100%;
+        width: 70%;
         font-family: monospace, Arial;
         font-size: 16px;
         padding: 32px;
+	margin: auto;
       }
       figure {
         width: 80%;
