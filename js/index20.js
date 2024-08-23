@@ -86,10 +86,10 @@ class Bankomat extends HTMLElement {
 
 Object.assign(Bankomat.prototype, {
   pictures: {
-    active: 'https://allfin.com.ua/wp-content/uploads/2018/12/privat-bankomat.png',
-    input: 'https://politeka.net/crops/fd0f4a/360x0/1/0/2019/10/23/fgHSC12RdeUAamFYbKd7t3YRElHat32z.jpg',
-    normal: 'https://acmc.ua/wp-content/uploads/2022/03/pryvatbank-vstanovyv-novi-pravyla-znyattya-gotivky-z-bankomativ.jpg',
-    card: 'https://i.colnect.net/f/788/919/PrivatBank-Debit-Card.jpg'
+    active: 'https://garevna.github.io/js-samples/pictures/bankomat-active.jpg',
+    input: 'https://garevna.github.io/js-samples/pictures/bankomat-input.jpg',
+    normal: 'https://garevna.github.io/js-samples/pictures/bankomat-normal.jpg',
+    card: 'https://garevna.github.io/js-samples/pictures/bankomat-card.jpg'
       
   },
   options: [
