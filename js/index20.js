@@ -1,3 +1,6 @@
+document.querySelector('#input_field').remove()
+document.querySelector('header').remove()
+
 const addElem = (tagName, container = document.body) => container.appendChild(document.createElement(tagName))
 
 document.body.style.background = '#000'
