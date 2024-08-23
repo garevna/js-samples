@@ -1,194 +1,224 @@
-const addElement = ( tagName, container ) =>
-    ( container ? container : document.body ).appendChild (
-          document.createElement ( tagName )
-    )
+const addElem = (tagName, container = document.body) => container.appendChild(document.createElement(tagName))
 
-class BankomatElement extends HTMLElement {
-        constructor() {
-                super ()
-                this.wrapper = document.createElement ( 'section' )
-                this.wrapper.className = "wrapper"
-                this.picture = addElement ( 'img', this.wrapper )
+document.body.style.background = '#000'
 
-                this.cardsPlace = addElement ( 'div', this.wrapper )
+class Bankomat extends HTMLElement {
+  constructor () {
+    super()
 
-                this.picture.className = "bankomat"
-                this.setPicture ( "normal" )
-                this.message = addElement ( 'p', this.wrapper )
+    const shadow = this.attachShadow({ mode: 'closed' })
 
+    Object.assign(addElem('style', shadow), {
+      textContent: this.css
+    })
 
-                let style = document.createElement ( 'style' )
-                style.textContent = `
-                        .wrapper {
-                            width: 100%;
-                            font-family: monospace, Arial;
-                            font-size: 16px;
-                            padding: 30px;
-                        }
-                        div { width: 100%; padding: 30px; height: 100px; }
-                        .bankomat {
-                            width:25%;
-                            float: left;
-                            transition: all 1s;
-                        }
-                        button {
-                          position: absolute;
-                          bottom: 20px;
-                          left: 20px;
-                        }
-                        .card {
-                            width:20%;
-                            margin: 2%;
-                            float: left;
-                            transition: all 1s;
-                        }
-                        p { clear: both; padding-top: 20px; }
-                        * {
-                            backgrond-color: transparent;
-                            color: #5f5;
-                        }
-                        input, button {
-                            font-size: 16px;
-                            padding: 5px 10px;
-                            color: #789;
-                        }
-                        [type="radio"] {
-                            width: 20px;
-                            height: 20px;
-                        }
-                `
+    this.wrapper = Object.assign(addElem('section', shadow), {
+      className: 'wrapper'
+    })
 
-                this.shadow = this.attachShadow ( { mode: 'closed' } )
-                this.shadow.appendChild ( style )
-                this.shadow.appendChild ( this.wrapper )
-        }
+    Object.assign(this, {
+      picture: Object.assign(addElem('img', this.wrapper), {
+        className: 'bankomat'
+      }),
+      cardsPlace: addElem('figure', this.wrapper),
+      message: Object.assign(addElem('div', this.wrapper), {
+        style: `
+          width: 90%;
+          margin-top: 48px;
+          border: solid 1px #ddd;
+          border-radius: 4px;
+          padding: 8px 16px;
+        `
+      })
+    })
 
-        setPicture ( regim ) {
-            let pictures = {
-              active: "https://voxukraine.org/wp-content/uploads/2017/07/Bankomat-907x600.jpg",
-              input: "https://nashkiev.ua/assets_images/post/000/100/824/image_originals.jpg",
-              normal: "http://alldonetsk.info/sites/default/files/image/spravka/privattbank.jpg"
-            }
-            this.picture.src = pictures [ regim ]
-        }
-        async inputData ( promptText ) {
-            this.setPicture ( "input" )
-            this.message.innerText = promptText
-            let elem = addElement ( 'input', bankomat.wrapper )
-            let promise = new Promise ( resolve => {
-                elem.onchange = function ( event ) {
-                    resolve ( this.value )
-                }
-            })
-            let answer = await promise.then ( res => res )
-            elem.parentNode.removeChild ( elem )
-            this.setPicture ( "normal" )
-            return answer
-        }
-        addCash ( sum ) {
-                cash += sum
-        }
-        async insertCard ( card ) {
-            let pin = await this.inputData ( "Введите пинкод:" )
-            let answer = card.cash ( pin )
-            let cash = parseFloat ( answer )
-            if ( !cash && cash !== 0 ) {
-                this.message.innerText = answer
-                this.message.style.color = "red"
-                this.setPicture ( "normal" )
-                return
-            }
-            this.message.style.color = "#7ad"
-            this.setPicture ( "active" )
-            this.message.innerText = "Выберите операцию:"
-            let text = [
-              'Посмотреть остаток счета<br>',
-              'Снятие наличных<br>',
-              'Пополнить карту<br>'
-            ]
-            let operations = []
-            for ( let x = 0; x < 3; x++ ) {
-                operations.push (
-                  [
-                    addElement ( 'input', bankomat.wrapper ),
-                    addElement ( 'label', bankomat.wrapper )
-                  ]
-                )
-            }
-            operations.forEach ( ( el, index ) => {
-                el[1].innerHTML = text [ index ]
-                el[0].type = "radio"
-                el[0].name = "operation"
-                el[0].value = index
-                el[0].__parent = this
-                el[0].onclick = function ( event ) {
-                    let selectedOperation = Number ( this.value )
-                    switch ( selectedOperation ) {
-                        case 0:
-                          this.__parent.message.innerText = "Остаток по карте: " + cash + " ua"
-                          break;
-                        case 1:
-                          this.__parent.inputData ( "Введите сумму:" )
-                              .then ( response => {
-                                  let answer = card.getMoney ( pin, response )
-                                  this.__parent.message.innerText =
-                                        parseFloat ( this.value ) ?
-                                            ( "Получите: " + answer ) : answer
-                              })
-                          break;
-                        case 2:
-                          this.__parent.inputData ( "Сумма пополнения:" )
-                            .then ( response => {
-                                if ( parseFloat ( response ) )
-                                    card.addCash( parseFloat ( response ) )
-                            })
-                          this.__parent.message.innerText = ""
-                          break;
-                        default:
-                          break;
-                    }
+    this.setPicture('normal')
+  }
 
-                    operations.forEach (
-                        x => x.forEach ( y => y.parentNode.removeChild ( y ) )
-                    )
-                }
-            })
-        }
+  setPicture (mode) {
+    this.picture.src = this.pictures[mode]
+  }
+
+  async inputData (promptText) {
+    this.setPicture('input')
+    this.message.innerText = promptText
+    const elem = addElem('input', bankomat.message)
+    const promise = new Promise(resolve => {
+      elem.onchange = function (event) {
+        resolve(event.target.value)
+        event.target.remove()
+      }
+    })
+
+    return promise
+  }
+    
+  async insertCard (card) {
+    const pin = await this.inputData('Enter the pincode:')
+    if (!card.testPin(pin)) return
+
+    this.message.innerHTML = ''
+    this.setPicture('active')
+
+    this.options
+      .forEach((option, index) => {
+        const id = `option${index}`
+        Object.assign(addElem('input', this.message), {
+          type: 'radio',
+          name: 'operation',
+          id,
+          value: index,
+          onclick: async function (event) {
+            const sum = index ? await this.inputData('Enter the amount:') : 0
+            card[['showCash', 'withdrawal', 'addCash'][index]](pin, sum)
+            
+            this.setPicture('normal')
+          }.bind(this)
+        })
+        Object.assign(addElem('label', this.message), {
+          for: id,
+          innerText: this.options[index]
+        })
+        addElem('br', this.message)
+      })
+  }
 }
 
-BankomatElement.createCard = function ( bankomat ) {
-    let cardNumber = prompt ( "Введите номер карты:" )
-    if ( !cardNumber ) return
-    let cardPin = prompt ( "Новый пинкод:" )
-    if ( !cardPin ) return
-    let cardCash = 0
-    return function () {
-        let card = addElement ( 'img', bankomat.cardsPlace )
-        card.src = "https://privatbank.ua/uploads/media/default/0001/01/c99a3c232bdc4cf2487984525969c6fe375b152d.png"
-        card.className = "card"
-        card.onclick = function ( event ) {
-            bankomat.setPicture ( "active" )
-            bankomat.insertCard ( this, cardPin, cardNumber )
-        }
-        card.cash = pin => pin === cardPin ? cardCash : "Access denied"
-        card.getMoney = ( pin, sum ) => {
-            if ( sum > cardCash ) return "Недостаточно денег на счету"
-            cardCash -= sum
-            return sum
-        }
-        card.addCash = function ( sum ) {
-            if ( sum ) cardCash += sum
-        }
+Object.assign(Bankomat.prototype, {
+  pictures: {
+    active: 'https://allfin.com.ua/wp-content/uploads/2018/12/privat-bankomat.png',
+    input: 'https://politeka.net/crops/fd0f4a/360x0/1/0/2019/10/23/fgHSC12RdeUAamFYbKd7t3YRElHat32z.jpg',
+    normal: 'https://acmc.ua/wp-content/uploads/2022/03/pryvatbank-vstanovyv-novi-pravyla-znyattya-gotivky-z-bankomativ.jpg',
+    card: 'https://i.colnect.net/f/788/919/PrivatBank-Debit-Card.jpg'
+      
+  },
+  options: [
+    'View account balance',
+    'Withdraw cash',
+    'Recharge your card'
+  ],
+  css: `
+      .wrapper {
+        width: 100%;
+        font-family: monospace, Arial;
+        font-size: 16px;
+        padding: 32px;
+      }
+      figure {
+        width: 80%;
+        padding: 16px 8px;
+        height: 120px;
+        overflow: auto;
+        border: solid 1px #777;
+        margin-top: 48px;
+      }
+      .bankomat {
+        width: 40%;
+        transition: all 1s;
+      }
+      button {
+        position: absolute;
+        top: 48px;
+        right: 16px;
+      }
+      .card {
+        width:20%;
+        margin: 2%;
+        float: left;
+        transition: all 1s;
+      }
+      p { clear: both; padding-top: 24px; }
+      * {
+        backgrond-color: transparent;
+        color: #ddd;
+      }
+      input, button {
+        font-size: 16px;
+        padding: 8px 12px;
+        color: #888;
+        margin-left: 8px;
+      }
+      [type="radio"] {
+        appearance: none;
+	    width: 20px;
+	    height: 20px;
+	    border: 2px solid #777;
+	    border-radius: 50%;
+	    background-clip: content-box;
+	    padding: 3px;
+        vertical-align: middle;
+        margin: 8px;
+      }
+      [type="radio"]:checked {
+	    background-color: #090;
+      }
+      .denied {
+        color: #D00;
+      }
+    `
+})
+
+class Card {
+  constructor (bankomat) {
+    this.number = Math.round(Math.random() * 10000000)
+    const pincode = prompt('Set pincode for the card ' + this.number)
+    let cash = 0
+
+    function getCash (sum) {
+      cash -= sum
+      return sum
     }
+
+    this.testPin = function (pin) {
+      pincode !== pin && this.showMessage('<b class="denied">Invalid pincode. Access denied</b>')
+      return pincode === pin
+    }
+
+    this.showCash = function (pin) {
+      this.testPin(pin) && this.showMessage(`Account amount: ${cash} UAH`)
+    }
+
+    this.addCash = async function (pin, sum) {
+      const amount = parseInt(sum)
+      if (amount) {
+        cash += amount
+        this.showMessage('Success. Account amount has been replenished.')
+      } else this.showMessage('<b class="denied">Operation failed. Invalid amount.<b>')
+    }
+
+    this.withdrawal = function (pin, sum) {
+      const amount = parseInt(sum)
+      this.testPin(pin)
+        ? amount && amount <= cash
+          ? getCash(amount) && this.showMessage(`Get the money: ${amount}`)
+          : this.showMessage('<b class="denied">Not enough money in the account.</b>')
+        : null
+    }
+
+    this.showMessage = function (text) {
+      bankomat.message.innerHTML = text
+    }
+    
+    this.elem = Object.assign(addElem('img', bankomat.cardsPlace), {
+      src: bankomat.pictures.card,
+      className: 'card',
+      onclick: function (event) {
+        bankomat.setPicture('active')
+        bankomat.insertCard(this)
+      }.bind(this),
+    })
+  }
 }
 
-customElements.define ( 'bankomat-element', BankomatElement )
+customElements.define('bankomat-element', Bankomat)
 
-let bankomat = addElement ( 'bankomat-element' )
+const bankomat = addElem('bankomat-element')
 
-let newCard = addElement ( 'button', bankomat.wrapper )
-newCard.innerText = "New card"
-newCard.bankomat = bankomat
-newCard.onclick = function ( event ) {
-    BankomatElement.createCard ( this.bankomat ) ()
-}
+const button = Object.assign(addElem('button', bankomat.wrapper), {
+  innerText: 'Create new card',
+  bankomat,
+  onclick (event) {
+    const card = new Card(bankomat)
+  }
+})
+
