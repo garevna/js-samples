@@ -1,5 +1,5 @@
 {
-  "page_title": "JavaScript | Занятие 7",
+  "page_title": "JavaScript | Lesson 7",
   "meta_descr": "JavaScript: events",
   "meta_keywords": "createEvent",
   "start_function":"/Javascript/js_object.js",
@@ -7,71 +7,71 @@
   "styleSheets": [],
   "clear_function":"",
   "styles": "",
-  "menu_title": "Занятие 7",
+  "menu_title": "Lesson 7",
   "src": [
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/10/",
-      "folder_name": "Создание библиотек",
-      "item_name": "Библиотека функций (1)",
+      "folder_name": "Library creation",
+      "item_name": "Function Library (1)",
       "button_type": "jsfiddle",
-      "h_text": "Простой пример в песочнице"
+      "h_text": "Simple Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/1/",
-      "folder_name": "Создание библиотек",
-      "item_name": "Библиотека функций (2)",
+      "folder_name": "Library creation",
+      "item_name": "Function Library (2)",
       "button_type": "jsfiddle",
-      "h_text": "Более сложный пример в песочнице"
+      "h_text": "More Complex Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/9/",
-      "folder_name": "Создание библиотек",
-      "item_name": "Массив функций (1)",
+      "folder_name": "Library creation",
+      "item_name": "Array of functions (1)",
       "button_type": "jsfiddle",
-      "h_text": "Простой пример в песочнице"
+      "h_text": "Simple Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/8/",
-      "folder_name": "Создание библиотек",
-      "item_name": "Массив функций (2)",
+      "folder_name": "Library creation",
+      "item_name": "Array of functions (2)",
       "button_type": "jsfiddle",
-      "h_text": "Более сложный пример в песочнице"
+      "h_text": "More Complex Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/7/",
-      "folder_name": "Создание событий",
-      "item_name": "Для одного элемента",
+      "folder_name": "Events creation",
+      "item_name": "For a Single Element",
       "button_type": "jsfiddle",
-      "h_text": "Пример в песочнице"
+      "h_text": "Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net/garevna/u0st8oyL/4/",
-      "folder_name": "Создание событий",
-      "item_name": "Для нескольких элементов",
+      "folder_name": "Events creation",
+      "item_name": "For Multiple Elements",
       "button_type": "jsfiddle",
-      "h_text": "Пример в песочнице"
+      "h_text": "Sandbox Example"
     },
     {
       "type": "window",
       "url": "https://jsbin.com",
-      "folder_name": "Песочницы",
+      "folder_name": "Sandbox",
       "item_name": "jsbin.com",
       "button_type": "jsbin",
-      "h_text": "Песочница"
+      "h_text": "Sandbox"
     },
     {
       "type": "window",
       "url": "https://jsfiddle.net",
-      "folder_name": "Песочницы",
+      "folder_name": "Sandbox",
       "item_name": "jsfiddle.net",
       "button_type": "jsfiddle",
-      "h_text": "Песочница"
+      "h_text": "Sandbox"
     }
   ],
   "news": []
