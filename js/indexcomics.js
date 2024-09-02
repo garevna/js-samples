@@ -44,7 +44,7 @@ class PictureSlider extends HTMLElement {
 
     this.soundButton = Object.assign(this.createElem('button', this.container), {
       className: 'sound-button',
-      onclick: function (ev) => {
+      onclick: function (ev) {
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
         this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
         this.audio.play()
