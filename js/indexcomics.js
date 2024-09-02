@@ -48,7 +48,7 @@ class PictureSlider extends HTMLElement {
       className: 'sound-button',
       off: true,
       onclick: function (event) {
-        event.target.style.off Object.assign(event.target.style, {
+        event.target.style.off && Object.assign(event.target.style, {
           background: `url(${host}/icons/playlist-music.svg)`
         })
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
