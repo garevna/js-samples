@@ -52,16 +52,16 @@ class PictureSlider extends HTMLElement {
           backgroundImage: `url(${host}/icons/playlist-music.svg)`
         })
         event.target.off = false
-        this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
-        this.source.src = `${host}/sounds/${this.musics[this.music]}.mp3`
+        // this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
+        // this.source.src = `${host}/sounds/${this.musics[this.music]}.mp3`
         this.audio.play()
       }.bind(this)
     })
   }
 
   connectedCallback () {
-    // this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
-    this.music = -1
+    this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
+    // this.music = -1
     // this.soundButton.dispatchEvent(new Event('click'))
   }
 
