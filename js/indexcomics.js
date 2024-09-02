@@ -12,7 +12,7 @@ class PictureSlider extends HTMLElement {
       container: this.createElem('figure'),
       currentIndex: 0,
       currentSlide: 0,
-      music: this.musics[0]
+      music: 0
     })
 
     Object.assign(this, {
@@ -41,11 +41,28 @@ class PictureSlider extends HTMLElement {
       innerHTML: '>',
       onclick: () => this.changePicture('right')
     })
+
+    this.soundButton = Object.assign(this.createElem('button', this.container), {
+      className: 'sound-button',
+      onclick: function (ev) => {
+        this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
+        this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
+        this.audio.play()
+      }.bind(this)
+    })
   }
 
   connectedCallback () {
     this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
     this.audio.play()
+  }
+
+  static get observedAttributes() {
+    return ['music']
+  }
+
+  attributeChangedCallback (attrName, oldVal, newVal) {
+    
   }
 
   createElem (tagName, container) {
@@ -155,6 +172,16 @@ function getStyle () {
     button:hover {
       font-size: 32px;
       text-shadow: 2px 2px 4px #000000b0;
+    }
+    .sound-button {
+      position: relative;
+      margin: 16px auto;
+      width: 48px;
+    }
+    .sound-button:before {
+      content: '♫';
+      font-size: 48px;
+      color: #fa0;
     }
     #left { left: 4%; }
     #right { right: 4%; }
