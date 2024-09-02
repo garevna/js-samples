@@ -1,5 +1,4 @@
-(elem => elem && elem.remove())(document.querySelector('input'))
-(elem => elem && elem.remove())(document.querySelector('header'))
+(elems.forEach(elem => elem && elem.remove()))(['input', 'header'].map(selector => document.querySelector(selector))
 
 const elem = document.body.appendChild(document.createElement('picture-slider'))
 elem.setAttribute('src', 'data_files/comics.json')
