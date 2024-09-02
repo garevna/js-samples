@@ -61,7 +61,7 @@ class PictureSlider extends HTMLElement {
   connectedCallback () {
     // this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
     this.music = -1
-    this.soundButton.dispatchEvent(new Event('click'))
+    // this.soundButton.dispatchEvent(new Event('click'))
   }
 
   static get observedAttributes() {
