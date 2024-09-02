@@ -15,7 +15,7 @@ class PictureSlider extends HTMLElement {
       music: this.musics[0]
     })
 
-    this.audio = this.createElem('source', this.createElem('audio', container))
+    this.audio = this.createElem('source', this.createElem('audio', this.container))
     this.audio.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
 
     this.loadData(this.getAttribute('src'))
