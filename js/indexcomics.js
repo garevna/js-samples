@@ -15,8 +15,13 @@ class PictureSlider extends HTMLElement {
       music: this.musics[0]
     })
 
-    this.audio = this.createElem('source', this.createElem('audio', this.container))
-    this.audio.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
+    Object.assign(this, {
+      audio: this.createElem('audio', this.container)
+    })
+
+    Object.assign(this, {
+      source: this.createElem('source', this.audio)
+    })
 
     this.loadData(this.getAttribute('src'))
 
@@ -36,6 +41,11 @@ class PictureSlider extends HTMLElement {
       innerHTML: '>',
       onclick: () => this.changePicture('right')
     })
+  }
+
+  connectedCallback () {
+    this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
+    this.audio.play()
   }
 
   createElem (tagName, container) {
