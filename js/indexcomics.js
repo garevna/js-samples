@@ -1,5 +1,7 @@
 (elems => elems.forEach(elem => elem && elem.remove()))(['input', 'header', '.logo'].map(selector => document.querySelector(selector)))
 
+const host = 'https://garevna.github.io/js-samples'
+
 const elem = document.body.appendChild(document.createElement('picture-slider'))
 elem.setAttribute('src', 'data_files/comics.json')
 
@@ -44,9 +46,13 @@ class PictureSlider extends HTMLElement {
 
     this.soundButton = Object.assign(this.createElem('button', this.container), {
       className: 'sound-button',
-      onclick: function (ev) {
+      off: true,
+      onclick: function (event) {
+        event.target.style.off Object.assign(event.target.style, {
+          background: `url(${host}/icons/playlist-music.svg)`
+        })
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
-        this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
+        this.source.src = `${host}/sounds/${this.musics[this.music]}.mp3`
         this.audio.play()
       }.bind(this)
     })
@@ -175,15 +181,21 @@ function getStyle () {
       text-shadow: 2px 2px 4px #000000b0;
     }
     .sound-button {
-      position: relative;
-      margin: 16px auto;
+      position: fixed;
+      top: 12px;
+      right: 16px;
       width: 48px;
+      background-image: url(${host}/icons/music-off.svg);
+      background-size: 48px;
     }
-    .sound-button:before {
+    .sound-button:hover {
+      background-image: url(${host}/icons/music.svg);
+    }
+    /*.sound-button:before {
       content: '♫';
       font-size: 48px;
       color: #fa0;
-    }
+    }*/
     #left { left: 4%; }
     #right { right: 4%; }
     div {
