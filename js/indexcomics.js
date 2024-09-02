@@ -49,7 +49,7 @@ class PictureSlider extends HTMLElement {
       off: true,
       onclick: function (event) {
         event.target.off && Object.assign(event.target.style, {
-          background: `url(${host}/icons/playlist-music.svg)`
+          backgroundImage: `url(${host}/icons/playlist-music.svg)`
         })
         event.target.off = false
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
