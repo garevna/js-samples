@@ -48,9 +48,10 @@ class PictureSlider extends HTMLElement {
       className: 'sound-button',
       off: true,
       onclick: function (event) {
-        event.target.style.off && Object.assign(event.target.style, {
+        event.target.off && Object.assign(event.target.style, {
           background: `url(${host}/icons/playlist-music.svg)`
         })
+        event.target.off = false
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
         this.source.src = `${host}/sounds/${this.musics[this.music]}.mp3`
         this.audio.play()
@@ -182,11 +183,12 @@ function getStyle () {
     }
     .sound-button {
       position: fixed;
-      top: 12px;
-      right: 16px;
+      top: 32px;
+      right: 32px;
       width: 48px;
+      height: 48px;
       background-image: url(${host}/icons/music-off.svg);
-      background-size: 48px;
+      background-size: contain;
     }
     .sound-button:hover {
       background-image: url(${host}/icons/music.svg);
