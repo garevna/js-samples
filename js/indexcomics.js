@@ -47,20 +47,24 @@ class PictureSlider extends HTMLElement {
     this.soundButton = Object.assign(this.createElem('button', this.container), {
       className: 'sound-button',
       off: true,
+      index: 0,
       onclick: function (event) {
         event.target.off && Object.assign(event.target.style, {
           backgroundImage: `url(${host}/icons/playlist-music.svg)`
         })
         event.target.off = false
-        // this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
-        // this.source.src = `${host}/sounds/${this.musics[this.music]}.mp3`
-        this.audio.play()
+        this.audio.pause()
+        event.target.index = event.target.index >= this.musics.length - 1 ? 0 : event.target.index + 1
+        this.source.src = `${host}/sounds/${this.musics[event.target.index]}.mp3`
+        setTimeout(function () {
+          this.audio.play()
+        }.bind(this))
       }.bind(this)
     })
   }
 
   connectedCallback () {
-    this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
+    // this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
     // this.music = -1
     // this.soundButton.dispatchEvent(new Event('click'))
   }
@@ -117,14 +121,14 @@ class PictureSlider extends HTMLElement {
 }
 
 PictureSlider.prototype.musics = [
-  'ballerino',
   'calm-music',
   'music-box',
   'mystical-music',
   'run-away-with-me',
   'september-story',
   'story-unfolds',
-  'violin-music'
+  'violin-music',
+  'ballerino'
 ]
 
 customElements.define ('picture-slider', PictureSlider)
