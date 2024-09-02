@@ -1,4 +1,5 @@
 (elem => elem && elem.remove())(document.querySelector('input'))
+(elem => elem && elem.remove())(document.querySelector('header'))
 
 const elem = document.body.appendChild(document.createElement('picture-slider'))
 elem.setAttribute('src', 'data_files/comics.json')
@@ -11,8 +12,12 @@ class PictureSlider extends HTMLElement {
       pictures: [],
       container: this.createElem('figure'),
       currentIndex: 0,
-      currentSlide: 0
+      currentSlide: 0,
+      audio: this.createElem('source', this.createElem('audio', container)),
+      music: this.musics[0]
     })
+
+    this.audio.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
 
     this.loadData(this.getAttribute('src'))
 
@@ -57,7 +62,7 @@ class PictureSlider extends HTMLElement {
     const nextSlide = this.currentSlide === 0 ? 1 : 0
     const nextIndex = this.getNextIndex(direction)
     this.slides[nextSlide].setPicture(this.pictures[nextIndex])
-    this.slides[nextSlide].init (-to)
+    this.slides[nextSlide].init(-to)
     this.slides[this.currentSlide].mcFromTo(10, to, 0)
     this.slides[nextSlide].mcFromTo(-to, 10, 1)
     setTimeout(function () {
@@ -76,6 +81,17 @@ class PictureSlider extends HTMLElement {
         : this.currentIndex + 1
   }
 }
+
+PictureSlider.prototype.musics = [
+  'ballerino',
+  'calm-music',
+  'music-box',
+  'mystical-music',
+  'run-away-with-me',
+  'september-story',
+  'story-unfolds',
+  'violin-music'
+]
 
 customElements.define ('picture-slider', PictureSlider)
 
