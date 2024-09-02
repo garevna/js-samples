@@ -46,15 +46,16 @@ class PictureSlider extends HTMLElement {
       className: 'sound-button',
       onclick: function (ev) {
         this.music = this.music === this.musics.length - 1 ? 0 : ++this.music
-        this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
+        this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
         this.audio.play()
       }.bind(this)
     })
   }
 
   connectedCallback () {
-    this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
-    this.audio.play()
+    // this.source.src = `https://garevna.github.io/js-samples/sounds/${this.music}.mp3`
+    this.music = -1
+    this.soundButton.dispatchEvent(new Event('click'))
   }
 
   static get observedAttributes() {
