@@ -2,6 +2,29 @@
 
 const host = 'https://garevna.github.io/js-samples'
 
+const subtitles = [
+  '',
+  'And so went my day.',
+  'So, I feel like the noose around my neck is getting tighter and tighter.',
+  'I\'m tired of thinking about things and doing things.',
+  'Tired.',
+  '',
+  'Wait here.',
+  '',
+  '',
+  '',
+  '',
+  'In some situations, the only way out is to wait.\nAnd all we have is this moment.',
+  'Even when it feels like the last circle of hell\nsomehow I feel like if there\'s something to wait for, you won\'t drown in it.',
+  'It\'s like an aqualung.\nThere you are underwater and it feels like there\'s almost nothing left to breathe.\nBut you get a few gulps from up there.',
+  'I guess I would call it an aspiration, or a goal.\nAs long as you have purpose, you\'ll live.\nAnd it\'s not hope, and it\'s not a fruitless search for happiness.',
+  'To hell with happiness, those who seek it are the most unhappy people.\n...\nYou know why I think you can do it?',
+  'Because you\'re not going for a fruitless pursuit of happiness.',
+  'And someday you\'re gonna surface and breathe.\nAnd while you\'re waiting, you\'re gonna start looking around for something to do.\nAnd maybe you\'ll even find yourself wondering... who knows.',
+  'And you won\'t be waiting alone.\nYou can share your waiting with others,\nwho want to share the moment when you can take off the scuba tank.',
+  'Look, the fireflies are on.'
+]
+
 const elem = document.body.appendChild(document.createElement('picture-slider'))
 elem.setAttribute('src', 'data_files/comics.json')
 
@@ -11,6 +34,7 @@ class PictureSlider extends HTMLElement {
 
     Object.assign(this, {
       pictures: [],
+      subtitles,
       container: this.createElem('figure'),
       currentIndex: 0,
       currentSlide: 0
@@ -34,18 +58,10 @@ class PictureSlider extends HTMLElement {
       innerHTML: '>',
       onclick: () => this.changePicture('right')
     })
-  }
 
-  connectedCallback () {
-    //
-  }
-
-  static get observedAttributes() {
-    return ['music']
-  }
-
-  attributeChangedCallback (attrName, oldVal, newVal) {
-    
+    this.subtitle = Object.assign(this.createElem('button', this.container), {
+      className: 'picture-subtitles'
+    })
   }
 
   createElem (tagName, container) {
@@ -74,6 +90,7 @@ class PictureSlider extends HTMLElement {
     this.slides[nextSlide].init(-to)
     this.slides[this.currentSlide].mcFromTo(10, to, 0)
     this.slides[nextSlide].mcFromTo(-to, 10, 1)
+    this.subtitle.textContent = this.subtitles[this.currentSlide]
     setTimeout(function () {
       this.currentSlide = nextSlide
       this.currentIndex = nextIndex
@@ -159,6 +176,13 @@ function getStyle () {
       background-size: contain;
       background-position: center center;
       transition: all 0.8s;
+    }
+
+    .picture-subtitles {
+      position: fixed;
+      bottom: 8%;
+      width: 80%;
+      margin: 0 10%;
     }
   `
 }
