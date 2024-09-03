@@ -173,6 +173,7 @@ document.head
   .textContent = `
     .play-button, .media-button {
       border: 0;
+      padding: 0;
       background: transparent;
       box-sizing: border-box;
       cursor: pointer;
@@ -219,12 +220,12 @@ document.head
 
 const media = [
   'desolate-fields-of-sorrow',
-  'enchanted-moonlit-ballad',
+  'enchanted-moonlight-ballad',
   'eternal-twilight-sonata',
   'haunted-shadows-on-hills',
   'majestic-orchestral-calmness',
   'midnight',
-  'midnight-moonlit-echoes',
+  'midnight-moonlight-echoes',
   'robotic-dance-waltz',
   'serene-celestial-opera-peace',
   'serene-grand-orchestral-journey',
