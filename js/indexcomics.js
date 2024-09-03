@@ -180,19 +180,19 @@ document.head
       cursor: pointer;
     }
     .play-button {
-      bottom: 2%;
-      width: 48px;
-      height: 48px;
+      top: 20px;
+      left: 16px;
+      width: 24px;
+      height: 24px;
       border-color: transparent transparent transparent #09b;
       transition: 100ms all ease;
       border-style: solid;
-      border-width: 24px 0 24px 48px;
-      margin: 0 calc(50% - 24px);
+      border-width: 12px 0 12px 24px;
     }
 
     .play-button.paused {
       border-style: double;
-      border-width: 0px 0 0px 48px;
+      border-width: 0px 0 0px 24px;
     }
 
     .play-button:hover {
@@ -205,9 +205,9 @@ document.head
       right: 16px;
       border-radius: 50%;
       border: solid 3px #fa0;
-      width: 64px;
-      height: 64px;
-      font-size: 36px;
+      width: 48px;
+      height: 48px;
+      font-size: 28px;
       color: #fa0;
       z-index: 50;
     }
