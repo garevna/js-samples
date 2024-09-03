@@ -13,16 +13,7 @@ class PictureSlider extends HTMLElement {
       pictures: [],
       container: this.createElem('figure'),
       currentIndex: 0,
-      currentSlide: 0,
-      music: 0
-    })
-
-    Object.assign(this, {
-      audio: this.createElem('audio', this.container)
-    })
-
-    Object.assign(this, {
-      source: this.createElem('source', this.audio)
+      currentSlide: 0
     })
 
     this.loadData(this.getAttribute('src'))
@@ -43,30 +34,10 @@ class PictureSlider extends HTMLElement {
       innerHTML: '>',
       onclick: () => this.changePicture('right')
     })
-
-    this.soundButton = Object.assign(this.createElem('button', this.container), {
-      className: 'sound-button',
-      off: true,
-      index: 0,
-      onclick: function (event) {
-        event.target.off && Object.assign(event.target.style, {
-          backgroundImage: `url(${host}/icons/playlist-music.svg)`
-        })
-        event.target.off = false
-        this.audio.pause()
-        event.target.index = event.target.index >= this.musics.length - 1 ? 0 : event.target.index + 1
-        this.source.src = `${host}/sounds/${this.musics[event.target.index]}.mp3`
-        setTimeout(function () {
-          this.audio.play()
-        }.bind(this))
-      }.bind(this)
-    })
   }
 
   connectedCallback () {
-    // this.source.src = `https://garevna.github.io/js-samples/sounds/${this.musics[this.music]}.mp3`
-    // this.music = -1
-    // this.soundButton.dispatchEvent(new Event('click'))
+    //
   }
 
   static get observedAttributes() {
@@ -119,17 +90,6 @@ class PictureSlider extends HTMLElement {
         : this.currentIndex + 1
   }
 }
-
-PictureSlider.prototype.musics = [
-  'calm-music',
-  'music-box',
-  'mystical-music',
-  'run-away-with-me',
-  'september-story',
-  'story-unfolds',
-  'violin-music',
-  'ballerino'
-]
 
 customElements.define ('picture-slider', PictureSlider)
 
@@ -185,23 +145,6 @@ function getStyle () {
       font-size: 32px;
       text-shadow: 2px 2px 4px #000000b0;
     }
-    .sound-button {
-      position: fixed;
-      top: 32px;
-      right: 32px;
-      width: 48px;
-      height: 48px;
-      background-image: url(${host}/icons/music-off.svg);
-      background-size: contain;
-    }
-    .sound-button:hover {
-      background-image: url(${host}/icons/music.svg);
-    }
-    /*.sound-button:before {
-      content: '♫';
-      font-size: 48px;
-      color: #fa0;
-    }*/
     #left { left: 4%; }
     #right { right: 4%; }
     div {
@@ -219,3 +162,125 @@ function getStyle () {
     }
   `
 }
+
+const host = 'https://garevna.github.io/js-samples/sounds/'
+
+const formatString = str => str.replaceAll('-', ' ')
+  .split(' ')
+  .map(word => word[0].toUpperCase() + word.slice(1))
+  .join(' ')
+
+document.head
+  .appendChild(document.createElement('style'))
+  .textContent = `
+    .play-button, .media-button {
+      border: 0;
+      background: transparent;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .play-button {
+      width: 0;
+      height: 48px;
+      border-color: transparent transparent transparent #09b;
+      transition: 100ms all ease;
+      border-style: solid;
+      border-width: 24px 0 24px 48px;
+    }
+
+    .play-button.paused {
+      border-style: double;
+      border-width: 0px 0 0px 48px;
+    }
+
+    .play-button:hover {
+      border-color: transparent transparent transparent #079;
+    }
+
+    .media-button {
+      vertical-align: text-bottom;
+      border-radius: 50%;
+      border: solid 3px #fa0;
+      width: 64px;
+      height: 64px;
+    }
+
+    .media-button:hover {
+      border: solid 3px #f70;
+    }
+
+    .media-button:before {
+      content: '♫';
+      font-size: 48px;
+      color: #fa0;
+    }
+
+    figure {
+      display: inline-block;
+      height: max-content;
+      vertical-align: text-bottom;
+    }
+  `
+
+const media = [
+  'desolate-fields-of-sorrow',
+  'enchanted-moonlit-ballad',
+  'eternal-twilight-sonata',
+  'haunted-shadows-on-hills',
+  'majestic-orchestral-calmness',
+  'midnight',
+  'midnight-moonlit-echoes',
+  'robotic-dance-waltz',
+  'serene-celestial-opera-peace',
+  'serene-grand-orchestral-journey',
+  'tranquil-cityscape-reflections',
+  'music-box',
+  'mystical-music',
+  'violin-music'
+]
+
+const buttons = [1, 2].map(() => document.body.appendChild(document.createElement('figure')))
+
+const audio = document.body.appendChild(document.createElement('audio'))
+audio.setAttribute('src', media[0])
+audio.setAttribute('crossorigin', 'anonymous')
+
+const audioContext = new AudioContext(window.AudioContext || window.webkitAudioContext)
+const track = audioContext.createMediaElementSource(audio)
+track.connect(audioContext.destination)
+
+const playButton = buttons[0].appendChild(document.createElement('button'))
+Object.assign(playButton, {
+  playing: false,
+  className: 'play-button',
+  onclick () {
+    audioContext.state === 'suspended' && audioContext.resume()
+    if (this.playing) audio.pause()
+    else audio.play()
+    this.className = this.playing ? 'play-button' : 'play-button paused'
+    this.playing = !this.playing
+  }
+})
+
+const mediaButton = buttons[1].appendChild(document.createElement('button'))
+Object.assign(mediaButton, {
+  className: 'media-button',
+  media: 0,
+  onclick () {
+    playButton.playing && playButton.dispatchEvent(new Event('click'))
+    this.media = this.media >= media.length - 1 ? 0 : this.media + 1
+    console.log(`${host}/${media[this.media]}.mp3`)
+    audio.setAttribute('src', `${host}/${media[this.media]}.mp3`)
+    !playButton.playing && playButton.dispatchEvent(new Event('click'))
+    demo.innerText = formatString(media[this.media])
+  }
+})
+
+audio.setAttribute('src', `${host}/${media[0]}.mp3`)
+
+const demo = document.body.appendChild(document.createElement('h4'))
+demo.innerText = formatString(media[0])
+
+audio.addEventListener('ended', () => {
+  playButton.playing = false
+}, false)
