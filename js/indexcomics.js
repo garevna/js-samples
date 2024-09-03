@@ -59,7 +59,7 @@ class PictureSlider extends HTMLElement {
       onclick: () => this.changePicture('right')
     })
 
-    this.subtitle = Object.assign(this.createElem('h4', this.container), {
+    this.subtitle = Object.assign(this.createElem('pre', this.container), {
       className: 'picture-subtitles'
     })
   }
@@ -183,6 +183,9 @@ function getStyle () {
       bottom: 8%;
       width: 80%;
       margin: 0 10%;
+      font-size: 16px;
+      font-family: Montserrat;
+      letter-spacing: 1.2px;
     }
   `
 }
