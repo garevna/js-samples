@@ -19,21 +19,21 @@ header > h1 > img {
 }
 
 header > h1 > span.js {
-    color: #f50;
-    font-family: "Luckiest Guy";
-    font-size: 50px;
-    letter-spacing: 8px;
+  color: #f50;
+  font-family: "Luckiest Guy";
+  font-size: 50px;
+  letter-spacing: 8px;
 }
 header > h1 > span.samples {
-    color: #0ad;
-    font-family: "Mali";
-    font-size: 30px;
+  color: #0ad;
+  font-family: "Mali";
+  font-size: 30px;
 }
 
-input { margin: 40px; padding: 5px 10px; width: 80%; }
+input { margin: 40px; padding: 4px 12px; width: 80%; }
 
 button {
-  padding: 5px 10px;
+  padding: 8px 12px;
   background-color: transparent;
   border: none;
   color: #999900;
@@ -46,7 +46,7 @@ button {
 button:hover {
   color: #BBBB00;
   /* font-style: italic; */
-  margin-left: 10px;
+  /* margin-left: 12px; */
 }
 
 .flex-container {
