@@ -90,10 +90,10 @@ class PictureSlider extends HTMLElement {
     this.slides[nextSlide].init(-to)
     this.slides[this.currentSlide].mcFromTo(10, to, 0)
     this.slides[nextSlide].mcFromTo(-to, 10, 1)
-    this.subtitle.textContent = this.subtitles[this.currentIndex]
     setTimeout(function () {
       this.currentSlide = nextSlide
       this.currentIndex = nextIndex
+      this.subtitle.textContent = this.subtitles[this.currentIndex]
     }.bind(this), 1000)
   }
 
