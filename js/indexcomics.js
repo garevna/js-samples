@@ -163,7 +163,7 @@ function getStyle () {
   `
 }
 
-const host = 'https://garevna.github.io/js-samples/sounds/'
+// const host = 'https://garevna.github.io/js-samples/sounds/'
 
 const formatString = str => str.replaceAll('-', ' ')
   .split(' ')
@@ -269,14 +269,13 @@ Object.assign(mediaButton, {
   onclick () {
     playButton.playing && playButton.dispatchEvent(new Event('click'))
     this.media = this.media >= media.length - 1 ? 0 : this.media + 1
-    console.log(`${host}/${media[this.media]}.mp3`)
-    audio.setAttribute('src', `${host}/${media[this.media]}.mp3`)
+    audio.setAttribute('src', `${host}/sounds/${media[this.media]}.mp3`)
     !playButton.playing && playButton.dispatchEvent(new Event('click'))
     demo.innerText = formatString(media[this.media])
   }
 })
 
-audio.setAttribute('src', `${host}/${media[0]}.mp3`)
+audio.setAttribute('src', `${host}/sounds/${media[0]}.mp3`)
 
 const demo = document.body.appendChild(document.createElement('h4'))
 demo.innerText = formatString(media[0])
