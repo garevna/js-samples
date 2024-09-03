@@ -1,5 +1,7 @@
 (elems => elems.forEach(elem => elem && elem.remove()))(['input', 'header', '.logo'].map(selector => document.querySelector(selector)))
 
+document.body.onmousemove = createMouseTail('Look, the fireflies are on!')
+
 const host = 'https://garevna.github.io/js-samples'
 
 const elem = document.body.appendChild(document.createElement('picture-slider'))
@@ -172,6 +174,7 @@ document.head
   .appendChild(document.createElement('style'))
   .textContent = `
     .play-button, .media-button {
+      position: fixed;
       border: 0;
       padding: 0;
       background: transparent;
@@ -179,12 +182,14 @@ document.head
       cursor: pointer;
     }
     .play-button {
-      width: 0;
+      bottom: 2%;
+      width: 48px;
       height: 48px;
       border-color: transparent transparent transparent #09b;
       transition: 100ms all ease;
       border-style: solid;
       border-width: 24px 0 24px 48px;
+      margin: 0 calc(50% - 24px);
     }
 
     .play-button.paused {
@@ -197,13 +202,16 @@ document.head
     }
 
     .media-button {
-      vertical-align: text-bottom;
+      position: fixed;
+      top: 12px;
+      right: 16px;
       border-radius: 50%;
       border: solid 3px #fa0;
       width: 64px;
       height: 64px;
-      font-size: 48px;
+      font-size: 36px;
       color: #fa0;
+      z-index: 50;
     }
 
     .media-button:hover {
@@ -211,10 +219,10 @@ document.head
       color: #f70;
     }
 
-    figure {
-      display: inline-block;
-      height: max-content;
-      vertical-align: text-bottom;
+    .music-title {
+      position: fixed;
+      top: 0;
+      left: 24px;
     }
   `
 
@@ -235,7 +243,7 @@ const media = [
   'violin-music'
 ]
 
-const buttons = [1, 2].map(() => document.body.appendChild(document.createElement('figure')))
+const [playButton, mediaButton] = [1, 2].map(() => document.body.appendChild(document.createElement('button')))
 
 const audio = document.body.appendChild(document.createElement('audio'))
 audio.setAttribute('src', media[0])
@@ -245,7 +253,6 @@ const audioContext = new AudioContext(window.AudioContext || window.webkitAudioC
 const track = audioContext.createMediaElementSource(audio)
 track.connect(audioContext.destination)
 
-const playButton = buttons[0].appendChild(document.createElement('button'))
 Object.assign(playButton, {
   playing: false,
   className: 'play-button',
@@ -258,7 +265,6 @@ Object.assign(playButton, {
   }
 })
 
-const mediaButton = buttons[1].appendChild(document.createElement('button'))
 Object.assign(mediaButton, {
   className: 'media-button',
   innerText: '♫',
@@ -275,7 +281,10 @@ Object.assign(mediaButton, {
 audio.setAttribute('src', `${host}/sounds/${media[0]}.mp3`)
 
 const demo = document.body.appendChild(document.createElement('h4'))
-demo.innerText = formatString(media[0])
+Object.assign(demo, {
+  innerText: formatString(media[0]),
+  className: 'music-title'
+})
 
 audio.addEventListener('ended', () => {
   playButton.playing = false
