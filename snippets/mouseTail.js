@@ -8,8 +8,6 @@ function createMouseTail (text) {
   const parentElem = document.createElement('div')
   document.body.insertBefore(parentElem, document.body.firstChild)
 
-  console.log(location.hash)
-
   const shadow = parentElem.attachShadow({ mode: 'closed' })
   location.hash !== '#comics' && Object.assign(shadow.appendChild(document.createElement('div')), {
     className: 'logo'
