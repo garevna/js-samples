@@ -8,10 +8,10 @@ function createMouseTail (text) {
   const parentElem = document.createElement('div')
   document.body.insertBefore(parentElem, document.body.firstChild)
 
-  console.log(location.href)
+  console.log(location.hash)
 
   const shadow = parentElem.attachShadow({ mode: 'closed' })
-  shadow.appendChild(document.createElement('div')).className = 'logo'
+  location.hash !== '#comics' && shadow.appendChild(document.createElement('div')).className = 'logo'
   shadow
     .appendChild((() => {
       const style = document.createElement('style')
@@ -69,4 +69,4 @@ function createMouseTail (text) {
     }
 }
 
-document.body.onmousemove = createMouseTail('Funcs are our jam!')
+document.body.onmousemove = createMouseTail(location.hash !== '#comics' ? 'Funcs are our jam!' : 'Look, the fireflies are on!')
