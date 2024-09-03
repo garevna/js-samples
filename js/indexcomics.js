@@ -59,7 +59,7 @@ class PictureSlider extends HTMLElement {
       onclick: () => this.changePicture('right')
     })
 
-    this.subtitle = Object.assign(this.createElem('button', this.container), {
+    this.subtitle = Object.assign(this.createElem('h4', this.container), {
       className: 'picture-subtitles'
     })
   }
