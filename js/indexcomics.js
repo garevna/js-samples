@@ -1,7 +1,5 @@
 (elems => elems.forEach(elem => elem && elem.remove()))(['input', 'header', '.logo'].map(selector => document.querySelector(selector)))
 
-document.body.onmousemove = createMouseTail('Look, the fireflies are on!')
-
 const host = 'https://garevna.github.io/js-samples'
 
 const elem = document.body.appendChild(document.createElement('picture-slider'))
