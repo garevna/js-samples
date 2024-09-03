@@ -71,4 +71,4 @@ function createMouseTail (text) {
     }
 }
 
-document.body.onmousemove = createMouseTail(location.hash !== '#comics' ? 'Funcs are our jam!' : 'Look, the fireflies are on!')
+document.body.onmousemove = createMouseTail(location.hash !== '#comics' ? 'Funcs are our jam!' : '⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆')
