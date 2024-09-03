@@ -163,8 +163,6 @@ function getStyle () {
   `
 }
 
-// const host = 'https://garevna.github.io/js-samples/sounds/'
-
 const formatString = str => str.replaceAll('-', ' ')
   .split(' ')
   .map(word => word[0].toUpperCase() + word.slice(1))
@@ -203,16 +201,13 @@ document.head
       border: solid 3px #fa0;
       width: 64px;
       height: 64px;
+      font-size: 48px;
+      color: #fa0;
     }
 
     .media-button:hover {
       border: solid 3px #f70;
-    }
-
-    .media-button:before {
-      content: '♫';
-      font-size: 48px;
-      color: #fa0;
+      color: #f70;
     }
 
     figure {
@@ -265,6 +260,7 @@ Object.assign(playButton, {
 const mediaButton = buttons[1].appendChild(document.createElement('button'))
 Object.assign(mediaButton, {
   className: 'media-button',
+  innerText: '♫',
   media: 0,
   onclick () {
     playButton.playing && playButton.dispatchEvent(new Event('click'))
