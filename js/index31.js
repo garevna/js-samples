@@ -48,7 +48,7 @@ class Canvas extends HTMLElement {
     
     if (!this.canvas.points.length) {
       this.init()
-      this.mode =  'draw'
+      this.mode = 'draw'
     } else this.mode = 'break'
 
     this.loop()
@@ -130,7 +130,6 @@ class Canvas extends HTMLElement {
   }
 }
 
-
 class CanvasPoint {
   constructor (canvas, ctx, target) {
     Object.assign(this, {
@@ -208,16 +207,15 @@ Object.defineProperty(CanvasPoint.prototype, 'maxDistance', {
 
 customElements.define('canvas-element', Canvas)
 
-
 let canvas = section.appendChild(document.createElement('canvas-element'))
 
-canvas.setAttribute('image', 'https://garevna.github.io/comics/images/butterfly-1-invert.png')
+canvas.setAttribute('image', '../icons/butterfly-1-invert.png')
 
 // canvas.setAttribute('text', 'Author')
 // canvas.setAttribute('font', 'Cursive')
 // canvas.setAttribute('size', 64)
 
 canvas.onclick = function (event) {
-  const currentText = event.target.getAttribute('text')
-  event.target.setAttribute('text', currentText === 'Author' ? 'Helen' : 'Author')
+  // const currentText = event.target.getAttribute('text')
+  // event.target.setAttribute('text', currentText === 'Author' ? 'Helen' : 'Author')
 }
