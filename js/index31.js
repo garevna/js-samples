@@ -209,7 +209,7 @@ customElements.define('canvas-element', Canvas)
 
 let canvas = section.appendChild(document.createElement('canvas-element'))
 
-canvas.setAttribute('image', '../icons/butterfly-1-invert.png')
+canvas.setAttribute('image', `${location.origin}${location.pathname}icons/butterfly-1-invert.png`)
 
 // canvas.setAttribute('text', 'Author')
 // canvas.setAttribute('font', 'Cursive')
